@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SEOHead } from '../components/SEOHead';
-import { TypewriterText } from '../components/TypewriterText';
 import { HorizontalSlider } from '../components/HorizontalSlider';
+import { SpotlightStatement } from '../components/SpotlightStatement';
 import { CAPABILITIES, CASE_STUDIES } from '../data/siteData';
 import { CaseStudyModal } from '../components/CaseStudyModal';
 import type { CaseStudy, NavigationPath } from '../types';
@@ -48,15 +48,12 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
           </div>
         </section>
 
-        {/* Visual Moment Sentence with Typewriter */}
-        <section className="p-8 md:p-14 bg-[#0d0d12] border-y border-[#d4af37]/30 text-center space-y-6">
-          <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl text-white font-medium tracking-wide uppercase leading-tight">
-            <TypewriterText text="VISIBILITY IS NOT THE GOAL. SIGNIFICANCE IS." speed={35} delay={150} />
-          </h2>
-          <p className="max-w-3xl mx-auto text-xs sm:text-sm text-neutral-400 font-light leading-relaxed">
-            The CENTRESTAGE doesn't pursue visibility for visibility's sake. We work backwards from what needs to change: perception, reputation, relevance, authority, connection or opportunity.
-          </p>
-        </section>
+        {/* Visual Moment Spotlight Statement */}
+        <SpotlightStatement
+          text="VISIBILITY IS NOT THE GOAL. SIGNIFICANCE IS."
+          subtitle="Strategic Philosophy"
+          tagline="We work backwards from what needs to change: perception, reputation, relevance, authority, connection or opportunity."
+        />
 
         {/* 5 CAPABILITY PRACTICE AREAS */}
         <section className="space-y-16">

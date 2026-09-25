@@ -7,7 +7,6 @@ import { SpotlightBeliefSection } from '../components/SpotlightBeliefSection';
 import { CAPABILITIES, ECOSYSTEM_PILLARS, INSIGHTS_ARTICLES, IMPACT_STATS } from '../data/siteData';
 import type { NavigationPath, InsightArticle } from '../types';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
-import logoImg from '../assets/the_centrestage_company_logo.jpg';
 
 interface HomePageProps {
   onNavigate: (path: NavigationPath) => void;
@@ -25,21 +24,17 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
       />
 
       <div className="space-y-28 pb-20">
-        
+
         {/* HERO SECTION */}
         <section className="relative min-h-[85vh] flex items-center justify-center pt-28 pb-16 overflow-hidden border-b border-[#d4af37]/15">
           {/* Subtle Ambient Background Gradients */}
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#d4af37]/5 rounded-full blur-[140px] pointer-events-none" />
 
           <div className="max-w-5xl mx-auto px-6 text-center space-y-8 relative z-10">
-            
+
             {/* Tagline Badge with Beautifully Displayed Logo */}
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-[#d4af37]/40 bg-[#d4af37]/10 backdrop-blur-md shadow-lg shadow-[#d4af37]/5">
-              <img
-                src={logoImg}
-                alt="The CENTRESTAGE Logo"
-                className="w-6 h-6 rounded-full object-cover border border-[#d4af37]"
-              />
+
               <span className="text-xs font-serif tracking-[0.25em] text-[#d4af37] uppercase font-semibold">
                 Strategy. Story. Visibility.
               </span>
@@ -86,7 +81,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
         <section className="max-w-6xl mx-auto px-6 md:px-12">
           <div className="bg-[#0b0b0f] border border-[#d4af37]/20 rounded-sm p-8 md:p-14 relative overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              
+
               <div className="lg:col-span-5 space-y-6">
                 <span className="text-xs font-mono tracking-[0.3em] text-[#d4af37] uppercase block">
                   HOW WE THINK

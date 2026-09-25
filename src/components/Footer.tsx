@@ -23,21 +23,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           
           {/* Brand Intro Column */}
           <div className="space-y-6 lg:col-span-1">
-            <div className="flex items-center gap-3">
-              <img
-                src={logoImg}
-                alt="The CENTRESTAGE Company Logo"
-                className="w-10 h-10 rounded-sm border border-[#d4af37]/30 object-cover"
-              />
-              <div className="flex flex-col">
-                <span className="font-serif text-xl font-bold tracking-widest text-white leading-none">
-                  THE CENTRESTAGE
-                </span>
-                <span className="text-[10px] tracking-[0.25em] text-[#d4af37] uppercase font-medium pt-1">
-                  Company
-                </span>
-              </div>
-            </div>
+            <img
+              src={logoImg}
+              alt="The CENTRESTAGE Company Logo"
+              className="h-12 w-auto object-contain max-w-[220px] border border-[#d4af37]/30 rounded-sm p-1 bg-black/40"
+            />
 
             <p className="text-xs text-neutral-400 leading-relaxed font-light">
               The digital home of an intelligent, contemporary African company operating at the intersection of strategy, story, reputation, visibility and influence.

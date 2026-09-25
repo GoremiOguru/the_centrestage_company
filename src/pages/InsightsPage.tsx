@@ -4,7 +4,7 @@ import { INSIGHTS_ARTICLES } from '../data/siteData';
 import { ArticleModal } from '../components/ArticleModal';
 import { HorizontalSlider } from '../components/HorizontalSlider';
 import type { InsightArticle, NavigationPath } from '../types';
-import { ChevronRight, Search } from 'lucide-react';
+import { ChevronRight, Search, ChevronDown } from 'lucide-react';
 
 interface InsightsPageProps {
   onNavigate: (path: NavigationPath) => void;
@@ -15,6 +15,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [activeArticle, setActiveArticle] = useState<InsightArticle | null>(selectedArticleFromParent || null);
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [visibleCount, setVisibleCount] = useState<number>(6); // Show initial 6 articles to prevent infinite scrolling
 
   const categories = [
     'All',
@@ -34,6 +35,9 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
       art.category.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+
+  const displayedArticles = filteredArticles.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredArticles.length;
 
   return (
     <>
@@ -78,7 +82,10 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
               {categories.map((cat) => (
                 <button
                   key={cat}
-                  onClick={() => setActiveCategory(cat)}
+                  onClick={() => {
+                    setActiveCategory(cat);
+                    setVisibleCount(6); // Reset pagination on category change
+                  }}
                   className={`px-4 py-2 text-xs font-sans tracking-wider transition-all rounded-sm ${
                     activeCategory === cat
                       ? 'bg-[#d4af37] text-black font-semibold shadow-md'
@@ -96,7 +103,10 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
                 type="text"
                 placeholder="Search journal..."
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                  setVisibleCount(6);
+                }}
                 className="w-full pl-9 pr-4 py-2 bg-[#0e0e14] border border-neutral-800 text-xs text-neutral-200 placeholder-neutral-500 rounded-sm focus:outline-none focus:border-[#d4af37]"
               />
               <Search className="w-4 h-4 text-neutral-500 absolute left-3 top-2.5" />
@@ -149,14 +159,14 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
           </section>
         )}
 
-        {/* Full Grid of Articles */}
-        <section className="space-y-6 pt-6">
+        {/* Grid of Articles with "View More" Pagination */}
+        <section className="space-y-8 pt-6">
           <h2 className="text-xs font-mono text-neutral-400 uppercase tracking-[0.25em]">
             ALL INSIGHT MONOGRAPHS ({filteredArticles.length})
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredArticles.map((article) => (
+            {displayedArticles.map((article) => (
               <div
                 key={article.id}
                 onClick={() => setActiveArticle(article)}
@@ -190,6 +200,19 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
               </div>
             ))}
           </div>
+
+          {/* VIEW MORE BUTTON */}
+          {hasMore && (
+            <div className="text-center pt-8">
+              <button
+                onClick={() => setVisibleCount((prev) => prev + 6)}
+                className="px-8 py-3.5 bg-[#12121a] border border-[#d4af37]/40 hover:border-[#d4af37] text-[#d4af37] hover:text-white text-xs uppercase tracking-widest font-semibold rounded-sm transition-all inline-flex items-center gap-2 group shadow-lg"
+              >
+                <span>View More Monograph Concepts ({filteredArticles.length - visibleCount} remaining)</span>
+                <ChevronDown className="w-4 h-4 transition-transform group-hover:translate-y-1" />
+              </button>
+            </div>
+          )}
         </section>
 
       </div>

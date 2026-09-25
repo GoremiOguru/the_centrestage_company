@@ -1,6 +1,6 @@
 import React from 'react';
 import { SEOHead } from '../components/SEOHead';
-import { TypewriterText } from '../components/TypewriterText';
+import { SpotlightStatement } from '../components/SpotlightStatement';
 import type { NavigationPath } from '../types';
 
 interface EcosystemPageProps {
@@ -36,18 +36,17 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
           </p>
         </section>
 
-        {/* Visual Moment Sentence with Typewriter */}
-        <section className="p-8 md:p-14 bg-[#0d0d12] border-y border-[#d4af37]/30 text-center">
-          <h2 className="font-serif text-2xl sm:text-4xl text-white font-medium tracking-wide leading-relaxed">
-            "<TypewriterText text="People, ideas and stories can create possibility when given the right platform." speed={40} delay={200} />"
-          </h2>
-        </section>
+        {/* Visual Moment Spotlight Statement */}
+        <SpotlightStatement
+          text="People, ideas and stories can create possibility when given the right platform."
+          subtitle="Core Ecosystem Idea"
+        />
 
         {/* 5 Distinct Ecosystem Visual Blocks */}
         <section className="space-y-16">
           
           {/* 1. The CENTRESTAGE Company */}
-          <div className="p-8 md:p-12 bg-[#0b0b0e] border border-[#d4af37]/30 rounded-sm shadow-2xl relative overflow-hidden">
+          <div className="interactive-card p-8 md:p-12 bg-[#0b0b0e] border border-[#d4af37]/30 rounded-sm shadow-2xl relative overflow-hidden">
             <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-8">
               <div className="space-y-4 max-w-3xl">
                 <span className="text-xs font-mono tracking-widest text-[#d4af37] uppercase block">
@@ -76,7 +75,7 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
           </div>
 
           {/* 2. The CENTRESTAGE Foundation */}
-          <div className="p-8 md:p-12 bg-[#0d0d14] border border-[#d4af37]/30 rounded-sm shadow-2xl space-y-8">
+          <div className="interactive-card p-8 md:p-12 bg-[#0d0d14] border border-[#d4af37]/30 rounded-sm shadow-2xl space-y-8">
             <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-6 pb-6 border-b border-neutral-800">
               <div className="space-y-3 max-w-2xl">
                 <span className="text-xs font-mono tracking-widest text-[#d4af37] uppercase block">
@@ -142,7 +141,7 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
           </div>
 
           {/* 3. CentreStage Club */}
-          <div className="p-8 md:p-12 bg-[#0b0b0e] border border-[#d4af37]/30 rounded-sm shadow-2xl">
+          <div className="interactive-card p-8 md:p-12 bg-[#0b0b0e] border border-[#d4af37]/30 rounded-sm shadow-2xl">
             <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-8">
               <div className="space-y-4 max-w-3xl">
                 <span className="text-xs font-mono tracking-widest text-[#d4af37] uppercase block">
@@ -174,7 +173,7 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
           </div>
 
           {/* 4. The Irreplaceable Advantage™ */}
-          <div className="p-8 md:p-12 bg-[#101017] border border-[#d4af37]/40 rounded-sm shadow-2xl">
+          <div className="interactive-card p-8 md:p-12 bg-[#101017] border border-[#d4af37]/40 rounded-sm shadow-2xl">
             <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-8">
               <div className="space-y-4 max-w-3xl">
                 <span className="text-xs font-mono tracking-widest text-[#d4af37] uppercase block">
@@ -206,7 +205,7 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
           </div>
 
           {/* 5. The CentreStage Mixer */}
-          <div className="p-8 md:p-12 bg-[#0b0b0e] border border-[#d4af37]/30 rounded-sm shadow-2xl">
+          <div className="interactive-card p-8 md:p-12 bg-[#0b0b0e] border border-[#d4af37]/30 rounded-sm shadow-2xl">
             <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-8">
               <div className="space-y-4 max-w-3xl">
                 <span className="text-xs font-mono tracking-widest text-[#d4af37] uppercase block">

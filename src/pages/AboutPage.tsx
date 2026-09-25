@@ -1,7 +1,7 @@
 import React from 'react';
 import { SEOHead } from '../components/SEOHead';
 import { BrandFrameworkVisual } from '../components/BrandFrameworkVisual';
-import { TypewriterText } from '../components/TypewriterText';
+import { SpotlightStatement } from '../components/SpotlightStatement';
 import type { NavigationPath } from '../types';
 import { ArrowRight, Eye, Compass, Award } from 'lucide-react';
 import logoImg from '../assets/the_centrestage_company_logo.jpg';
@@ -34,15 +34,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           </p>
         </section>
 
-        {/* Story & Visual Statements */}
+        {/* Story & Dot Matrix Spotlight Statements */}
         <section className="space-y-16">
           
-          {/* Statement Moment 1 */}
-          <div className="p-8 md:p-14 bg-gradient-to-r from-[#0d0d14] via-[#141420] to-[#0d0d14] border border-[#d4af37]/30 rounded-sm shadow-2xl text-center hover:border-[#d4af37] transition-all">
-            <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl text-white font-medium tracking-wide uppercase">
-              GREAT WORK SHOULD NOT GO UNSEEN.
-            </h2>
-          </div>
+          {/* Spotlight Statement 1 */}
+          <SpotlightStatement
+            text="GREAT WORK SHOULD NOT GO UNSEEN."
+            subtitle="The Foundational Instinct"
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-sm md:text-base text-neutral-300 font-light leading-relaxed">
             <div className="space-y-6">
@@ -57,11 +56,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               <p>
                 Through all that evolution, one instinct has remained constant:
               </p>
-              <div className="p-6 bg-[#12121a] border border-[#d4af37]/30 rounded-sm">
-                <span className="font-serif text-xl sm:text-2xl text-white italic block">
-                  "<TypewriterText text="We see what others miss." speed={50} delay={300} />"
-                </span>
-              </div>
+
+              {/* Spotlight Statement 2 */}
+              <SpotlightStatement
+                text="WE SEE WHAT OTHERS MISS."
+                subtitle="Strategic Vision"
+              />
             </div>
           </div>
 
@@ -111,7 +111,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-6">
             
             {/* SEE */}
-            <div className="p-8 bg-[#0f0f15] border border-[#d4af37]/20 rounded-sm space-y-4 hover:border-[#d4af37] transition-all">
+            <div className="interactive-card p-8 bg-[#0f0f15] border border-[#d4af37]/20 rounded-sm space-y-4">
               <div className="flex items-center justify-between">
                 <span className="font-serif text-2xl text-[#d4af37] font-bold">SEE</span>
                 <Eye className="w-5 h-5 text-[#d4af37]" />
@@ -125,7 +125,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             </div>
 
             {/* SHAPE */}
-            <div className="p-8 bg-[#0f0f15] border border-[#d4af37]/20 rounded-sm space-y-4 hover:border-[#d4af37] transition-all">
+            <div className="interactive-card p-8 bg-[#0f0f15] border border-[#d4af37]/20 rounded-sm space-y-4">
               <div className="flex items-center justify-between">
                 <span className="font-serif text-2xl text-[#d4af37] font-bold">SHAPE</span>
                 <Compass className="w-5 h-5 text-[#d4af37]" />
@@ -139,7 +139,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             </div>
 
             {/* POSITION */}
-            <div className="p-8 bg-[#0f0f15] border border-[#d4af37]/20 rounded-sm space-y-4 hover:border-[#d4af37] transition-all">
+            <div className="interactive-card p-8 bg-[#0f0f15] border border-[#d4af37]/20 rounded-sm space-y-4">
               <div className="flex items-center justify-between">
                 <span className="font-serif text-2xl text-[#d4af37] font-bold">POSITION</span>
                 <Award className="w-5 h-5 text-[#d4af37]" />
@@ -170,20 +170,20 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             
             {/* Leadership Image Framing for Dr. Naomi */}
             <div className="lg:col-span-5 relative group overflow-hidden rounded-sm border border-[#d4af37]/40">
-              <div className="w-full h-[400px] bg-gradient-to-b from-[#12121c] via-[#0b0b0e] to-black p-6 flex flex-col justify-between items-center text-center">
+              <div className="w-full h-[380px] bg-gradient-to-b from-[#12121c] via-[#0b0b0e] to-black p-6 flex flex-col justify-between items-center text-center">
                 <div className="w-full flex justify-between items-center">
                   <img
                     src={logoImg}
                     alt="Logo"
-                    className="w-10 h-10 rounded-sm border border-[#d4af37]/40 object-cover"
+                    className="h-8 w-auto object-contain max-w-[140px]"
                   />
                   <span className="text-[10px] font-mono text-[#d4af37] uppercase tracking-widest border border-[#d4af37]/30 px-2 py-1 rounded-sm">
                     Founder Portrait
                   </span>
                 </div>
 
-                <div className="space-y-2 py-8">
-                  <div className="w-24 h-24 rounded-full border-2 border-[#d4af37] p-1 mx-auto overflow-hidden">
+                <div className="space-y-2 py-6">
+                  <div className="w-20 h-20 rounded-full border-2 border-[#d4af37] p-1 mx-auto overflow-hidden">
                     <img
                       src={logoImg}
                       alt="Dr. Naomi Logo Mark"

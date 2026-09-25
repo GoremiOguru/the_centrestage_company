@@ -4,6 +4,7 @@ interface TypewriterTextProps {
   text: string;
   speed?: number;
   delay?: number;
+  repeatDelay?: number;
   className?: string;
   cursorColor?: string;
 }
@@ -11,7 +12,8 @@ interface TypewriterTextProps {
 export const TypewriterText: React.FC<TypewriterTextProps> = ({
   text,
   speed = 35,
-  delay = 150,
+  delay = 100,
+  repeatDelay = 4000, // Auto plays every 4 seconds when in view
   className = '',
   cursorColor = '#d4af37'
 }) => {
@@ -20,20 +22,19 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
   const [isInView, setIsInView] = useState(false);
   const containerRef = useRef<HTMLSpanElement>(null);
 
-  // IntersectionObserver to trigger typing whenever the element enters viewport
+  // IntersectionObserver to trigger independently when each section is scrolled into view
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // Reset and start typing when in view
-          setDisplayedText('');
-          setCurrentIndex(0);
           setIsInView(true);
         } else {
           setIsInView(false);
+          setDisplayedText('');
+          setCurrentIndex(0);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.15 }
     );
 
     if (containerRef.current) {
@@ -43,13 +44,16 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
     return () => observer.disconnect();
   }, [text]);
 
+  // Typing & 4-second Auto-Replay Loop
   useEffect(() => {
     if (!isInView) return;
 
-    if (currentIndex === 0) {
+    if (currentIndex === 0 && displayedText === '') {
       const startTimer = setTimeout(() => {
-        setDisplayedText(text[0] || '');
-        setCurrentIndex(1);
+        if (text.length > 0) {
+          setDisplayedText(text[0]);
+          setCurrentIndex(1);
+        }
       }, delay);
       return () => clearTimeout(startTimer);
     }
@@ -61,8 +65,16 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
       }, speed);
 
       return () => clearTimeout(timeout);
+    } else {
+      // Finished typing: wait 4 seconds then auto replay
+      const replayTimeout = setTimeout(() => {
+        setDisplayedText('');
+        setCurrentIndex(0);
+      }, repeatDelay);
+
+      return () => clearTimeout(replayTimeout);
     }
-  }, [currentIndex, isInView, text, speed, delay]);
+  }, [currentIndex, displayedText, isInView, text, speed, delay, repeatDelay]);
 
   return (
     <span ref={containerRef} className={`inline-block ${className}`}>
