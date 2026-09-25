@@ -1,7 +1,7 @@
 import React from 'react';
 import { BRAND_FRAMEWORK } from '../data/siteData';
 import { MarqueeCarousel } from './MarqueeCarousel';
-import { Compass, Target, Eye, Sparkles, Shield, Heart } from 'lucide-react';
+import { Compass, Target, Eye, Sparkles, Shield, Heart, Award } from 'lucide-react';
 import logoImg from '../assets/the_centrestage_company_logo.jpg';
 
 export const BrandFrameworkVisual: React.FC = () => {
@@ -14,11 +14,9 @@ export const BrandFrameworkVisual: React.FC = () => {
       {/* Header Badge */}
       <div className="flex flex-col md:flex-row md:items-center justify-between pb-8 mb-8 border-b border-neutral-800 gap-4">
         <div className="flex items-center gap-4">
-          <img
-            src={logoImg}
-            alt="Logo"
-            className="w-12 h-12 rounded-sm border border-[#d4af37]/40 object-cover"
-          />
+          <div className="p-2.5 bg-[#d4af37]/10 border border-[#d4af37]/30 rounded-sm text-[#d4af37]">
+            <Award className="w-6 h-6" />
+          </div>
           <div>
             <span className="text-[10px] font-mono tracking-[0.3em] text-[#d4af37] uppercase block mb-1">
               Institutional Architecture
@@ -28,10 +26,13 @@ export const BrandFrameworkVisual: React.FC = () => {
             </h3>
           </div>
         </div>
-        <div className="text-right">
-          <span className="text-xs font-serif italic text-neutral-400">
-            {BRAND_FRAMEWORK.brandShorthand}
-          </span>
+
+        <div>
+          <img
+            src={logoImg}
+            alt="The CENTRESTAGE Company Logo"
+            className="h-8 md:h-10 w-auto object-contain max-w-[180px] border border-[#d4af37]/30 rounded-sm p-1 bg-black/40"
+          />
         </div>
       </div>
 
@@ -39,7 +40,7 @@ export const BrandFrameworkVisual: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
         
         {/* BELIEF */}
-        <div className="p-6 bg-[#0e0e14] border border-[#d4af37]/15 rounded-sm flex flex-col justify-between hover:border-[#d4af37]/40 transition-all">
+        <div className="interactive-card p-6 bg-[#0e0e14] border border-[#d4af37]/15 rounded-sm flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-4">
               <span className="text-[10px] font-mono tracking-widest text-[#d4af37] uppercase">BELIEF</span>
@@ -53,7 +54,7 @@ export const BrandFrameworkVisual: React.FC = () => {
         </div>
 
         {/* PURPOSE */}
-        <div className="p-6 bg-[#0e0e14] border border-[#d4af37]/15 rounded-sm flex flex-col justify-between hover:border-[#d4af37]/40 transition-all">
+        <div className="interactive-card p-6 bg-[#0e0e14] border border-[#d4af37]/15 rounded-sm flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-4">
               <span className="text-[10px] font-mono tracking-widest text-[#d4af37] uppercase">PURPOSE</span>
@@ -67,7 +68,7 @@ export const BrandFrameworkVisual: React.FC = () => {
         </div>
 
         {/* MISSION */}
-        <div className="p-6 bg-[#0e0e14] border border-[#d4af37]/15 rounded-sm flex flex-col justify-between hover:border-[#d4af37]/40 transition-all">
+        <div className="interactive-card p-6 bg-[#0e0e14] border border-[#d4af37]/15 rounded-sm flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-4">
               <span className="text-[10px] font-mono tracking-widest text-[#d4af37] uppercase">MISSION</span>
@@ -81,7 +82,7 @@ export const BrandFrameworkVisual: React.FC = () => {
         </div>
 
         {/* VISION */}
-        <div className="p-6 bg-[#0e0e14] border border-[#d4af37]/15 rounded-sm flex flex-col justify-between hover:border-[#d4af37]/40 transition-all">
+        <div className="interactive-card p-6 bg-[#0e0e14] border border-[#d4af37]/15 rounded-sm flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-4">
               <span className="text-[10px] font-mono tracking-widest text-[#d4af37] uppercase">VISION</span>

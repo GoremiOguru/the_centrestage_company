@@ -3,7 +3,7 @@ import { SEOHead } from '../components/SEOHead';
 import { BrandFrameworkVisual } from '../components/BrandFrameworkVisual';
 import { SpotlightStatement } from '../components/SpotlightStatement';
 import type { NavigationPath } from '../types';
-import { ArrowRight, Eye, Compass, Award } from 'lucide-react';
+import { ArrowRight, Eye, Compass, Award, UserCheck } from 'lucide-react';
 import logoImg from '../assets/the_centrestage_company_logo.jpg';
 
 interface AboutPageProps {
@@ -168,35 +168,31 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
 
           <div className="bg-[#0b0b0e] border border-[#d4af37]/20 rounded-sm p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            {/* Leadership Image Framing for Dr. Naomi */}
-            <div className="lg:col-span-5 relative group overflow-hidden rounded-sm border border-[#d4af37]/40">
-              <div className="w-full h-[380px] bg-gradient-to-b from-[#12121c] via-[#0b0b0e] to-black p-6 flex flex-col justify-between items-center text-center">
-                <div className="w-full flex justify-between items-center">
+            {/* Leadership Executive Framing for Dr. Naomi */}
+            <div className="lg:col-span-5 relative group overflow-hidden rounded-sm border border-[#d4af37]/40 shadow-2xl">
+              <div className="w-full h-[360px] bg-gradient-to-b from-[#12121c] via-[#0b0b0e] to-black p-6 flex flex-col justify-between items-center text-center">
+                <div className="w-full flex justify-between items-center border-b border-neutral-800 pb-4">
                   <img
                     src={logoImg}
-                    alt="Logo"
+                    alt="The CENTRESTAGE Company Logo"
                     className="h-8 w-auto object-contain max-w-[140px]"
                   />
                   <span className="text-[10px] font-mono text-[#d4af37] uppercase tracking-widest border border-[#d4af37]/30 px-2 py-1 rounded-sm">
-                    Founder Portrait
+                    Founder Profile
                   </span>
                 </div>
 
-                <div className="space-y-2 py-6">
-                  <div className="w-20 h-20 rounded-full border-2 border-[#d4af37] p-1 mx-auto overflow-hidden">
-                    <img
-                      src={logoImg}
-                      alt="Dr. Naomi Logo Mark"
-                      className="w-full h-full object-cover rounded-full"
-                    />
+                <div className="space-y-3 py-6">
+                  <div className="w-16 h-16 rounded-full bg-[#d4af37]/10 border-2 border-[#d4af37] flex items-center justify-center mx-auto text-[#d4af37]">
+                    <UserCheck className="w-8 h-8" />
                   </div>
-                  <h3 className="font-serif text-2xl text-white font-semibold pt-2">Dr. Naomi</h3>
-                  <p className="text-xs text-[#d4af37] font-mono uppercase tracking-widest">
+                  <h3 className="font-serif text-3xl text-white font-semibold pt-1">Dr. Naomi</h3>
+                  <p className="text-xs text-[#d4af37] font-mono uppercase tracking-widest font-semibold">
                     Founder &amp; Chief Strategist
                   </p>
                 </div>
 
-                <p className="text-[11px] text-neutral-400 font-serif italic">
+                <p className="text-xs text-neutral-400 font-serif italic border-t border-neutral-800 pt-3">
                   "Great work should not go unseen."
                 </p>
               </div>

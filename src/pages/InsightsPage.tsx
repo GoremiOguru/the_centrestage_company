@@ -4,7 +4,7 @@ import { INSIGHTS_ARTICLES } from '../data/siteData';
 import { ArticleModal } from '../components/ArticleModal';
 import { HorizontalSlider } from '../components/HorizontalSlider';
 import type { InsightArticle, NavigationPath } from '../types';
-import { ChevronRight, Search, ChevronDown } from 'lucide-react';
+import { ChevronRight, Search, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface InsightsPageProps {
   onNavigate: (path: NavigationPath) => void;
@@ -15,7 +15,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [activeArticle, setActiveArticle] = useState<InsightArticle | null>(selectedArticleFromParent || null);
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [visibleCount, setVisibleCount] = useState<number>(6); // Show initial 6 articles to prevent infinite scrolling
+  const [visibleCount, setVisibleCount] = useState<number>(3); // Initial visible count set to 3
 
   const categories = [
     'All',
@@ -37,7 +37,15 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
   });
 
   const displayedArticles = filteredArticles.slice(0, visibleCount);
-  const hasMore = visibleCount < filteredArticles.length;
+  const isExpanded = visibleCount >= filteredArticles.length;
+
+  const toggleViewMore = () => {
+    if (isExpanded) {
+      setVisibleCount(3); // Collapse back to 3
+    } else {
+      setVisibleCount(filteredArticles.length); // Expand to all
+    }
+  };
 
   return (
     <>
@@ -84,7 +92,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
                   key={cat}
                   onClick={() => {
                     setActiveCategory(cat);
-                    setVisibleCount(6); // Reset pagination on category change
+                    setVisibleCount(3); // Reset to 3 on category filter change
                   }}
                   className={`px-4 py-2 text-xs font-sans tracking-wider transition-all rounded-sm ${
                     activeCategory === cat
@@ -105,7 +113,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
                 value={searchQuery}
                 onChange={(e) => {
                   setSearchQuery(e.target.value);
-                  setVisibleCount(6);
+                  setVisibleCount(3);
                 }}
                 className="w-full pl-9 pr-4 py-2 bg-[#0e0e14] border border-neutral-800 text-xs text-neutral-200 placeholder-neutral-500 rounded-sm focus:outline-none focus:border-[#d4af37]"
               />
@@ -159,7 +167,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
           </section>
         )}
 
-        {/* Grid of Articles with "View More" Pagination */}
+        {/* Grid of Articles with "View More" / "View Less" Toggle */}
         <section className="space-y-8 pt-6">
           <h2 className="text-xs font-mono text-neutral-400 uppercase tracking-[0.25em]">
             ALL INSIGHT MONOGRAPHS ({filteredArticles.length})
@@ -201,15 +209,19 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
             ))}
           </div>
 
-          {/* VIEW MORE BUTTON */}
-          {hasMore && (
+          {/* VIEW MORE / VIEW LESS BUTTON */}
+          {filteredArticles.length > 3 && (
             <div className="text-center pt-8">
               <button
-                onClick={() => setVisibleCount((prev) => prev + 6)}
+                onClick={toggleViewMore}
                 className="px-8 py-3.5 bg-[#12121a] border border-[#d4af37]/40 hover:border-[#d4af37] text-[#d4af37] hover:text-white text-xs uppercase tracking-widest font-semibold rounded-sm transition-all inline-flex items-center gap-2 group shadow-lg"
               >
-                <span>View More Monograph Concepts ({filteredArticles.length - visibleCount} remaining)</span>
-                <ChevronDown className="w-4 h-4 transition-transform group-hover:translate-y-1" />
+                <span>{isExpanded ? 'View Less' : 'View More'}</span>
+                {isExpanded ? (
+                  <ChevronUp className="w-4 h-4 transition-transform group-hover:-translate-y-0.5" />
+                ) : (
+                  <ChevronDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
+                )}
               </button>
             </div>
           )}
