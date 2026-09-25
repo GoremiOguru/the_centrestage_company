@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { SEOHead } from '../components/SEOHead';
+import { TypewriterText } from '../components/TypewriterText';
 import { CAPABILITIES, CASE_STUDIES } from '../data/siteData';
 import { CaseStudyModal } from '../components/CaseStudyModal';
 import type { CaseStudy, NavigationPath } from '../types';
@@ -21,10 +22,10 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
 
       <div className="max-w-6xl mx-auto px-6 md:px-12 pt-32 pb-24 space-y-28">
         
-        {/* H1 Header & Lead Copy */}
+        {/* Header & Lead Copy */}
         <section className="space-y-8 text-center max-w-4xl mx-auto">
           <span className="text-xs font-mono tracking-[0.3em] text-[#d4af37] uppercase block">
-            03 — OUR WORK
+            OUR WORK
           </span>
           <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl text-white font-light leading-tight">
             Great work <br />
@@ -46,17 +47,17 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
           </div>
         </section>
 
-        {/* Visual Moment Sentence */}
+        {/* Visual Moment Sentence with Typewriter */}
         <section className="p-8 md:p-14 bg-[#0d0d12] border-y border-[#d4af37]/30 text-center space-y-6">
-          <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl text-white font-medium tracking-wide uppercase">
-            VISIBILITY IS NOT THE GOAL. <span className="text-[#d4af37]">SIGNIFICANCE IS.</span>
+          <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl text-white font-medium tracking-wide uppercase leading-tight">
+            <TypewriterText text="VISIBILITY IS NOT THE GOAL. SIGNIFICANCE IS." speed={40} delay={200} />
           </h2>
           <p className="max-w-3xl mx-auto text-xs sm:text-sm text-neutral-400 font-light leading-relaxed">
             The CENTRESTAGE doesn't pursue visibility for visibility's sake. We work backwards from what needs to change: perception, reputation, relevance, authority, connection or opportunity.
           </p>
         </section>
 
-        {/* 5 CAPABILITY AREAS IN GREATER DETAIL */}
+        {/* 5 CAPABILITY PRACTICE AREAS */}
         <section className="space-y-16">
           <div className="text-center space-y-2">
             <span className="text-xs font-mono tracking-[0.3em] text-[#d4af37] uppercase block">
@@ -68,14 +69,14 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
           </div>
 
           <div className="space-y-12">
-            {CAPABILITIES.map((cap, index) => (
+            {CAPABILITIES.map((cap) => (
               <div
                 key={cap.id}
-                className="p-8 md:p-12 bg-[#0b0b0e] border border-neutral-800 hover:border-[#d4af37]/30 transition-all rounded-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
+                className="p-8 md:p-12 bg-[#0b0b0e] border border-neutral-800 hover:border-[#d4af37]/40 transition-all rounded-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
               >
                 <div className="lg:col-span-4 space-y-3">
                   <span className="text-xs font-mono text-[#d4af37] uppercase tracking-widest block">
-                    PRACTICE 0{index + 1}
+                    CAPABILITY
                   </span>
                   <h3 className="font-serif text-2xl sm:text-3xl text-white">
                     {cap.title}
@@ -121,7 +122,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
               The work behind the work.
             </h2>
             <p className="text-xs sm:text-sm text-neutral-400 font-light">
-              We measure impact by shifts in perception, authority, reach, and opportunity. Each featured engagement demonstrates our strategic intelligence.
+              We measure impact by shifts in perception, authority, reach, and opportunity. Click any monograph below to view full details.
             </p>
           </div>
 

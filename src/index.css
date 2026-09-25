@@ -50,8 +50,8 @@
 }
 
 .border-gold-glow {
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
-  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+  border-color: rgba(212, 175, 55, 0.4);
 }
 
 .gold-line {
@@ -64,9 +64,33 @@
   background: linear-gradient(90deg, rgba(212, 175, 55, 0.6) 0%, rgba(212, 175, 55, 0.1) 80%, rgba(212, 175, 55, 0) 100%);
 }
 
+/* Hide Scrollbar */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Marquee Keyframes */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {

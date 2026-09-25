@@ -1,23 +1,32 @@
 import React from 'react';
 import { BRAND_FRAMEWORK } from '../data/siteData';
+import { MarqueeCarousel } from './MarqueeCarousel';
 import { Compass, Target, Eye, Sparkles, Shield, Heart } from 'lucide-react';
+import logoImg from '../assets/the_centrestage_company_logo.jpg';
 
 export const BrandFrameworkVisual: React.FC = () => {
   return (
-    <div className="w-full bg-[#0a0a0d] border border-[#d4af37]/20 rounded-sm p-6 md:p-12 shadow-2xl relative overflow-hidden my-12">
+    <div className="w-full bg-[#0a0a0d] border border-[#d4af37]/20 rounded-sm p-6 md:p-12 shadow-2xl relative overflow-hidden my-8">
       {/* Editorial Decorative Background Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#d4af37]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#d4af37]/5 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header Badge */}
       <div className="flex flex-col md:flex-row md:items-center justify-between pb-8 mb-8 border-b border-neutral-800 gap-4">
-        <div>
-          <span className="text-[10px] font-mono tracking-[0.3em] text-[#d4af37] uppercase block mb-1">
-            Institutional Architecture
-          </span>
-          <h3 className="font-serif text-2xl md:text-3xl text-white">
-            The CENTRESTAGE Brand Framework
-          </h3>
+        <div className="flex items-center gap-4">
+          <img
+            src={logoImg}
+            alt="Logo"
+            className="w-12 h-12 rounded-sm border border-[#d4af37]/40 object-cover"
+          />
+          <div>
+            <span className="text-[10px] font-mono tracking-[0.3em] text-[#d4af37] uppercase block mb-1">
+              Institutional Architecture
+            </span>
+            <h3 className="font-serif text-2xl md:text-3xl text-white">
+              The CENTRESTAGE Brand Framework
+            </h3>
+          </div>
         </div>
         <div className="text-right">
           <span className="text-xs font-serif italic text-neutral-400">
@@ -33,7 +42,7 @@ export const BrandFrameworkVisual: React.FC = () => {
         <div className="p-6 bg-[#0e0e14] border border-[#d4af37]/15 rounded-sm flex flex-col justify-between hover:border-[#d4af37]/40 transition-all">
           <div>
             <div className="flex items-center justify-between mb-4">
-              <span className="text-[10px] font-mono tracking-widest text-[#d4af37] uppercase">01 / BELIEF</span>
+              <span className="text-[10px] font-mono tracking-widest text-[#d4af37] uppercase">BELIEF</span>
               <Eye className="w-4 h-4 text-[#d4af37]" />
             </div>
             <p className="font-serif text-lg text-white font-medium leading-snug">
@@ -47,7 +56,7 @@ export const BrandFrameworkVisual: React.FC = () => {
         <div className="p-6 bg-[#0e0e14] border border-[#d4af37]/15 rounded-sm flex flex-col justify-between hover:border-[#d4af37]/40 transition-all">
           <div>
             <div className="flex items-center justify-between mb-4">
-              <span className="text-[10px] font-mono tracking-widest text-[#d4af37] uppercase">02 / PURPOSE</span>
+              <span className="text-[10px] font-mono tracking-widest text-[#d4af37] uppercase">PURPOSE</span>
               <Target className="w-4 h-4 text-[#d4af37]" />
             </div>
             <p className="font-serif text-lg text-white font-medium leading-snug">
@@ -61,7 +70,7 @@ export const BrandFrameworkVisual: React.FC = () => {
         <div className="p-6 bg-[#0e0e14] border border-[#d4af37]/15 rounded-sm flex flex-col justify-between hover:border-[#d4af37]/40 transition-all">
           <div>
             <div className="flex items-center justify-between mb-4">
-              <span className="text-[10px] font-mono tracking-widest text-[#d4af37] uppercase">03 / MISSION</span>
+              <span className="text-[10px] font-mono tracking-widest text-[#d4af37] uppercase">MISSION</span>
               <Compass className="w-4 h-4 text-[#d4af37]" />
             </div>
             <p className="text-xs text-neutral-300 leading-relaxed">
@@ -75,7 +84,7 @@ export const BrandFrameworkVisual: React.FC = () => {
         <div className="p-6 bg-[#0e0e14] border border-[#d4af37]/15 rounded-sm flex flex-col justify-between hover:border-[#d4af37]/40 transition-all">
           <div>
             <div className="flex items-center justify-between mb-4">
-              <span className="text-[10px] font-mono tracking-widest text-[#d4af37] uppercase">04 / VISION</span>
+              <span className="text-[10px] font-mono tracking-widest text-[#d4af37] uppercase">VISION</span>
               <Sparkles className="w-4 h-4 text-[#d4af37]" />
             </div>
             <p className="text-xs text-neutral-300 leading-relaxed">
@@ -107,43 +116,25 @@ export const BrandFrameworkVisual: React.FC = () => {
         </div>
       </div>
 
-      {/* Values & Spirit Grid */}
+      {/* VALUES & SPIRIT AUTO CAROUSEL */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 border-t border-neutral-800">
         
-        {/* VALUES */}
-        <div>
-          <div className="flex items-center gap-2 mb-4">
+        {/* VALUES Auto Carousel */}
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
             <Shield className="w-4 h-4 text-[#d4af37]" />
-            <span className="text-xs font-mono tracking-widest text-[#d4af37] uppercase">VALUES</span>
+            <span className="text-xs font-mono tracking-widest text-[#d4af37] uppercase font-semibold">VALUES</span>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {BRAND_FRAMEWORK.values.map((val) => (
-              <span
-                key={val}
-                className="px-3 py-1.5 text-xs font-sans tracking-wider bg-[#101016] text-neutral-200 border border-neutral-800 rounded-sm"
-              >
-                {val}
-              </span>
-            ))}
-          </div>
+          <MarqueeCarousel items={BRAND_FRAMEWORK.values} badgeStyle="dark" />
         </div>
 
-        {/* SPIRIT */}
-        <div>
-          <div className="flex items-center gap-2 mb-4">
+        {/* SPIRIT Auto Carousel */}
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
             <Heart className="w-4 h-4 text-[#d4af37]" />
-            <span className="text-xs font-mono tracking-widest text-[#d4af37] uppercase">SPIRIT</span>
+            <span className="text-xs font-mono tracking-widest text-[#d4af37] uppercase font-semibold">SPIRIT</span>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {BRAND_FRAMEWORK.spirit.map((sp) => (
-              <span
-                key={sp}
-                className="px-3 py-1.5 text-xs font-sans tracking-wider bg-[#101016] text-[#d4af37] border border-[#d4af37]/20 rounded-sm"
-              >
-                {sp}
-              </span>
-            ))}
-          </div>
+          <MarqueeCarousel items={BRAND_FRAMEWORK.spirit} badgeStyle="gold" />
         </div>
 
       </div>

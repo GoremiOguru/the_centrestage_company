@@ -15,7 +15,6 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
   const [activeArticle, setActiveArticle] = useState<InsightArticle | null>(selectedArticleFromParent || null);
   const [searchQuery, setSearchQuery] = useState<string>('');
 
-  // Explicit Categories as specified in Document 2 (strictly NO "Visibility" category)
   const categories = [
     'All',
     'Reputation',
@@ -44,10 +43,10 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
 
       <div className="max-w-6xl mx-auto px-6 md:px-12 pt-32 pb-24 space-y-20">
         
-        {/* H1 & Lead Section */}
+        {/* Header & Lead Section */}
         <section className="space-y-8 text-center max-w-4xl mx-auto">
           <span className="text-xs font-mono tracking-[0.3em] text-[#d4af37] uppercase block">
-            05 — INSIGHTS JOURNAL
+            INSIGHTS JOURNAL
           </span>
           <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl text-white font-light leading-tight">
             Ideas worth putting <br />
@@ -105,7 +104,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
           </div>
         </section>
 
-        {/* Launch Articles Spotlight (If category is 'All') */}
+        {/* Launch Articles Spotlight */}
         {activeCategory === 'All' && searchQuery === '' && (
           <section className="space-y-6">
             <h2 className="text-xs font-mono text-[#d4af37] uppercase tracking-[0.25em]">

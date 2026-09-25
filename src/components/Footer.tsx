@@ -1,6 +1,7 @@
 import React from 'react';
 import type { NavigationPath } from '../types';
 import { ArrowUpRight } from 'lucide-react';
+import logoImg from '../assets/the_centrestage_company_logo.jpg';
 
 interface FooterProps {
   onNavigate: (path: NavigationPath) => void;
@@ -22,14 +23,22 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           
           {/* Brand Intro Column */}
           <div className="space-y-6 lg:col-span-1">
-            <div className="space-y-1">
-              <span className="font-serif text-2xl font-bold tracking-widest text-white block">
-                THE CENTRESTAGE
-              </span>
-              <span className="text-xs tracking-[0.25em] text-[#d4af37] uppercase font-medium block">
-                Company
-              </span>
+            <div className="flex items-center gap-3">
+              <img
+                src={logoImg}
+                alt="The CENTRESTAGE Company Logo"
+                className="w-10 h-10 rounded-sm border border-[#d4af37]/30 object-cover"
+              />
+              <div className="flex flex-col">
+                <span className="font-serif text-xl font-bold tracking-widest text-white leading-none">
+                  THE CENTRESTAGE
+                </span>
+                <span className="text-[10px] tracking-[0.25em] text-[#d4af37] uppercase font-medium pt-1">
+                  Company
+                </span>
+              </div>
             </div>
+
             <p className="text-xs text-neutral-400 leading-relaxed font-light">
               The digital home of an intelligent, contemporary African company operating at the intersection of strategy, story, reputation, visibility and influence.
             </p>
@@ -179,7 +188,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
             </ul>
 
-            {/* Discreet Location Statement as requested in Build Notes */}
             <div className="pt-4 border-t border-neutral-900/80">
               <p className="text-[11px] text-neutral-400 leading-relaxed font-light">
                 Headquartered in <span className="text-neutral-200 font-medium">Abuja, Nigeria</span>. Working across borders.
@@ -193,9 +201,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-500 font-light">
           <p>© {new Date().getFullYear()} The CENTRESTAGE Company. All rights reserved.</p>
           <div className="flex items-center space-x-6">
-            <a href="#privacy" className="hover:text-neutral-300 transition-colors">Privacy Policy</a>
+            <a href="#privacy" onClick={(e) => e.preventDefault()} className="hover:text-neutral-300 transition-colors">Privacy Policy</a>
             <span>•</span>
-            <a href="#terms" className="hover:text-neutral-300 transition-colors">Terms of Service</a>
+            <a href="#terms" onClick={(e) => e.preventDefault()} className="hover:text-neutral-300 transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

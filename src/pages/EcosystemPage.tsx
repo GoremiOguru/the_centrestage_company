@@ -1,5 +1,6 @@
 import React from 'react';
 import { SEOHead } from '../components/SEOHead';
+import { TypewriterText } from '../components/TypewriterText';
 import type { NavigationPath } from '../types';
 
 interface EcosystemPageProps {
@@ -23,7 +24,7 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
         {/* Header Section */}
         <section className="space-y-8 text-center max-w-4xl mx-auto">
           <span className="text-xs font-mono tracking-[0.3em] text-[#d4af37] uppercase block">
-            04 — ECOSYSTEM
+            ECOSYSTEM
           </span>
           <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl text-white font-light leading-tight">
             One house. <br />
@@ -35,10 +36,10 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
           </p>
         </section>
 
-        {/* Visual Moment Sentence */}
+        {/* Visual Moment Sentence with Typewriter */}
         <section className="p-8 md:p-14 bg-[#0d0d12] border-y border-[#d4af37]/30 text-center">
           <h2 className="font-serif text-2xl sm:text-4xl text-white font-medium tracking-wide leading-relaxed">
-            "People, ideas and stories can create possibility when given the right platform."
+            "<TypewriterText text="People, ideas and stories can create possibility when given the right platform." speed={40} delay={200} />"
           </h2>
         </section>
 
@@ -66,7 +67,7 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
               <div>
                 <button
                   onClick={() => handleCtaClick('Work With Us')}
-                  className="px-8 py-4 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#e2bd44] transition-all rounded-sm whitespace-nowrap"
+                  className="w-full sm:w-auto px-8 py-4 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#e2bd44] transition-all rounded-sm whitespace-normal break-words max-w-full text-center"
                 >
                   Work With Us
                 </button>
@@ -95,7 +96,7 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
               <div>
                 <button
                   onClick={() => handleCtaClick('Foundation')}
-                  className="px-8 py-4 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#e2bd44] transition-all rounded-sm whitespace-nowrap"
+                  className="w-full sm:w-auto px-8 py-4 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#e2bd44] transition-all rounded-sm whitespace-normal break-words max-w-full text-center"
                 >
                   Explore The Foundation
                 </button>
@@ -164,7 +165,7 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
               <div>
                 <button
                   onClick={() => handleCtaClick('CentreStage Club')}
-                  className="px-8 py-4 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#e2bd44] transition-all rounded-sm whitespace-nowrap"
+                  className="w-full sm:w-auto px-8 py-4 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#e2bd44] transition-all rounded-sm whitespace-normal break-words max-w-full text-center"
                 >
                   Bring CentreStage Club to Your School
                 </button>
@@ -196,7 +197,7 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
               <div>
                 <button
                   onClick={() => handleCtaClick('Work With Us')}
-                  className="px-8 py-4 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#e2bd44] transition-all rounded-sm whitespace-nowrap"
+                  className="w-full sm:w-auto px-8 py-4 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#e2bd44] transition-all rounded-sm whitespace-normal break-words max-w-full text-center"
                 >
                   Discover The Irreplaceable Advantage™
                 </button>
@@ -228,7 +229,7 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
               <div>
                 <button
                   onClick={() => handleCtaClick('Partnerships')}
-                  className="px-8 py-4 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#e2bd44] transition-all rounded-sm whitespace-nowrap"
+                  className="w-full sm:w-auto px-8 py-4 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#e2bd44] transition-all rounded-sm whitespace-normal break-words max-w-full text-center"
                 >
                   Partner With The Mixer
                 </button>
