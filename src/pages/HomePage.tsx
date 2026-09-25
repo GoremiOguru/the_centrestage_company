@@ -3,10 +3,10 @@ import { SEOHead } from '../components/SEOHead';
 import { CountUpStat } from '../components/CountUpStat';
 import { HorizontalSlider } from '../components/HorizontalSlider';
 import { SpotlightBeliefSection } from '../components/SpotlightBeliefSection';
+import { TypewriterText } from '../components/TypewriterText';
 import { CAPABILITIES, ECOSYSTEM_PILLARS, INSIGHTS_ARTICLES, IMPACT_STATS } from '../data/siteData';
 import type { NavigationPath, InsightArticle } from '../types';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
-import logoImg from '../assets/the_centrestage_company_logo.jpg';
 
 interface HomePageProps {
   onNavigate: (path: NavigationPath) => void;
@@ -32,13 +32,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
 
           <div className="max-w-5xl mx-auto px-6 text-center space-y-8 relative z-10">
             
-            {/* Tagline Badge with Logo */}
+            {/* Tagline Badge */}
             <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#d4af37]/40 bg-[#d4af37]/10 backdrop-blur-md shadow-lg shadow-[#d4af37]/5">
-              <img
-                src={logoImg}
-                alt="The CENTRESTAGE Logo"
-                className="w-5 h-5 rounded-full object-cover border border-[#d4af37]"
-              />
               <span className="text-xs font-serif tracking-[0.25em] text-[#d4af37] uppercase font-semibold">
                 Strategy. Story. Visibility.
               </span>
@@ -47,7 +42,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
             {/* Main H1 Title - Fully visible with zero clipping */}
             <h1 className="font-serif text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white leading-[1.1] tracking-tight">
               Make great work <br className="hidden sm:inline" />
-              <span className="italic text-gold-gradient font-normal">impossible to overlook.</span>
+              <span className="italic text-gold-gradient font-normal">
+                <TypewriterText text="impossible to overlook." speed={40} cursorColor="#d4af37" />
+              </span>
             </h1>
 
             {/* Lead Copy */}
