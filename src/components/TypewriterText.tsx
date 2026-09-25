@@ -11,30 +11,34 @@ interface TypewriterTextProps {
 
 export const TypewriterText: React.FC<TypewriterTextProps> = ({
   text,
-  speed = 35,
-  delay = 100,
-  repeatDelay = 4000, // Auto plays every 4 seconds when in view
+  speed = 30, // Snappy typing speed
+  repeatDelay = 4000, // Replay every 4 seconds
   className = '',
   cursorColor = '#d4af37'
 }) => {
-  const [displayedText, setDisplayedText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState(text); // Default to full text so no blank/delayed box on load
+  const [currentIndex, setCurrentIndex] = useState(text.length);
   const [isInView, setIsInView] = useState(false);
   const containerRef = useRef<HTMLSpanElement>(null);
+  const hasTypedRef = useRef(false);
 
-  // IntersectionObserver to trigger independently when each section is scrolled into view
+  // IntersectionObserver to trigger typing when section scrolls into view
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsInView(true);
+          // If first time entering view, start typing instantly from index 0
+          if (!hasTypedRef.current) {
+            hasTypedRef.current = true;
+            setDisplayedText('');
+            setCurrentIndex(0);
+          }
         } else {
           setIsInView(false);
-          setDisplayedText('');
-          setCurrentIndex(0);
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
 
     if (containerRef.current) {
@@ -44,19 +48,9 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
     return () => observer.disconnect();
   }, [text]);
 
-  // Typing & 4-second Auto-Replay Loop
+  // Typing effect loop
   useEffect(() => {
     if (!isInView) return;
-
-    if (currentIndex === 0 && displayedText === '') {
-      const startTimer = setTimeout(() => {
-        if (text.length > 0) {
-          setDisplayedText(text[0]);
-          setCurrentIndex(1);
-        }
-      }, delay);
-      return () => clearTimeout(startTimer);
-    }
 
     if (currentIndex < text.length) {
       const timeout = setTimeout(() => {
@@ -66,7 +60,7 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
 
       return () => clearTimeout(timeout);
     } else {
-      // Finished typing: wait 4 seconds then auto replay
+      // Completed full text: pause for 4 seconds then re-type seamlessly
       const replayTimeout = setTimeout(() => {
         setDisplayedText('');
         setCurrentIndex(0);
@@ -74,7 +68,7 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
 
       return () => clearTimeout(replayTimeout);
     }
-  }, [currentIndex, displayedText, isInView, text, speed, delay, repeatDelay]);
+  }, [currentIndex, isInView, text, speed, repeatDelay]);
 
   return (
     <span ref={containerRef} className={`inline-block ${className}`}>
