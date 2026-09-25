@@ -1,12 +1,12 @@
 import React from 'react';
 import { SEOHead } from '../components/SEOHead';
 import { CountUpStat } from '../components/CountUpStat';
-import { TypewriterText } from '../components/TypewriterText';
 import { HorizontalSlider } from '../components/HorizontalSlider';
 import { SpotlightBeliefSection } from '../components/SpotlightBeliefSection';
 import { CAPABILITIES, ECOSYSTEM_PILLARS, INSIGHTS_ARTICLES, IMPACT_STATS } from '../data/siteData';
 import type { NavigationPath, InsightArticle } from '../types';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import logoImg from '../assets/the_centrestage_company_logo.jpg';
 
 interface HomePageProps {
   onNavigate: (path: NavigationPath) => void;
@@ -23,29 +23,31 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
         description="The CENTRESTAGE Company helps leaders and organisations strengthen reputation, sharpen positioning, tell powerful stories and build influence."
       />
 
-      <div className="space-y-28 pb-20">
-
+      <div className="space-y-24 pb-20">
+        
         {/* HERO SECTION */}
-        <section className="relative min-h-[85vh] flex items-center justify-center pt-28 pb-16 overflow-hidden border-b border-[#d4af37]/15">
+        <section className="relative min-h-[75vh] flex items-center justify-center pt-24 sm:pt-32 pb-12 overflow-hidden border-b border-[#d4af37]/15">
           {/* Subtle Ambient Background Gradients */}
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#d4af37]/5 rounded-full blur-[140px] pointer-events-none" />
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#d4af37]/5 rounded-full blur-[120px] pointer-events-none" />
 
           <div className="max-w-5xl mx-auto px-6 text-center space-y-8 relative z-10">
-
-            {/* Tagline Badge with Beautifully Displayed Logo */}
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-[#d4af37]/40 bg-[#d4af37]/10 backdrop-blur-md shadow-lg shadow-[#d4af37]/5">
-
+            
+            {/* Tagline Badge with Logo */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#d4af37]/40 bg-[#d4af37]/10 backdrop-blur-md shadow-lg shadow-[#d4af37]/5">
+              <img
+                src={logoImg}
+                alt="The CENTRESTAGE Logo"
+                className="w-5 h-5 rounded-full object-cover border border-[#d4af37]"
+              />
               <span className="text-xs font-serif tracking-[0.25em] text-[#d4af37] uppercase font-semibold">
                 Strategy. Story. Visibility.
               </span>
             </div>
 
-            {/* Main H1 Title with Typewriter Effect */}
-            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white leading-[1.08] tracking-tight">
+            {/* Main H1 Title - Fully visible with zero clipping */}
+            <h1 className="font-serif text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white leading-[1.1] tracking-tight">
               Make great work <br className="hidden sm:inline" />
-              <span className="italic text-gold-gradient font-normal">
-                <TypewriterText text="impossible to overlook." speed={40} delay={200} />
-              </span>
+              <span className="italic text-gold-gradient font-normal">impossible to overlook.</span>
             </h1>
 
             {/* Lead Copy */}
@@ -54,7 +56,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
             </p>
 
             {/* CTAs */}
-            <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
               <button
                 onClick={() => onNavigate('/our-work')}
                 className="w-full sm:w-auto px-8 py-4 bg-[#d4af37] text-black font-semibold text-xs tracking-widest uppercase hover:bg-[#e2bd44] transition-all rounded-sm shadow-xl shadow-[#d4af37]/10 flex items-center justify-center gap-3 group whitespace-normal break-words"
@@ -81,13 +83,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
         <section className="max-w-6xl mx-auto px-6 md:px-12">
           <div className="bg-[#0b0b0f] border border-[#d4af37]/20 rounded-sm p-8 md:p-14 relative overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-
+              
               <div className="lg:col-span-5 space-y-6">
                 <span className="text-xs font-mono tracking-[0.3em] text-[#d4af37] uppercase block">
                   HOW WE THINK
                 </span>
                 <h2 className="font-serif text-3xl sm:text-5xl text-white font-medium leading-tight">
-                  <TypewriterText text="We see what others miss." speed={40} delay={150} />
+                  We see what <br />
+                  <span className="italic text-gold-gradient">others miss.</span>
                 </h2>
                 <p className="text-sm text-neutral-400 font-light leading-relaxed">
                   The most powerful positioning often begins with something that is already there. We find it, shape it, and bring it forward.

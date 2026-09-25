@@ -1,63 +1,80 @@
 import React, { useState, useRef } from 'react';
-import { TypewriterText } from './TypewriterText';
 import { Sparkles } from 'lucide-react';
 
 interface SpotlightStatementProps {
   text: string;
   subtitle?: string;
   tagline?: string;
-  useTypewriter?: boolean;
 }
 
 export const SpotlightStatement: React.FC<SpotlightStatementProps> = ({
   text,
   subtitle,
-  tagline,
-  useTypewriter = true
+  tagline
 }) => {
-  const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
+  const [spotlightPos, setSpotlightPos] = useState({ x: 50, y: 50 });
+  const [isTapped, setIsTapped] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handlePointerMove = (clientX: number, clientY: number) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    setMousePosition({ x, y });
+    const x = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
+    const y = Math.max(0, Math.min(100, ((clientY - rect.top) / rect.height) * 100));
+    setSpotlightPos({ x, y });
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    handlePointerMove(e.clientX, e.clientY);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (e.touches[0]) {
+      handlePointerMove(e.touches[0].clientX, e.touches[0].clientY);
+    }
+  };
+
+  const handleTap = () => {
+    setIsTapped(true);
+    setTimeout(() => setIsTapped(false), 600);
   };
 
   return (
     <div
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative py-14 px-6 sm:px-12 md:py-20 rounded-sm border border-[#d4af37]/35 overflow-hidden shadow-2xl transition-all duration-500 group my-12 text-center"
+      onTouchMove={handleTouchMove}
+      onClick={handleTap}
+      onTouchStart={handleTap}
+      className="relative py-14 px-6 sm:px-12 md:py-20 rounded-sm border border-[#d4af37]/40 overflow-hidden shadow-2xl transition-all duration-300 group my-10 text-center cursor-pointer select-none bg-[#08080c]"
     >
       {/* 1. Dot Grid Matrix Overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(#d4af37_1.2px,transparent_1.2px)] [background-size:22px_22px] opacity-30 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(#d4af37_1.5px,transparent_1.5px)] [background-size:22px_22px] opacity-35 pointer-events-none" />
 
-      {/* 2. Dynamic Radial Spotlight Glow */}
+      {/* 2. Touch/Mouse Interactive Radial Spotlight Glow */}
       <div
-        className="absolute inset-0 transition-opacity duration-300 pointer-events-none"
+        className="absolute inset-0 transition-all duration-150 pointer-events-none"
         style={{
-          background: `radial-gradient(550px circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(212,175,55,0.24), rgba(8,8,12,0.96) 75%)`
+          background: `radial-gradient(${isTapped ? '600px' : '450px'} circle at ${spotlightPos.x}% ${spotlightPos.y}%, rgba(212,175,55,${isTapped ? 0.38 : 0.25}), rgba(8,8,12,0.95) 70%)`
         }}
       />
 
-      {/* 3. Ambient Floating Particles */}
-      <div className="absolute top-1/4 left-1/4 w-36 h-36 bg-[#d4af37]/15 rounded-full blur-3xl animate-pulse pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-44 h-44 bg-[#d4af37]/10 rounded-full blur-3xl animate-pulse pointer-events-none" style={{ animationDelay: '2.5s' }} />
+      {/* 3. Floating Glowing Dot Particles */}
+      <div className="absolute top-10 left-10 w-2 h-2 rounded-full bg-[#d4af37] animate-ping pointer-events-none opacity-60" style={{ animationDuration: '3s' }} />
+      <div className="absolute bottom-12 right-12 w-2.5 h-2.5 rounded-full bg-[#d4af37] animate-ping pointer-events-none opacity-50" style={{ animationDuration: '4s', animationDelay: '1s' }} />
+      <div className="absolute top-1/2 right-1/4 w-1.5 h-1.5 rounded-full bg-[#d4af37] animate-ping pointer-events-none opacity-70" style={{ animationDuration: '2.5s', animationDelay: '0.5s' }} />
 
       {/* Content */}
-      <div className="relative z-10 space-y-5">
+      <div className="relative z-10 space-y-4">
         {subtitle && (
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#d4af37]/40 bg-[#d4af37]/10 text-xs font-mono text-[#d4af37] uppercase tracking-widest">
-            <Sparkles className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '6s' }} />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#d4af37]/50 bg-[#d4af37]/15 text-xs font-mono text-[#d4af37] uppercase tracking-widest shadow-md">
+            <Sparkles className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '5s' }} />
             <span>{subtitle}</span>
           </div>
         )}
 
-        <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-medium tracking-wide uppercase leading-snug max-w-4xl mx-auto">
-          {useTypewriter ? <TypewriterText text={text} speed={35} delay={5000} /> : text}
+        <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-medium tracking-wide uppercase leading-snug max-w-4xl mx-auto drop-shadow-md">
+          {text}
         </h2>
 
         {tagline && (
