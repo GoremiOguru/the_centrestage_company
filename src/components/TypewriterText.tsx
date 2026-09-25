@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 interface TypewriterTextProps {
   text: string;
@@ -6,30 +6,53 @@ interface TypewriterTextProps {
   delay?: number;
   className?: string;
   cursorColor?: string;
-  onComplete?: () => void;
 }
 
 export const TypewriterText: React.FC<TypewriterTextProps> = ({
   text,
-  speed = 40,
-  delay = 300,
+  speed = 35,
+  delay = 150,
   className = '',
-  cursorColor = '#d4af37',
-  onComplete
+  cursorColor = '#d4af37'
 }) => {
   const [displayedText, setDisplayedText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [hasStarted, setHasStarted] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const containerRef = useRef<HTMLSpanElement>(null);
+
+  // IntersectionObserver to trigger typing whenever the element enters viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Reset and start typing when in view
+          setDisplayedText('');
+          setCurrentIndex(0);
+          setIsInView(true);
+        } else {
+          setIsInView(false);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [text]);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setHasStarted(true);
-    }, delay);
-    return () => clearTimeout(timer);
-  }, [delay]);
+    if (!isInView) return;
 
-  useEffect(() => {
-    if (!hasStarted) return;
+    if (currentIndex === 0) {
+      const startTimer = setTimeout(() => {
+        setDisplayedText(text[0] || '');
+        setCurrentIndex(1);
+      }, delay);
+      return () => clearTimeout(startTimer);
+    }
 
     if (currentIndex < text.length) {
       const timeout = setTimeout(() => {
@@ -38,16 +61,14 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
       }, speed);
 
       return () => clearTimeout(timeout);
-    } else if (onComplete) {
-      onComplete();
     }
-  }, [currentIndex, hasStarted, text, speed, onComplete]);
+  }, [currentIndex, isInView, text, speed, delay]);
 
   return (
-    <span className={`inline-block ${className}`}>
+    <span ref={containerRef} className={`inline-block ${className}`}>
       {displayedText}
       <span
-        className="inline-block w-[3px] h-[0.9em] ml-1 align-baseline animate-pulse rounded-full"
+        className="inline-block w-[3px] h-[0.85em] ml-1 align-baseline animate-pulse rounded-full"
         style={{ backgroundColor: cursorColor }}
       />
     </span>

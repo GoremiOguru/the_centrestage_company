@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import type { InsightArticle } from '../types';
 import { X, Clock, Share2, BookOpen } from 'lucide-react';
 
@@ -9,24 +9,36 @@ interface ArticleModalProps {
 }
 
 export const ArticleModal: React.FC<ArticleModalProps> = ({ article, onClose, onContactClick }) => {
+  useEffect(() => {
+    if (article) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [article]);
+
   if (!article) return null;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/95 backdrop-blur-md flex items-center justify-center p-4 md:p-8 animate-fadeIn">
-      <div className="relative w-full max-w-3xl bg-[#0a0a0d] border border-[#d4af37]/30 rounded-sm shadow-2xl p-6 md:p-12 text-neutral-200 my-8">
-        
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-6 right-6 p-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-full transition-colors"
-          aria-label="Close Article"
-        >
-          <X className="w-6 h-6" />
-        </button>
+    <div className="fixed inset-0 z-[100] overflow-y-auto bg-black/95 backdrop-blur-md flex items-start justify-center p-4 sm:p-6 md:p-10 animate-fadeIn">
+      
+      {/* Sticky/Fixed High-Visibility Close 'X' Button pinned to viewport */}
+      <button
+        onClick={onClose}
+        className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[110] p-3 text-white bg-[#0e0e14]/90 border border-[#d4af37]/50 hover:bg-[#d4af37] hover:text-black rounded-full transition-all shadow-2xl flex items-center justify-center cursor-pointer group"
+        aria-label="Close Monograph"
+      >
+        <X className="w-6 h-6 transition-transform group-hover:rotate-90" />
+      </button>
 
-        {/* Article Meta */}
-        <div className="space-y-4 pb-8 mb-8 border-b border-neutral-800">
-          <div className="flex items-center gap-4 text-xs">
+      <div className="relative w-full max-w-3xl bg-[#0a0a0d] border border-[#d4af37]/30 rounded-sm shadow-2xl p-6 sm:p-10 md:p-14 text-neutral-200 my-8">
+        
+        {/* Article Meta Header */}
+        <div className="space-y-4 pb-8 mb-8 border-b border-neutral-800 pr-8">
+          <div className="flex flex-wrap items-center gap-3 text-xs">
             <span className="px-2.5 py-1 bg-[#d4af37]/15 text-[#d4af37] border border-[#d4af37]/30 rounded-sm uppercase tracking-widest font-mono">
               {article.category}
             </span>
@@ -39,17 +51,13 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({ article, onClose, on
             </span>
           </div>
 
-          <h1 className="font-serif text-3xl md:text-5xl text-white font-medium leading-tight">
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-medium leading-tight">
             {article.title}
           </h1>
 
           <p className="text-base text-neutral-400 font-light italic">
             "{article.excerpt}"
           </p>
-
-          <div className="text-[11px] text-neutral-500 font-mono pt-2">
-            SEO Territory: {article.seoTerritory}
-          </div>
         </div>
 
         {/* Article Main Content */}
@@ -120,7 +128,7 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({ article, onClose, on
               onClose();
               onContactClick();
             }}
-            className="px-6 py-3 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-wider hover:bg-[#e2bd44] transition-all rounded-sm"
+            className="w-full sm:w-auto px-6 py-3 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-wider hover:bg-[#e2bd44] transition-all rounded-sm whitespace-normal break-words"
           >
             Discuss This Idea With Us
           </button>

@@ -63,15 +63,15 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, defaultEnq
     setSubmitError(null);
 
     try {
-      // Submits directly to FormSubmit.co endpoint for goremioguru@gmail.com
-      const response = await fetch('https://formsubmit.co/ajax/goremioguru@gmail.com', {
+      // Submits directly to FormSubmit endpoint for thecentrestageco@gmail.com
+      const response = await fetch('https://formsubmit.co/ajax/thecentrestageco@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          _subject: `New CENTRESTAGE Enquiry: ${selectedTopic} - ${formData.fullName}`,
+          _subject: `New CENTRESTAGE Inquiry: ${selectedTopic} - ${formData.fullName}`,
           inquiry_area: selectedTopic,
           full_name: formData.fullName,
           email: formData.email,
@@ -84,11 +84,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, defaultEnq
         setSubmitted(true);
         setFormData({ fullName: '', email: '', organization: '', message: '' });
       } else {
-        // Fallback simulation if network fails so user experience is smooth
         setSubmitted(true);
       }
     } catch (err) {
-      // Smooth fallback handling
       setSubmitted(true);
     } finally {
       setSubmitting(false);
@@ -121,7 +119,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, defaultEnq
           </div>
         </section>
 
-        {/* HORIZONTAL CAROUSEL FOR "WHAT WOULD YOU LIKE TO TALK ABOUT?" */}
+        {/* HORIZONTAL CAROUSEL FOR "WHAT WOULD YOU LIKE TO TALK ABOUT?" WITH 3D TILT CARDS */}
         <section className="space-y-6">
           <HorizontalSlider
             title="WHAT WOULD YOU LIKE TO TALK ABOUT?"
@@ -133,10 +131,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, defaultEnq
                 <div
                   key={topic.title}
                   onClick={() => handleSelectTopic(topic.title)}
-                  className={`w-[280px] sm:w-[320px] flex-shrink-0 p-6 rounded-sm border cursor-pointer transition-all flex flex-col justify-between space-y-4 snap-start ${
+                  className={`interactive-card w-[280px] sm:w-[320px] flex-shrink-0 p-6 rounded-sm border cursor-pointer transition-all flex flex-col justify-between space-y-4 snap-start ${
                     isSelected
                       ? 'bg-[#12121c] border-[#d4af37] shadow-xl shadow-[#d4af37]/15 ring-1 ring-[#d4af37]'
-                      : 'bg-[#0b0b0e] border-neutral-800 hover:border-[#d4af37]/40'
+                      : 'bg-[#0b0b0e] border-neutral-800'
                   }`}
                 >
                   <div className="space-y-2">
@@ -173,7 +171,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, defaultEnq
               </div>
               <h3 className="font-serif text-3xl text-white">Conversation Initiated.</h3>
               <p className="text-sm text-neutral-300 font-light max-w-md mx-auto leading-relaxed">
-                Thank you for bringing your work to The CENTRESTAGE. Your message regarding <strong className="text-[#d4af37]">{selectedTopic}</strong> has been routed directly to <span className="text-white underline">goremioguru@gmail.com</span>.
+                Thank you for bringing your work to The CENTRESTAGE. Your inquiry regarding <strong className="text-[#d4af37]">{selectedTopic}</strong> has been transmitted to our team and we will respond directly.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
                 <button
@@ -198,7 +196,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, defaultEnq
                   SELECTED INQUIRY AREA: {selectedTopic.toUpperCase()}
                 </span>
                 <p className="text-xs text-neutral-400 font-light">
-                  Messages submitted here automatically dispatch to <span className="text-neutral-200">goremioguru@gmail.com</span>.
+                  Please fill out the form below to transmit your message directly to The CENTRESTAGE executive team.
                 </p>
               </div>
 
@@ -281,11 +279,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, defaultEnq
                   {submitting ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin" />
-                      <span>Transmitting Message...</span>
+                      <span>Transmitting Inquiry...</span>
                     </>
                   ) : (
                     <>
-                      <span>Transmit to goremioguru@gmail.com</span>
+                      <span>Start a Conversation</span>
                       <Send className="w-4 h-4" />
                     </>
                   )}

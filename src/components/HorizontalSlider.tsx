@@ -18,7 +18,7 @@ export const HorizontalSlider: React.FC<HorizontalSliderProps> = ({ children, ti
   };
 
   return (
-    <div className="w-full space-y-6">
+    <div className="w-full space-y-6 my-6">
       {(title || subtitle) && (
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
@@ -37,14 +37,14 @@ export const HorizontalSlider: React.FC<HorizontalSliderProps> = ({ children, ti
           <div className="flex items-center gap-2 self-end sm:self-auto">
             <button
               onClick={() => scroll('left')}
-              className="p-2.5 bg-[#0f0f15] border border-neutral-800 text-neutral-300 hover:text-[#d4af37] hover:border-[#d4af37] rounded-sm transition-colors"
+              className="p-2.5 bg-[#0f0f15] border border-neutral-800 text-neutral-300 hover:text-[#d4af37] hover:border-[#d4af37] rounded-sm transition-all hover:scale-105 active:scale-95 shadow-md"
               aria-label="Scroll Left"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={() => scroll('right')}
-              className="p-2.5 bg-[#0f0f15] border border-neutral-800 text-neutral-300 hover:text-[#d4af37] hover:border-[#d4af37] rounded-sm transition-colors"
+              className="p-2.5 bg-[#0f0f15] border border-neutral-800 text-neutral-300 hover:text-[#d4af37] hover:border-[#d4af37] rounded-sm transition-all hover:scale-105 active:scale-95 shadow-md"
               aria-label="Scroll Right"
             >
               <ChevronRight className="w-4 h-4" />
@@ -53,10 +53,10 @@ export const HorizontalSlider: React.FC<HorizontalSliderProps> = ({ children, ti
         </div>
       )}
 
-      {/* Scrollable Container */}
+      {/* Scrollable Container with 3D Tilt Card Interaction */}
       <div
         ref={sliderRef}
-        className="flex gap-6 overflow-x-auto scrollbar-none scroll-smooth pb-4 snap-x snap-mandatory"
+        className="flex gap-6 overflow-x-auto scrollbar-none scroll-smooth py-6 px-2 snap-x snap-mandatory"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {children}

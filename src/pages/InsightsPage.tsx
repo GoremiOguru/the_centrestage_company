@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { SEOHead } from '../components/SEOHead';
 import { INSIGHTS_ARTICLES } from '../data/siteData';
 import { ArticleModal } from '../components/ArticleModal';
+import { HorizontalSlider } from '../components/HorizontalSlider';
 import type { InsightArticle, NavigationPath } from '../types';
 import { ChevronRight, Search } from 'lucide-react';
 
@@ -104,19 +105,18 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
           </div>
         </section>
 
-        {/* Launch Articles Spotlight */}
+        {/* HORIZONTALLY ARRANGED LAUNCH MONOGRAPHS SPOTLIGHT */}
         {activeCategory === 'All' && searchQuery === '' && (
-          <section className="space-y-6">
-            <h2 className="text-xs font-mono text-[#d4af37] uppercase tracking-[0.25em]">
-              FEATURED LAUNCH MONOGRAPHS
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <section className="space-y-4">
+            <HorizontalSlider
+              title="Featured Launch Monographs"
+              subtitle="MUST-READ ESSAYS"
+            >
               {INSIGHTS_ARTICLES.filter((a) => a.isPublished).map((article) => (
                 <div
                   key={article.id}
                   onClick={() => setActiveArticle(article)}
-                  className="p-8 bg-[#0d0d14] border border-[#d4af37]/30 hover:border-[#d4af37] transition-all rounded-sm space-y-6 cursor-pointer group flex flex-col justify-between"
+                  className="interactive-card w-[320px] sm:w-[380px] flex-shrink-0 p-8 bg-[#0d0d14] border border-[#d4af37]/30 rounded-sm space-y-6 cursor-pointer group flex flex-col justify-between snap-start"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between text-xs font-mono">
@@ -145,7 +145,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
                   </div>
                 </div>
               ))}
-            </div>
+            </HorizontalSlider>
           </section>
         )}
 
@@ -160,7 +160,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
               <div
                 key={article.id}
                 onClick={() => setActiveArticle(article)}
-                className="p-6 bg-[#0b0b0e] border border-neutral-800 hover:border-[#d4af37]/40 transition-all rounded-sm space-y-4 cursor-pointer group flex flex-col justify-between"
+                className="interactive-card p-6 bg-[#0b0b0e] border border-neutral-800 rounded-sm space-y-4 cursor-pointer group flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between text-[11px] font-mono">

@@ -3,9 +3,10 @@ import { SEOHead } from '../components/SEOHead';
 import { CountUpStat } from '../components/CountUpStat';
 import { TypewriterText } from '../components/TypewriterText';
 import { HorizontalSlider } from '../components/HorizontalSlider';
+import { SpotlightBeliefSection } from '../components/SpotlightBeliefSection';
 import { CAPABILITIES, ECOSYSTEM_PILLARS, INSIGHTS_ARTICLES, IMPACT_STATS } from '../data/siteData';
 import type { NavigationPath, InsightArticle } from '../types';
-import { ArrowRight, ArrowUpRight, Sparkles } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import logoImg from '../assets/the_centrestage_company_logo.jpg';
 
 interface HomePageProps {
@@ -32,12 +33,12 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
 
           <div className="max-w-5xl mx-auto px-6 text-center space-y-8 relative z-10">
             
-            {/* Tagline Badge with Logo */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[#d4af37]/30 bg-[#d4af37]/5 backdrop-blur-sm">
+            {/* Tagline Badge with Beautifully Displayed Logo */}
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-[#d4af37]/40 bg-[#d4af37]/10 backdrop-blur-md shadow-lg shadow-[#d4af37]/5">
               <img
                 src={logoImg}
                 alt="The CENTRESTAGE Logo"
-                className="w-4 h-4 rounded-full object-cover border border-[#d4af37]/40"
+                className="w-6 h-6 rounded-full object-cover border border-[#d4af37]"
               />
               <span className="text-xs font-serif tracking-[0.25em] text-[#d4af37] uppercase font-semibold">
                 Strategy. Story. Visibility.
@@ -48,7 +49,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
             <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white leading-[1.08] tracking-tight">
               Make great work <br className="hidden sm:inline" />
               <span className="italic text-gold-gradient font-normal">
-                <TypewriterText text="impossible to overlook." speed={50} delay={400} />
+                <TypewriterText text="impossible to overlook." speed={40} delay={200} />
               </span>
             </h1>
 
@@ -78,39 +79,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
           </div>
         </section>
 
-        {/* SECTION: OUR BELIEF */}
-        <section className="max-w-5xl mx-auto px-6 md:px-12 text-center space-y-8">
-          <span className="text-xs font-mono tracking-[0.3em] text-[#d4af37] uppercase block">
-            OUR BELIEF
-          </span>
-          
-          {/* Animated Interactive Visual Moment Sentence */}
-          <div className="p-8 md:p-14 bg-gradient-to-r from-[#0d0d14] via-[#141420] to-[#0d0d14] border border-[#d4af37]/30 rounded-sm shadow-2xl relative overflow-hidden group hover:border-[#d4af37] transition-all">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#d4af37]/10 rounded-full blur-2xl group-hover:scale-150 transition-transform" />
-            
-            <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-white font-medium tracking-wide uppercase leading-tight relative z-10">
-              GREAT WORK SHOULD NOT GO UNSEEN.
-            </h2>
-
-            <div className="mt-4 flex items-center justify-center gap-2 text-xs font-mono text-[#d4af37] uppercase tracking-widest">
-              <Sparkles className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '6s' }} />
-              <span>The Founding Principle</span>
-              <Sparkles className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '6s' }} />
-            </div>
-          </div>
-
-          <div className="max-w-3xl mx-auto space-y-6 text-base sm:text-lg text-neutral-300 font-light leading-relaxed">
-            <p>
-              There is extraordinary work happening every day that remains under recognised, poorly positioned or simply unseen.
-            </p>
-            <p className="font-serif text-xl sm:text-2xl text-white italic">
-              We exist to change that.
-            </p>
-            <p className="text-neutral-400">
-              Not by creating more noise, but by finding what is distinctive, shaping the story around it and positioning it to be seen, understood and remembered.
-            </p>
-          </div>
-        </section>
+        {/* SECTION: OUR BELIEF SPOTLIGHT WITH DOT MATRIX & RADIAL GLOW */}
+        <SpotlightBeliefSection />
 
         {/* SECTION: HOW WE THINK */}
         <section className="max-w-6xl mx-auto px-6 md:px-12">
@@ -122,7 +92,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
                   HOW WE THINK
                 </span>
                 <h2 className="font-serif text-3xl sm:text-5xl text-white font-medium leading-tight">
-                  <TypewriterText text="We see what others miss." speed={45} delay={200} />
+                  <TypewriterText text="We see what others miss." speed={40} delay={150} />
                 </h2>
                 <p className="text-sm text-neutral-400 font-light leading-relaxed">
                   The most powerful positioning often begins with something that is already there. We find it, shape it, and bring it forward.
@@ -167,7 +137,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
           </div>
         </section>
 
-        {/* SECTION: WHAT WE DO (HORIZONTAL SLIDER) */}
+        {/* SECTION: WHAT WE DO (HORIZONTAL SLIDER WITH INTERACTIVE SHAKE CARDS) */}
         <section className="max-w-7xl mx-auto px-6 md:px-12">
           <HorizontalSlider
             title="We turn distinction into influence."
@@ -177,7 +147,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
               <div
                 key={cap.id}
                 onClick={() => onNavigate('/our-work')}
-                className="w-[300px] sm:w-[360px] flex-shrink-0 p-8 bg-[#0b0b0e] border border-neutral-800 hover:border-[#d4af37]/50 transition-all rounded-sm group flex flex-col justify-between cursor-pointer snap-start"
+                className="interactive-card w-[300px] sm:w-[360px] flex-shrink-0 p-8 bg-[#0b0b0e] border border-neutral-800 rounded-sm group flex flex-col justify-between cursor-pointer snap-start"
               >
                 <div className="space-y-4">
                   <span className="text-[10px] font-mono tracking-widest text-[#d4af37] uppercase block">
@@ -202,7 +172,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
             ))}
           </HorizontalSlider>
 
-          <div className="text-right pt-4">
+          <div className="text-right pt-2">
             <button
               onClick={() => onNavigate('/our-work')}
               className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#d4af37] hover:underline"
@@ -213,7 +183,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
           </div>
         </section>
 
-        {/* SECTION: ECOSYSTEM PREVIEW (HORIZONTAL SLIDER) */}
+        {/* SECTION: ECOSYSTEM PREVIEW (HORIZONTAL SLIDER WITH INTERACTIVE SHAKE CARDS) */}
         <section className="max-w-7xl mx-auto px-6 md:px-12">
           <HorizontalSlider
             title="ONE HOUSE. MANY EXPRESSIONS."
@@ -222,7 +192,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
             {ECOSYSTEM_PILLARS.map((pillar) => (
               <div
                 key={pillar.id}
-                className="w-[320px] sm:w-[380px] flex-shrink-0 p-8 bg-[#0d0d12] border border-[#d4af37]/20 rounded-sm flex flex-col justify-between hover:border-[#d4af37]/60 transition-all group snap-start"
+                className="interactive-card w-[320px] sm:w-[380px] flex-shrink-0 p-8 bg-[#0d0d12] border border-[#d4af37]/20 rounded-sm flex flex-col justify-between group snap-start"
               >
                 <div className="space-y-4">
                   {pillar.badge && (
@@ -277,7 +247,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
           </div>
         </section>
 
-        {/* SECTION: INSIGHTS PREVIEW (HORIZONTAL SLIDER) */}
+        {/* SECTION: INSIGHTS PREVIEW (HORIZONTAL SLIDER WITH INTERACTIVE SHAKE CARDS) */}
         <section className="max-w-7xl mx-auto px-6 md:px-12">
           <HorizontalSlider
             title="Ideas worth putting CentreStage."
@@ -287,7 +257,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
               <div
                 key={article.id}
                 onClick={() => onOpenArticle(article)}
-                className="w-[300px] sm:w-[360px] flex-shrink-0 p-8 bg-[#0b0b0e] border border-neutral-800 hover:border-[#d4af37]/40 transition-all rounded-sm group flex flex-col justify-between cursor-pointer snap-start"
+                className="interactive-card w-[300px] sm:w-[360px] flex-shrink-0 p-8 bg-[#0b0b0e] border border-neutral-800 rounded-sm group flex flex-col justify-between cursor-pointer snap-start"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between text-xs font-mono">

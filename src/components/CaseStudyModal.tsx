@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import type { CaseStudy } from '../types';
 import { X, ArrowRight, CheckCircle2 } from 'lucide-react';
 
@@ -9,27 +9,39 @@ interface CaseStudyModalProps {
 }
 
 export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClose, onContactClick }) => {
+  useEffect(() => {
+    if (caseStudy) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [caseStudy]);
+
   if (!caseStudy) return null;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/90 backdrop-blur-md flex items-center justify-center p-4 md:p-8 animate-fadeIn">
-      <div className="relative w-full max-w-4xl bg-[#0b0b0e] border border-[#d4af37]/30 rounded-sm shadow-2xl p-6 md:p-12 text-neutral-200 my-8">
-        
-        {/* Close button */}
-        <button
-          onClick={onClose}
-          className="absolute top-6 right-6 p-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-full transition-colors"
-          aria-label="Close Case Study"
-        >
-          <X className="w-6 h-6" />
-        </button>
+    <div className="fixed inset-0 z-[100] overflow-y-auto bg-black/95 backdrop-blur-md flex items-start justify-center p-4 sm:p-6 md:p-10 animate-fadeIn">
+      
+      {/* Sticky/Fixed High-Visibility Close 'X' Button pinned to viewport */}
+      <button
+        onClick={onClose}
+        className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[110] p-3 text-white bg-[#0e0e14]/90 border border-[#d4af37]/50 hover:bg-[#d4af37] hover:text-black rounded-full transition-all shadow-2xl flex items-center justify-center cursor-pointer group"
+        aria-label="Close Case Monograph"
+      >
+        <X className="w-6 h-6 transition-transform group-hover:rotate-90" />
+      </button>
 
+      <div className="relative w-full max-w-4xl bg-[#0b0b0e] border border-[#d4af37]/30 rounded-sm shadow-2xl p-6 sm:p-10 md:p-12 text-neutral-200 my-8">
+        
         {/* Header tag & title */}
-        <div className="space-y-3 pb-8 mb-8 border-b border-neutral-800">
+        <div className="space-y-3 pb-8 mb-8 border-b border-neutral-800 pr-8">
           <span className="text-xs font-mono tracking-widest text-[#d4af37] uppercase">
             {caseStudy.clientCategory}
           </span>
-          <h2 className="font-serif text-2xl md:text-4xl text-white font-medium leading-tight">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-white font-medium leading-tight">
             {caseStudy.title}
           </h2>
           <p className="text-sm md:text-base text-neutral-400 font-light">
@@ -43,7 +55,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClo
           {/* Part 1: THE CONTEXT */}
           <div className="p-6 bg-[#0e0e14] border-l-2 border-neutral-600 rounded-r-sm">
             <h4 className="text-xs font-mono tracking-[0.2em] text-neutral-400 uppercase mb-2">
-              01. THE CONTEXT
+              THE CONTEXT
             </h4>
             <p className="text-sm md:text-base leading-relaxed text-neutral-200">
               {caseStudy.context}
@@ -53,7 +65,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClo
           {/* Part 2: WHAT WE SAW (High emphasis strategic vision) */}
           <div className="p-6 bg-[#12121c] border-l-2 border-[#d4af37] rounded-r-sm">
             <h4 className="text-xs font-mono tracking-[0.2em] text-[#d4af37] uppercase mb-2 font-semibold">
-              02. WHAT WE SAW
+              WHAT WE SAW
             </h4>
             <p className="font-serif text-lg md:text-xl text-white leading-relaxed italic">
               "{caseStudy.whatWeSaw}"
@@ -63,7 +75,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClo
           {/* Part 3: WHAT WE DID */}
           <div className="p-6 bg-[#0e0e14] border-l-2 border-neutral-600 rounded-r-sm">
             <h4 className="text-xs font-mono tracking-[0.2em] text-neutral-400 uppercase mb-2">
-              03. WHAT WE DID
+              WHAT WE DID
             </h4>
             <p className="text-sm md:text-base leading-relaxed text-neutral-200">
               {caseStudy.whatWeDid}
@@ -75,7 +87,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClo
             <div className="flex items-center gap-2 mb-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
               <h4 className="text-xs font-mono tracking-[0.2em] text-emerald-400 uppercase font-semibold">
-                04. WHAT CHANGED
+                WHAT CHANGED
               </h4>
             </div>
             <p className="text-sm md:text-base leading-relaxed text-emerald-100">
@@ -123,7 +135,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClo
               onClose();
               onContactClick();
             }}
-            className="px-6 py-3 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-wider hover:bg-[#e2bd44] transition-all rounded-sm flex items-center gap-2"
+            className="w-full sm:w-auto px-6 py-3 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-wider hover:bg-[#e2bd44] transition-all rounded-sm flex items-center justify-center gap-2 whitespace-normal break-words"
           >
             <span>Start a Similar Engagement</span>
             <ArrowRight className="w-4 h-4" />

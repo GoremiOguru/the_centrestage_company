@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { SEOHead } from '../components/SEOHead';
 import { TypewriterText } from '../components/TypewriterText';
+import { HorizontalSlider } from '../components/HorizontalSlider';
 import { CAPABILITIES, CASE_STUDIES } from '../data/siteData';
 import { CaseStudyModal } from '../components/CaseStudyModal';
 import type { CaseStudy, NavigationPath } from '../types';
@@ -50,7 +51,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
         {/* Visual Moment Sentence with Typewriter */}
         <section className="p-8 md:p-14 bg-[#0d0d12] border-y border-[#d4af37]/30 text-center space-y-6">
           <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl text-white font-medium tracking-wide uppercase leading-tight">
-            <TypewriterText text="VISIBILITY IS NOT THE GOAL. SIGNIFICANCE IS." speed={40} delay={200} />
+            <TypewriterText text="VISIBILITY IS NOT THE GOAL. SIGNIFICANCE IS." speed={35} delay={150} />
           </h2>
           <p className="max-w-3xl mx-auto text-xs sm:text-sm text-neutral-400 font-light leading-relaxed">
             The CENTRESTAGE doesn't pursue visibility for visibility's sake. We work backwards from what needs to change: perception, reputation, relevance, authority, connection or opportunity.
@@ -72,7 +73,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
             {CAPABILITIES.map((cap) => (
               <div
                 key={cap.id}
-                className="p-8 md:p-12 bg-[#0b0b0e] border border-neutral-800 hover:border-[#d4af37]/40 transition-all rounded-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
+                className="interactive-card p-8 md:p-12 bg-[#0b0b0e] border border-neutral-800 rounded-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
               >
                 <div className="lg:col-span-4 space-y-3">
                   <span className="text-xs font-mono text-[#d4af37] uppercase tracking-widest block">
@@ -112,26 +113,17 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
           </div>
         </section>
 
-        {/* SELECTED WORK (CASE STUDIES) */}
-        <section className="space-y-12 pt-8">
-          <div className="text-center space-y-3 max-w-3xl mx-auto">
-            <span className="text-xs font-mono tracking-[0.3em] text-[#d4af37] uppercase block">
-              SELECTED WORK
-            </span>
-            <h2 className="font-serif text-3xl sm:text-5xl text-white font-medium">
-              The work behind the work.
-            </h2>
-            <p className="text-xs sm:text-sm text-neutral-400 font-light">
-              We measure impact by shifts in perception, authority, reach, and opportunity. Click any monograph below to view full details.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* SELECTED WORK (HORIZONTALLY ARRANGED CASE STUDIES) */}
+        <section className="space-y-6 pt-4">
+          <HorizontalSlider
+            title="The work behind the work."
+            subtitle="SELECTED WORK"
+          >
             {CASE_STUDIES.map((study) => (
               <div
                 key={study.id}
                 onClick={() => setSelectedCaseStudy(study)}
-                className="p-8 bg-[#0d0d12] border border-[#d4af37]/20 hover:border-[#d4af37] transition-all rounded-sm space-y-6 cursor-pointer group flex flex-col justify-between"
+                className="interactive-card w-[320px] sm:w-[400px] flex-shrink-0 p-8 bg-[#0d0d12] border border-[#d4af37]/20 rounded-sm space-y-6 cursor-pointer group flex flex-col justify-between snap-start"
               >
                 <div className="space-y-4">
                   <span className="text-[10px] font-mono tracking-widest text-[#d4af37] uppercase block">
@@ -140,7 +132,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
                   <h3 className="font-serif text-2xl text-white group-hover:text-[#d4af37] transition-colors leading-snug">
                     {study.title}
                   </h3>
-                  <p className="text-xs text-neutral-400 font-light">
+                  <p className="text-xs text-neutral-400 font-light line-clamp-3">
                     {study.summary}
                   </p>
 
@@ -161,7 +153,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
                 </div>
               </div>
             ))}
-          </div>
+          </HorizontalSlider>
 
           {/* Quiet Client Logos / Partner Indicators */}
           <div className="pt-16 border-t border-neutral-900 text-center space-y-6">
