@@ -3,6 +3,7 @@ import { SEOHead } from '../components/SEOHead';
 import { BrandFrameworkVisual } from '../components/BrandFrameworkVisual';
 import { SpotlightStatement } from '../components/SpotlightStatement';
 import { ImpactPhotoGallery } from '../components/ImpactPhotoGallery';
+import { TypewriterText } from '../components/TypewriterText';
 import type { NavigationPath } from '../types';
 import { ArrowRight, Eye, Compass, Award } from 'lucide-react';
 import logoImg from '../assets/the_centrestage_company_logo.jpg';
@@ -28,7 +29,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           </span>
           <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl text-white font-light leading-tight">
             Where great ideas take <br />
-            <span className="text-gold-gradient italic">The CentreStage.</span>
+            <span className="text-gold-gradient italic">
+              <TypewriterText text="The CentreStage." speed={35} delay={200} />
+            </span>
           </h1>
           <p className="text-base sm:text-lg text-neutral-300 font-light max-w-2xl mx-auto leading-relaxed">
             The CENTRESTAGE Company began in 2015 with a simple conviction:

@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { SEOHead } from '../components/SEOHead';
+import { TypewriterText } from '../components/TypewriterText';
 import { 
   WORKSHOP_META, 
   WORKSHOP_CLASSES, 
@@ -131,7 +132,9 @@ export const WorkshopPage: React.FC<WorkshopPageProps> = ({ onNavigate }) => {
           <div className="space-y-4 max-w-4xl mx-auto">
             <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-light leading-tight">
               The Business Advantage <br />
-              <span className="italic text-gold-gradient font-normal">Workshop (BAW)</span>
+              <span className="italic text-gold-gradient font-normal">
+                <TypewriterText text="Workshop (BAW)" speed={40} delay={200} />
+              </span>
             </h1>
             <p className="font-serif text-xl sm:text-2xl md:text-3xl text-[#d4af37] font-light italic">
               "The advantage your organisation needs may already be inside it."

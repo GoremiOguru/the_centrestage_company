@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Sparkles } from 'lucide-react';
+import { TypewriterText } from './TypewriterText';
 
 interface SpotlightStatementProps {
   text: string;
@@ -118,7 +119,7 @@ export const SpotlightStatement: React.FC<SpotlightStatementProps> = ({
         )}
 
         <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-medium tracking-wide uppercase leading-snug max-w-4xl mx-auto drop-shadow-md">
-          {text}
+          <TypewriterText text={text} speed={24} delay={200} />
         </h2>
 
         {tagline && (

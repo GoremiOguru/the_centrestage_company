@@ -1,6 +1,7 @@
 import React from 'react';
 import { SEOHead } from '../components/SEOHead';
 import { SpotlightStatement } from '../components/SpotlightStatement';
+import { TypewriterText } from '../components/TypewriterText';
 import type { NavigationPath } from '../types';
 
 interface EcosystemPageProps {
@@ -28,7 +29,9 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
           </span>
           <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl text-white font-light leading-tight">
             One house. <br />
-            <span className="text-gold-gradient italic">Many expressions.</span>
+            <span className="text-gold-gradient italic">
+              <TypewriterText text="Many expressions." speed={38} delay={200} />
+            </span>
           </h1>
 
           <p className="text-base sm:text-lg text-neutral-300 font-light max-w-2xl mx-auto leading-relaxed">

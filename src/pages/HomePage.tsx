@@ -182,7 +182,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
                 <div className="space-y-2">
                   <h2 className="font-serif text-3xl sm:text-5xl text-white font-medium leading-tight">
                     The Business Advantage <br />
-                    <span className="italic text-gold-gradient">Workshop (BAW)</span>
+                    <span className="italic text-gold-gradient">
+                      <TypewriterText text="Workshop (BAW)" speed={40} delay={200} />
+                    </span>
                   </h2>
                   <p className="font-serif text-lg sm:text-xl text-[#d4af37] italic">
                     "The advantage your organisation needs may already be inside it."

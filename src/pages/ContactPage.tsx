@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { SEOHead } from '../components/SEOHead';
 import { HorizontalSlider } from '../components/HorizontalSlider';
+import { TypewriterText } from '../components/TypewriterText';
 import type { NavigationPath } from '../types';
 import { ArrowRight, CheckCircle, Loader2, Send } from 'lucide-react';
 
@@ -109,7 +110,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, defaultEnq
           </span>
           <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl text-white font-light leading-tight">
             Bring it to <br />
-            <span className="text-gold-gradient italic">The CentreStage.</span>
+            <span className="text-gold-gradient italic">
+              <TypewriterText text="The CentreStage." speed={38} delay={200} />
+            </span>
           </h1>
 
           <div className="space-y-4 text-base sm:text-lg text-neutral-300 font-light max-w-2xl mx-auto leading-relaxed">

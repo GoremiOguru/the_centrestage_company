@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NAV_ITEMS } from '../data/siteData';
 import type { NavigationPath } from '../types';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Flame, Clock, Sparkles } from 'lucide-react';
 import logoImg from '../assets/the_centrestage_company_logo.jpg';
 
 interface NavbarProps {
@@ -12,6 +12,12 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [timeLeft, setTimeLeft] = useState<{ days: number; hours: number; minutes: number; seconds: number }>({
+    days: 7,
+    hours: 8,
+    minutes: 24,
+    seconds: 40
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +25,31 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Live countdown timer to October 15, 2026
+  useEffect(() => {
+    const targetDate = new Date('2026-10-15T11:00:00+01:00').getTime();
+
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        setTimeLeft({ days, hours, minutes, seconds });
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      }
+    };
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+    return () => clearInterval(interval);
   }, []);
 
   // Lock body scroll when mobile drawer is open
@@ -39,31 +70,59 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const formatDigits = (n: number) => String(n).padStart(2, '0');
+
   return (
     <>
-      {/* Sleek Top Announcement Ribbon for The Business Advantage Workshop */}
+      {/* High-End Dynamic Announcement Ribbon with Live Countdown & Shimmer Sweep */}
       <div 
         onClick={() => handleNavClick('/workshop')}
-        className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#121008] via-[#241c09] to-[#121008] border-b border-[#d4af37]/40 px-4 py-1.5 text-center cursor-pointer group hover:bg-[#2e230a] transition-colors"
+        className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#0d0a04] via-[#211706] to-[#0d0a04] border-b border-[#d4af37]/50 px-3 py-2 text-center cursor-pointer group hover:bg-[#2b1f09] transition-all overflow-hidden select-none shadow-lg shadow-black/60"
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 text-[10px] sm:text-xs font-mono tracking-wider text-[#d4af37]">
-          <span className="px-1.5 py-0.2 bg-[#d4af37] text-black font-bold rounded-sm uppercase tracking-widest text-[9px]">
-            New Masterclass
+        {/* Animated Lightbeam Sweep Effect */}
+        <div className="absolute inset-y-0 w-48 bg-gradient-to-r from-transparent via-[#d4af37]/25 to-transparent animate-banner-shimmer pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-[10px] sm:text-xs font-mono tracking-wider text-[#d4af37] relative z-10">
+          
+          {/* Animated Flame Badge */}
+          <div className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-[#d4af37] text-black font-bold rounded-sm uppercase tracking-widest text-[9px] shadow-sm animate-gold-glow">
+            <Flame className="w-3 h-3 text-red-600 fill-red-600 animate-bounce" />
+            <span>EXECUTIVE MASTERCLASS</span>
+          </div>
+
+          {/* Main Hook text */}
+          <span className="text-neutral-200 group-hover:text-white transition-colors flex items-center gap-1.5 font-sans">
+            <strong className="text-[#d4af37] font-semibold">The Business Advantage Workshop (BAW)</strong>
+            <span className="hidden lg:inline text-neutral-400 font-light">• Abuja with Dr. Naomi</span>
           </span>
-          <span className="text-neutral-200 group-hover:text-white transition-colors">
-            <strong>The Business Advantage Workshop (BAW)</strong> in Abuja by Dr. Naomi
-          </span>
-          <span className="hidden md:inline text-[#d4af37] underline font-semibold ml-1 group-hover:translate-x-1 transition-transform">
-            Reserve Your Seat →
-          </span>
+
+          {/* Dynamic Live Countdown Ticker */}
+          <div className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-black/80 border border-[#d4af37]/50 rounded-sm font-mono text-[10px] sm:text-xs text-white shadow-inner">
+            <Clock className="w-3 h-3 text-[#d4af37] animate-pulse" />
+            <span className="text-neutral-400 text-[9px] mr-1 hidden sm:inline uppercase">STARTS IN:</span>
+            <span className="font-bold text-[#d4af37]">{formatDigits(timeLeft.days)}d</span>
+            <span className="text-[#d4af37]/60">:</span>
+            <span className="font-bold text-white">{formatDigits(timeLeft.hours)}h</span>
+            <span className="text-[#d4af37]/60">:</span>
+            <span className="font-bold text-white">{formatDigits(timeLeft.minutes)}m</span>
+            <span className="text-[#d4af37]/60">:</span>
+            <span className="font-bold text-[#e2bd44]">{formatDigits(timeLeft.seconds)}s</span>
+          </div>
+
+          {/* CTA Arrow */}
+          <div className="inline-flex items-center gap-1 text-[#d4af37] group-hover:text-white font-semibold underline underline-offset-2 decoration-[#d4af37]/60 group-hover:decoration-white transition-colors">
+            <span>Reserve Seat</span>
+            <Sparkles className="w-3 h-3 text-[#d4af37] group-hover:rotate-45 transition-transform" />
+          </div>
+
         </div>
       </div>
 
       <header
         className={`fixed left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'top-7 bg-[#08080a]/95 backdrop-blur-md border-b border-[#d4af37]/20 py-3 shadow-2xl'
-            : 'top-7 bg-transparent py-4'
+            ? 'top-9 bg-[#08080a]/95 backdrop-blur-md border-b border-[#d4af37]/20 py-3 shadow-2xl'
+            : 'top-9 bg-transparent py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { SEOHead } from '../components/SEOHead';
 import { HorizontalSlider } from '../components/HorizontalSlider';
 import { SpotlightStatement } from '../components/SpotlightStatement';
+import { TypewriterText } from '../components/TypewriterText';
 import { CAPABILITIES, CASE_STUDIES } from '../data/siteData';
 import { CaseStudyModal } from '../components/CaseStudyModal';
 import type { CaseStudy, NavigationPath } from '../types';
@@ -30,7 +31,9 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
           </span>
           <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl text-white font-light leading-tight">
             Great work <br />
-            <span className="text-gold-gradient italic">isn't enough.</span>
+            <span className="text-gold-gradient italic">
+              <TypewriterText text="isn't enough." speed={40} delay={200} />
+            </span>
           </h1>
 
           <div className="space-y-4 text-base sm:text-lg text-neutral-300 font-light max-w-2xl mx-auto leading-relaxed">

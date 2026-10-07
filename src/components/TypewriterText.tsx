@@ -3,42 +3,40 @@ import React, { useState, useEffect, useRef } from 'react';
 interface TypewriterTextProps {
   text: string;
   speed?: number;
+  delay?: number;
   repeatDelay?: number;
   className?: string;
   cursorColor?: string;
+  showCursor?: boolean;
 }
 
 export const TypewriterText: React.FC<TypewriterTextProps> = ({
   text,
-  speed = 35,
-  repeatDelay = 5000,
+  speed = 30,
+  delay = 100,
+  repeatDelay = 0, // 0 = type once and hold permanently
   className = '',
-  cursorColor = '#d4af37'
+  cursorColor = '#d4af37',
+  showCursor = true
 }) => {
-  const [displayedText, setDisplayedText] = useState(text);
-  const [currentIndex, setCurrentIndex] = useState(text.length);
+  const [displayedText, setDisplayedText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isTypingActive, setIsTypingActive] = useState(false);
+  const [isFinished, setIsFinished] = useState(false);
   const containerRef = useRef<HTMLSpanElement>(null);
-  const hasInitialTypedRef = useRef(false);
+  const hasTriggeredRef = useRef(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsTypingActive(true);
-          if (!hasInitialTypedRef.current) {
-            hasInitialTypedRef.current = true;
-            // Delay initial clear slightly to prevent flickering
-            setTimeout(() => {
-              setDisplayedText('');
-              setCurrentIndex(0);
-            }, 100);
-          }
-        } else {
-          setIsTypingActive(false);
+        if (entry.isIntersecting && !hasTriggeredRef.current) {
+          hasTriggeredRef.current = true;
+          setTimeout(() => {
+            setIsTypingActive(true);
+          }, delay);
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
 
     if (containerRef.current) {
@@ -46,7 +44,7 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
     }
 
     return () => observer.disconnect();
-  }, [text]);
+  }, [delay]);
 
   useEffect(() => {
     if (!isTypingActive) return;
@@ -58,27 +56,32 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
       }, speed);
 
       return () => clearTimeout(timeout);
-    } else if (repeatDelay > 0) {
-      const replayTimeout = setTimeout(() => {
-        setDisplayedText('');
-        setCurrentIndex(0);
-      }, repeatDelay);
+    } else {
+      setIsFinished(true);
+      if (repeatDelay > 0) {
+        const replayTimeout = setTimeout(() => {
+          setDisplayedText('');
+          setCurrentIndex(0);
+          setIsFinished(false);
+        }, repeatDelay);
 
-      return () => clearTimeout(replayTimeout);
+        return () => clearTimeout(replayTimeout);
+      }
     }
   }, [currentIndex, isTypingActive, text, speed, repeatDelay]);
 
   return (
     <span
       ref={containerRef}
-      className={`inline-inline-block max-w-full break-words ${className}`}
-      style={{ minHeight: '1.2em' }}
+      className={`inline ${className}`}
     >
       {displayedText}
-      <span
-        className="inline-block w-[3px] h-[0.85em] ml-1 align-baseline animate-pulse rounded-full"
-        style={{ backgroundColor: cursorColor }}
-      />
+      {showCursor && (!isFinished || repeatDelay > 0) && (
+        <span
+          className="inline-block w-[3px] h-[0.85em] ml-1 align-baseline animate-pulse rounded-full"
+          style={{ backgroundColor: cursorColor }}
+        />
+      )}
     </span>
   );
 };
