@@ -70,9 +70,22 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
             {CAPABILITIES.map((cap) => (
               <div
                 key={cap.id}
-                className="interactive-card p-8 md:p-12 bg-[#0b0b0e] border border-neutral-800 rounded-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
+                className="interactive-card p-8 md:p-12 bg-[#0b0b0e] border border-neutral-800 rounded-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
               >
-                <div className="lg:col-span-4 space-y-3">
+                <div className="lg:col-span-5 space-y-4">
+                  {cap.image && (
+                    <div className="relative aspect-[16/10] w-full rounded-sm overflow-hidden border border-[#d4af37]/30 shadow-lg group">
+                      <img
+                        src={cap.image}
+                        alt={cap.title}
+                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                      <span className="absolute bottom-3 left-3 text-[10px] font-mono uppercase tracking-widest text-[#d4af37] bg-black/70 px-2 py-0.5 rounded-sm border border-[#d4af37]/30">
+                        Practice Showcase
+                      </span>
+                    </div>
+                  )}
                   <span className="text-xs font-mono text-[#d4af37] uppercase tracking-widest block">
                     CAPABILITY
                   </span>
@@ -84,7 +97,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
                   </p>
                 </div>
 
-                <div className="lg:col-span-8 space-y-6">
+                <div className="lg:col-span-7 space-y-6">
                   <p className="text-sm md:text-base text-neutral-300 font-light leading-relaxed">
                     {cap.description}
                   </p>
@@ -120,9 +133,20 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
               <div
                 key={study.id}
                 onClick={() => setSelectedCaseStudy(study)}
-                className="interactive-card w-[320px] sm:w-[400px] flex-shrink-0 p-8 bg-[#0d0d12] border border-[#d4af37]/20 rounded-sm space-y-6 cursor-pointer group flex flex-col justify-between snap-start"
+                className="interactive-card w-[320px] sm:w-[400px] flex-shrink-0 p-6 sm:p-8 bg-[#0d0d12] border border-[#d4af37]/20 rounded-sm space-y-5 cursor-pointer group flex flex-col justify-between snap-start"
               >
                 <div className="space-y-4">
+                  {study.image && (
+                    <div className="relative aspect-[16/9] w-full rounded-sm overflow-hidden border border-neutral-800 group-hover:border-[#d4af37]/50 transition-colors">
+                      <img
+                        src={study.image}
+                        alt={study.title}
+                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                    </div>
+                  )}
+
                   <span className="text-[10px] font-mono tracking-widest text-[#d4af37] uppercase block">
                     {study.clientCategory}
                   </span>

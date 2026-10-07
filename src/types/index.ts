@@ -1,4 +1,4 @@
-export type NavigationPath = '/' | '/about' | '/our-work' | '/ecosystem' | '/insights' | '/contact';
+export type NavigationPath = '/' | '/about' | '/our-work' | '/ecosystem' | '/insights' | '/contact' | '/workshop';
 
 export interface NavItem {
   label: string;
@@ -11,6 +11,7 @@ export interface Capability {
   tagline: string;
   description: string;
   includes: string[];
+  image?: string;
 }
 
 export interface CaseStudy {
@@ -22,6 +23,7 @@ export interface CaseStudy {
   whatWeSaw: string;
   whatWeDid: string;
   whatChanged: string;
+  image?: string;
   quote?: {
     text: string;
     author: string;
@@ -39,10 +41,12 @@ export interface EcosystemPillar {
   headline: string;
   badge?: string;
   description: string;
+  image?: string;
   nestedItems?: {
     title: string;
     description: string;
     tagline?: string;
+    image?: string;
   }[];
   ctaText: string;
   enquiryType: string;
@@ -59,6 +63,7 @@ export interface InsightArticle {
   fullContent?: string;
   isPublished: boolean;
   publishedDate?: string;
+  image?: string;
 }
 
 export interface ImpactStat {

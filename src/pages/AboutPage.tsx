@@ -2,8 +2,9 @@ import React from 'react';
 import { SEOHead } from '../components/SEOHead';
 import { BrandFrameworkVisual } from '../components/BrandFrameworkVisual';
 import { SpotlightStatement } from '../components/SpotlightStatement';
+import { ImpactPhotoGallery } from '../components/ImpactPhotoGallery';
 import type { NavigationPath } from '../types';
-import { ArrowRight, Eye, Compass, Award, UserCheck } from 'lucide-react';
+import { ArrowRight, Eye, Compass, Award } from 'lucide-react';
 import logoImg from '../assets/the_centrestage_company_logo.jpg';
 
 interface AboutPageProps {
@@ -155,6 +156,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           </div>
         </section>
 
+        {/* VISUAL ARCHIVE & CONVENINGS GALLERY */}
+        <ImpactPhotoGallery />
+
         {/* OUR BEGINNING & LEADERSHIP FEATURE */}
         <section className="space-y-12 pt-8">
           <div className="text-center space-y-4">
@@ -169,32 +173,41 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           <div className="bg-[#0b0b0e] border border-[#d4af37]/20 rounded-sm p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Leadership Executive Framing for Dr. Naomi */}
-            <div className="lg:col-span-5 relative group overflow-hidden rounded-sm border border-[#d4af37]/40 shadow-2xl">
-              <div className="w-full h-[360px] bg-gradient-to-b from-[#12121c] via-[#0b0b0e] to-black p-6 flex flex-col justify-between items-center text-center">
-                <div className="w-full flex justify-between items-center border-b border-neutral-800 pb-4">
-                  <img
-                    src={logoImg}
-                    alt="The CENTRESTAGE Company Logo"
-                    className="h-8 w-auto object-contain max-w-[140px]"
-                  />
-                  <span className="text-[10px] font-mono text-[#d4af37] uppercase tracking-widest border border-[#d4af37]/30 px-2 py-1 rounded-sm">
+            <div className="lg:col-span-5 relative group overflow-hidden rounded-sm border border-[#d4af37]/40 shadow-2xl bg-[#0e0e14]">
+              <div className="relative aspect-[3/4] max-h-[500px] w-full overflow-hidden">
+                <img
+                  src="/images/dr_naomi_executive_portrait.jpg"
+                  alt="Dr. Naomi - Founder & Chief Strategist"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+
+                {/* Subtle Luxury Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-90 group-hover:opacity-80 transition-opacity" />
+
+                {/* Top Badge Overlay */}
+                <div className="absolute top-4 left-4 right-4 flex justify-between items-center z-10">
+                  <span className="text-[10px] font-mono text-[#d4af37] uppercase tracking-widest bg-black/70 backdrop-blur-md border border-[#d4af37]/40 px-3 py-1 rounded-sm shadow-md">
                     Founder Profile
                   </span>
+                  <img
+                    src={logoImg}
+                    alt="The CENTRESTAGE Company"
+                    className="h-6 w-auto object-contain bg-black/60 backdrop-blur-md px-2 py-0.5 rounded-sm border border-neutral-800"
+                  />
                 </div>
 
-                <div className="space-y-3 py-6">
-                  <div className="w-16 h-16 rounded-full bg-[#d4af37]/10 border-2 border-[#d4af37] flex items-center justify-center mx-auto text-[#d4af37]">
-                    <UserCheck className="w-8 h-8" />
-                  </div>
-                  <h3 className="font-serif text-3xl text-white font-semibold pt-1">Dr. Naomi</h3>
-                  <p className="text-xs text-[#d4af37] font-mono uppercase tracking-widest font-semibold">
+                {/* Bottom Bio Overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 z-10 space-y-1.5 border-t border-white/10 bg-gradient-to-t from-black/95 via-black/80 to-transparent">
+                  <span className="text-[11px] text-[#d4af37] font-mono uppercase tracking-[0.2em] font-semibold block">
                     Founder &amp; Chief Strategist
+                  </span>
+                  <h3 className="font-serif text-2xl sm:text-3xl text-white font-medium">
+                    Dr. Naomi
+                  </h3>
+                  <p className="text-xs text-neutral-300 font-serif italic pt-1 border-t border-neutral-800/80">
+                    "Great work should not go unseen."
                   </p>
                 </div>
-
-                <p className="text-xs text-neutral-400 font-serif italic border-t border-neutral-800 pt-3">
-                  "Great work should not go unseen."
-                </p>
               </div>
             </div>
 

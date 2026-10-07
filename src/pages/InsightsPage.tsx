@@ -134,9 +134,20 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
                 <div
                   key={article.id}
                   onClick={() => setActiveArticle(article)}
-                  className="interactive-card w-[320px] sm:w-[380px] flex-shrink-0 p-8 bg-[#0d0d14] border border-[#d4af37]/30 rounded-sm space-y-6 cursor-pointer group flex flex-col justify-between snap-start"
+                  className="interactive-card w-[320px] sm:w-[380px] flex-shrink-0 p-6 sm:p-8 bg-[#0d0d14] border border-[#d4af37]/30 rounded-sm space-y-5 cursor-pointer group flex flex-col justify-between snap-start"
                 >
                   <div className="space-y-4">
+                    {article.image && (
+                      <div className="relative aspect-[16/9] w-full rounded-sm overflow-hidden border border-neutral-800 group-hover:border-[#d4af37]/50 transition-colors">
+                        <img
+                          src={article.image}
+                          alt={article.title}
+                          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                      </div>
+                    )}
+
                     <div className="flex items-center justify-between text-xs font-mono">
                       <span className="px-2 py-0.5 bg-[#d4af37]/15 text-[#d4af37] border border-[#d4af37]/30 rounded-sm uppercase tracking-wider">
                         {article.category}
@@ -152,7 +163,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
                       {article.title}
                     </h3>
 
-                    <p className="text-xs text-neutral-300 font-light leading-relaxed">
+                    <p className="text-xs text-neutral-300 font-light leading-relaxed line-clamp-3">
                       {article.excerpt}
                     </p>
                   </div>
@@ -181,6 +192,17 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
                 className="interactive-card p-6 bg-[#0b0b0e] border border-neutral-800 rounded-sm space-y-4 cursor-pointer group flex flex-col justify-between"
               >
                 <div className="space-y-3">
+                  {article.image && (
+                    <div className="relative aspect-[16/9] w-full rounded-sm overflow-hidden border border-neutral-800 group-hover:border-[#d4af37]/40 transition-colors">
+                      <img
+                        src={article.image}
+                        alt={article.title}
+                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                    </div>
+                  )}
+
                   <div className="flex items-center justify-between text-[11px] font-mono">
                     <span className="text-[#d4af37] uppercase tracking-wider">
                       {article.category}

@@ -34,8 +34,25 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({ article, onClose, on
         <X className="w-6 h-6 transition-transform group-hover:rotate-90" />
       </button>
 
-      <div className="relative w-full max-w-3xl bg-[#0a0a0d] border border-[#d4af37]/30 rounded-sm shadow-2xl p-6 sm:p-10 md:p-14 text-neutral-200 my-8">
+      <div className="relative w-full max-w-3xl bg-[#0a0a0d] border border-[#d4af37]/30 rounded-sm shadow-2xl p-6 sm:p-10 md:p-14 text-neutral-200 my-8 overflow-hidden">
         
+        {/* Article Editorial Image Header */}
+        {article.image && (
+          <div className="relative w-full h-48 sm:h-64 mb-8 -mt-2 rounded-sm overflow-hidden border border-[#d4af37]/30 group">
+            <img
+              src={article.image}
+              alt={article.title}
+              className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0d] via-black/40 to-transparent" />
+            <div className="absolute bottom-3 left-4">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-[#d4af37] bg-black/80 px-2.5 py-1 rounded-sm border border-[#d4af37]/30">
+                Editorial Monograph
+              </span>
+            </div>
+          </div>
+        )}
+
         {/* Article Meta Header */}
         <div className="space-y-4 pb-8 mb-8 border-b border-neutral-800 pr-8">
           <div className="flex flex-wrap items-center gap-3 text-xs">

@@ -5,6 +5,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'ABOUT', path: '/about' },
   { label: 'OUR WORK', path: '/our-work' },
   { label: 'ECOSYSTEM', path: '/ecosystem' },
+  { label: 'WORKSHOP', path: '/workshop' },
   { label: 'INSIGHTS', path: '/insights' },
   { label: 'CONTACT', path: '/contact' },
 ];
@@ -40,6 +41,7 @@ export const CAPABILITIES: Capability[] = [
     title: "Positioning & Reputation",
     tagline: "Be known for the right things.",
     description: "Reputation is being formed whether you manage it or not. We help leaders and organisations clarify what they stand for, identify what they should be known for and close the distance between their actual value and how they are perceived.",
+    image: "/images/corporate_anniversary_summit.jpg",
     includes: [
       "Positioning",
       "Reputation audits",
@@ -54,6 +56,7 @@ export const CAPABILITIES: Capability[] = [
     title: "Executive & Leadership Presence",
     tagline: "How you lead should be reflected in how you show up.",
     description: "Expertise alone does not guarantee influence. We work with executives, founders and leaders to strengthen how they communicate, show up in important rooms and represent their expertise, organisations and ideas.",
+    image: "/images/dr_naomi_speaking_stage.jpg",
     includes: [
       "Executive positioning",
       "Leadership communication",
@@ -68,6 +71,7 @@ export const CAPABILITIES: Capability[] = [
     title: "Storytelling & Communication",
     tagline: "Turn what you know into something people remember.",
     description: "Every organisation has information. Far fewer know how to turn that information into meaning. We uncover the human, organisational and cultural stories beneath the work and translate them into communication people can understand, remember and repeat.",
+    image: "/images/women_with_stories_abuja.jpg",
     includes: [
       "Narrative development",
       "Corporate storytelling",
@@ -82,6 +86,7 @@ export const CAPABILITIES: Capability[] = [
     title: "Thought Leadership",
     tagline: "Don't just join the conversation. Bring a point of view.",
     description: "The most influential leaders and organisations are not simply visible. They contribute ideas that change how people think about an issue, industry or possibility. We help identify the ideas you can credibly own and develop them into intellectual property, content, conversations and platforms that build authority.",
+    image: "/images/thought_leadership_address.jpg",
     includes: [
       "Thought leadership positioning",
       "Signature ideas",
@@ -96,6 +101,7 @@ export const CAPABILITIES: Capability[] = [
     title: "Experiences & Convenings",
     tagline: "The right room can change everything.",
     description: "Some opportunities only happen when the right people enter the same room. We shape conversations, events and experiences designed to create connection, exchange, visibility and possibility. From intimate executive conversations to conferences and signature gatherings, we think beyond logistics to the story, people and possibilities created in the room.",
+    image: "/images/mixer_gala_networking.jpg",
     includes: [
       "Event concepts",
       "Conversation architecture",
@@ -114,6 +120,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: "Repositioning a Pan-African Financial Institution",
     clientCategory: "Financial Services & Economic Strategy",
     summary: "Reframing a decade of quiet regional innovation into a high-authority global market narrative.",
+    image: "/images/corporate_anniversary_summit.jpg",
     context: "A prominent pan-African financial institution was undergoing significant operational modernization, yet market perception remained anchored to legacy retail banking models. Despite high-impact cross-border trade initiatives, their institutional voice was diluted by transactional public relations.",
     whatWeSaw: "An overlooked asset: unmatched proprietary intelligence on informal trade corridors and sovereign liquidity solutions across Sub-Saharan Africa that traditional quarterly reporting completely obscured.",
     whatWeDid: "We authored an overarching institutional narrative, 'The Corridor of Future Growth', repositioned the executive committee as sovereign trade authorities, and engineered exclusive invitation-only executive roundtables in London and Lagos.",
@@ -134,6 +141,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: "Executive Visibility for Infrastructure Tech Founder",
     clientCategory: "Technology & Sovereign Infrastructure",
     summary: "Elevating a tech founder from product engineer to definitive global industry voice.",
+    image: "/images/founder_keynote_naomi.jpg",
     context: "A high-growth cloud infrastructure founder possessed exceptional technical IP and enterprise contracts, but struggled to articulate their broader systemic value to sovereign investors and policy makers.",
     whatWeSaw: "The founder was speaking in product features rather than economic sovereignty. The true story was about digital independence for emerging markets.",
     whatWeDid: "We defined 'The Sovereign Data Mandate' framework, curated high-stakes international keynote platforms, and trained the executive for global media broadcasts.",
@@ -153,6 +161,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: "The Women With Stories Platform Expansion",
     clientCategory: "Social Impact & Narrative Movement",
     summary: "Architecting a global storytelling platform that rewrites how women's leadership is documented.",
+    image: "/images/women_with_stories_abuja.jpg",
     context: "Female leaders across Africa and the diaspora were driving structural change, yet their insights were relegated to generic panel sessions without lasting institutional documentation.",
     whatWeSaw: "A profound gap between statistical representation metrics and authentic, nuanced human storytelling. Statistics don't tell the story. Stories rewrite the stats.",
     whatWeDid: "Created 'The Women With Stories' convening and digital archive, designing intimate, high-impact storytelling formats and high-production editorial documentation.",
@@ -167,6 +176,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: "Energy Transition Reputation Transformation",
     clientCategory: "Energy & Infrastructure",
     summary: "Bridging the perception gap between legacy energy operations and sovereign green transition commitments.",
+    image: "/images/executive_awards_celebration.jpg",
     context: "A leading energy conglomerate was making multi-million dollar investments in clean energy transitions, but public perception remained skeptical and critical.",
     whatWeSaw: "The company was publishing technical compliance documents instead of telling the story of energy access, local job creation, and industrial stability.",
     whatWeDid: "Conducted an intensive reputation audit, restructured corporate communications direction, and launched 'Energy for Human Progress' stakeholder forums.",
@@ -185,6 +195,7 @@ export const ECOSYSTEM_PILLARS: EcosystemPillar[] = [
     headline: "Where great work becomes difficult to overlook.",
     badge: "Commercial Heart",
     description: "The commercial heart of our ecosystem. We work with leaders and organisations across reputation, positioning, storytelling, executive presence, thought leadership and experiences.",
+    image: "/images/dr_naomi_speaking_stage.jpg",
     ctaText: "Work With Us",
     enquiryType: "Work With Us"
   },
@@ -194,19 +205,23 @@ export const ECOSYSTEM_PILLARS: EcosystemPillar[] = [
     headline: "Stories can change what statistics cannot.",
     badge: "Social Impact Platform",
     description: "The social impact expression of The CENTRESTAGE. The Foundation creates platforms that elevate stories, develop people and expand possibility.",
+    image: "/images/women_with_stories_abuja.jpg",
     nestedItems: [
       {
         title: "The Women With Stories",
         tagline: "Statistics don't tell the story. Stories rewrite the stats.",
-        description: "A global storytelling movement changing the way women's experiences are seen, heard and remembered."
+        description: "A global storytelling movement changing the way women's experiences are seen, heard and remembered.",
+        image: "/images/women_with_stories_abuja.jpg"
       },
       {
         title: "Africa Thru My Eyes",
-        description: "A platform inviting Africans to tell richer, more human stories about the continent through their own eyes."
+        description: "A platform inviting Africans to tell richer, more human stories about the continent through their own eyes.",
+        image: "/images/thought_leadership_address.jpg"
       },
       {
         title: "Young Adult Mentorship Programme",
-        description: "Equipping emerging adults with the perspective, relationships and capabilities to navigate life, leadership and work."
+        description: "Equipping emerging adults with the perspective, relationships and capabilities to navigate life, leadership and work.",
+        image: "/images/youth_club_mentorship.jpg"
       }
     ],
     ctaText: "Explore The Foundation",
@@ -218,6 +233,7 @@ export const ECOSYSTEM_PILLARS: EcosystemPillar[] = [
     headline: "Future ready starts now.",
     badge: "Youth & School Development",
     description: "The world young people are entering is changing faster than the systems preparing them for it. CentreStage Club is a school based development experience helping young people discover who they are while building the capabilities the future will demand.\n\nStudents develop critical thinking, communication, public speaking, leadership, teamwork, adaptability and confidence while learning to recognise the value they bring in an AI disrupted world.",
+    image: "/images/youth_club_mentorship.jpg",
     ctaText: "Bring CentreStage Club to Your School",
     enquiryType: "CentreStage Club"
   },
@@ -227,6 +243,7 @@ export const ECOSYSTEM_PILLARS: EcosystemPillar[] = [
     headline: "What can only you bring?",
     badge: "Proprietary Framework",
     description: "In a world where technology can replicate more of what we do, the question of what makes us distinctive becomes increasingly important.\n\nThe Irreplaceable Advantage™ is our proprietary framework for identifying the distinctive combination of experience, perspective, knowledge, values, thinking and capability that makes an individual or organisation difficult to replicate.\n\nThe framework is being developed across assessments, leadership programmes, schools, organisations, speaking and original research.",
+    image: "/images/founder_keynote_naomi.jpg",
     ctaText: "Discover The Irreplaceable Advantage™",
     enquiryType: "Work With Us"
   },
@@ -236,6 +253,7 @@ export const ECOSYSTEM_PILLARS: EcosystemPillar[] = [
     headline: "The right room changes everything.",
     badge: "Invite-Only Convening",
     description: "The CentreStage Mixer is an invite only gathering bringing leaders, thinkers, experts, creators and decision makers from different sectors into one carefully curated room.\n\nIt is not another networking event. It is a place for ideas to cross sectors, relationships to begin and unexpected possibilities to emerge.",
+    image: "/images/high_table_convening.jpg",
     ctaText: "Partner With The Mixer",
     enquiryType: "Partnerships"
   }
@@ -250,6 +268,7 @@ export const INSIGHTS_ARTICLES: InsightArticle[] = [
     readTime: "6 min read",
     seoTerritory: "Brand positioning, organisational reputation, corporate visibility",
     excerpt: "You can be excellent at what you do and still remain completely invisible to the people who matter most. Excellence is table stakes; positioning is what creates authority.",
+    image: "/images/thought_leadership_address.jpg",
     publishedDate: "Launch Article",
     isPublished: true,
     fullContent: `
@@ -308,6 +327,7 @@ Great work should not go unseen. But making it visible requires strategy, story,
     readTime: "5 min read",
     seoTerritory: "Executive visibility, leadership influence, personal reputation, thought leadership",
     excerpt: "Being seen is easy. Being remembered for what matters—and having the authority to shape outcomes—is entirely different.",
+    image: "/images/dynamic_keynote_session.jpg",
     publishedDate: "Launch Article",
     isPublished: true,
     fullContent: `
@@ -360,6 +380,7 @@ When leaders move beyond chasing social media metrics and focus on shaping perce
     readTime: "7 min read",
     seoTerritory: "AI and leadership, future of work, human skills, differentiation, The Irreplaceable Advantage™",
     excerpt: "As artificial intelligence commoditizes content creation and analytical execution, human distinction becomes the ultimate competitive advantage.",
+    image: "/images/masterclass_audience.jpg",
     publishedDate: "Launch Article",
     isPublished: true,
     fullContent: `
@@ -406,6 +427,7 @@ When technology can replicate more of what we do, the question of what makes us 
     readTime: "4 min read",
     seoTerritory: "organisational reputation, clarity, corporate identity",
     excerpt: "If five of your key stakeholders were asked to describe what sets your company apart in one sentence, would they give the same answer?",
+    image: "/images/roundtable_advisory.jpg",
     publishedDate: "Upcoming Insights",
     isPublished: false
   },
@@ -417,6 +439,7 @@ When technology can replicate more of what we do, the question of what makes us 
     readTime: "5 min read",
     seoTerritory: "brand strategy, focus, marketing noise",
     excerpt: "Omnipresence is often the enemy of premium positioning. Why restraint and focus create far greater brand authority.",
+    image: "/images/executive_spotlight_stage.jpg",
     publishedDate: "Upcoming Insights",
     isPublished: false
   },
@@ -428,6 +451,7 @@ When technology can replicate more of what we do, the question of what makes us 
     readTime: "6 min read",
     seoTerritory: "thought leadership, executive presence, authority building",
     excerpt: "Expertise is knowing the facts. Authority is having the clarity, courage, and platform to shape how others understand those facts.",
+    image: "/images/strategy_forum_stage.jpg",
     publishedDate: "Upcoming Insights",
     isPublished: false
   },
@@ -439,6 +463,7 @@ When technology can replicate more of what we do, the question of what makes us 
     readTime: "5 min read",
     seoTerritory: "reputation audit, brand positioning, perception management",
     excerpt: "Closing the gap between internal brilliance and external perception is the single fastest way to unlock market value.",
+    image: "/images/executive_dialogue.jpg",
     publishedDate: "Upcoming Insights",
     isPublished: false
   },
@@ -448,8 +473,9 @@ When technology can replicate more of what we do, the question of what makes us 
     title: "Your Organisation Has Stories. The Question Is Whether Anyone Remembers Them",
     category: "Storytelling",
     readTime: "6 min read",
-    seoTerritory: "corporate storytelling, executive narratives, internal communication",
-    excerpt: "Information informs, but narrative endures. How to uncover the memorable human stories buried inside your corporate data.",
+    seoTerritory: "corporate storytelling, institutional memory, brand legacy",
+    excerpt: "Facts inform, but narrative moves markets. How leading brands transform operational data into enduring lore.",
+    image: "/images/women_with_stories_abuja.jpg",
     publishedDate: "Upcoming Insights",
     isPublished: false
   },
@@ -461,6 +487,7 @@ When technology can replicate more of what we do, the question of what makes us 
     readTime: "5 min read",
     seoTerritory: "executive visibility, modesty trap, leadership presence",
     excerpt: "False modesty is a business liability. Why great leaders owe it to their organizations to step into strategic visibility.",
+    image: "/images/dynamic_keynote_session.jpg",
     publishedDate: "Upcoming Insights",
     isPublished: false
   },
@@ -472,6 +499,7 @@ When technology can replicate more of what we do, the question of what makes us 
     readTime: "8 min read",
     seoTerritory: "African narrative, global positioning, strategic storytelling",
     excerpt: "Reclaiming the narrative of African innovation, capital, and culture requires moving from being documented by others to owning the narrative architecture.",
+    image: "/images/thought_leadership_address.jpg",
     publishedDate: "Upcoming Insights",
     isPublished: false
   },
@@ -483,6 +511,7 @@ When technology can replicate more of what we do, the question of what makes us 
     readTime: "5 min read",
     seoTerritory: "executive convenings, networking, high-impact events",
     excerpt: "The most powerful opportunities rarely happen on open platforms. They occur when curated minds convene in spaces designed for genuine trust.",
+    image: "/images/mixer_evening_networking.jpg",
     publishedDate: "Upcoming Insights",
     isPublished: false
   },
@@ -494,6 +523,7 @@ When technology can replicate more of what we do, the question of what makes us 
     readTime: "7 min read",
     seoTerritory: "competitive advantage, Irreplaceable Advantage, strategic distinction",
     excerpt: "When features, pricing, and marketing can be quickly copied, your culture, narrative, and distinct perspective become your only defensible moat.",
+    image: "/images/corporate_anniversary_summit.jpg",
     publishedDate: "Upcoming Insights",
     isPublished: false
   }

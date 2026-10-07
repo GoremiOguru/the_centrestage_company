@@ -47,8 +47,22 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
           
           {/* 1. The CENTRESTAGE Company */}
           <div className="interactive-card p-8 md:p-12 bg-[#0b0b0e] border border-[#d4af37]/30 rounded-sm shadow-2xl relative overflow-hidden">
-            <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-8">
-              <div className="space-y-4 max-w-3xl">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-5">
+                <div className="relative aspect-[16/10] w-full rounded-sm overflow-hidden border border-[#d4af37]/40 shadow-xl group">
+                  <img
+                    src="/images/summit_keynote_stage.jpg"
+                    alt="The CENTRESTAGE Company Keynote"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-3 text-[10px] font-mono uppercase tracking-widest text-[#d4af37] bg-black/80 px-2.5 py-1 rounded-sm border border-[#d4af37]/30">
+                    Commercial Heart
+                  </span>
+                </div>
+              </div>
+
+              <div className="lg:col-span-7 space-y-4">
                 <span className="text-xs font-mono tracking-widest text-[#d4af37] uppercase block">
                   COMMERCIAL HEART
                 </span>
@@ -61,23 +75,36 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
                 <p className="text-sm md:text-base text-neutral-300 font-light leading-relaxed">
                   The commercial heart of our ecosystem. We work with leaders and organisations across reputation, positioning, storytelling, executive presence, thought leadership and experiences.
                 </p>
-              </div>
-
-              <div>
-                <button
-                  onClick={() => handleCtaClick('Work With Us')}
-                  className="w-full sm:w-auto px-8 py-4 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#e2bd44] transition-all rounded-sm whitespace-normal break-words max-w-full text-center"
-                >
-                  Work With Us
-                </button>
+                <div className="pt-2">
+                  <button
+                    onClick={() => handleCtaClick('Work With Us')}
+                    className="w-full sm:w-auto px-8 py-4 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#e2bd44] transition-all rounded-sm whitespace-normal break-words text-center"
+                  >
+                    Work With Us
+                  </button>
+                </div>
               </div>
             </div>
           </div>
 
           {/* 2. The CENTRESTAGE Foundation */}
           <div className="interactive-card p-8 md:p-12 bg-[#0d0d14] border border-[#d4af37]/30 rounded-sm shadow-2xl space-y-8">
-            <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-6 pb-6 border-b border-neutral-800">
-              <div className="space-y-3 max-w-2xl">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pb-6 border-b border-neutral-800">
+              <div className="lg:col-span-5">
+                <div className="relative aspect-[16/10] w-full rounded-sm overflow-hidden border border-[#d4af37]/40 shadow-xl group">
+                  <img
+                    src="/images/women_with_stories_abuja.jpg"
+                    alt="The CENTRESTAGE Foundation - The Women With Stories"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-3 text-[10px] font-mono uppercase tracking-widest text-[#d4af37] bg-black/80 px-2.5 py-1 rounded-sm border border-[#d4af37]/30">
+                    Social Impact Platform
+                  </span>
+                </div>
+              </div>
+
+              <div className="lg:col-span-7 space-y-4">
                 <span className="text-xs font-mono tracking-widest text-[#d4af37] uppercase block">
                   SOCIAL IMPACT PLATFORM
                 </span>
@@ -87,18 +114,17 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
                 <p className="font-serif italic text-lg text-[#d4af37]">
                   "Stories can change what statistics cannot."
                 </p>
-                <p className="text-sm text-neutral-300 font-light leading-relaxed">
+                <p className="text-sm md:text-base text-neutral-300 font-light leading-relaxed">
                   The social impact expression of The CENTRESTAGE. The Foundation creates platforms that elevate stories, develop people and expand possibility.
                 </p>
-              </div>
-
-              <div>
-                <button
-                  onClick={() => handleCtaClick('Foundation')}
-                  className="w-full sm:w-auto px-8 py-4 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#e2bd44] transition-all rounded-sm whitespace-normal break-words max-w-full text-center"
-                >
-                  Explore The Foundation
-                </button>
+                <div className="pt-2">
+                  <button
+                    onClick={() => handleCtaClick('Foundation')}
+                    className="w-full sm:w-auto px-8 py-4 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#e2bd44] transition-all rounded-sm whitespace-normal break-words text-center"
+                  >
+                    Explore The Foundation
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -110,7 +136,7 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
                 {/* The Women With Stories */}
-                <div className="p-6 bg-[#12121c] border border-neutral-800 rounded-sm space-y-3">
+                <div className="p-6 bg-[#12121c] border border-neutral-800 rounded-sm space-y-3 group hover:border-[#d4af37]/40 transition-colors">
                   <h4 className="font-serif text-xl text-white font-medium">The Women With Stories</h4>
                   <p className="text-xs font-serif italic text-[#d4af37]">
                     "Statistics don't tell the story. Stories rewrite the stats."
@@ -121,7 +147,7 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
                 </div>
 
                 {/* Africa Thru My Eyes */}
-                <div className="p-6 bg-[#12121c] border border-neutral-800 rounded-sm space-y-3">
+                <div className="p-6 bg-[#12121c] border border-neutral-800 rounded-sm space-y-3 group hover:border-[#d4af37]/40 transition-colors">
                   <h4 className="font-serif text-xl text-white font-medium">Africa Thru My Eyes</h4>
                   <p className="text-xs text-neutral-400 leading-relaxed font-light">
                     A platform inviting Africans to tell richer, more human stories about the continent through their own eyes.
@@ -129,7 +155,7 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
                 </div>
 
                 {/* Young Adult Mentorship Programme */}
-                <div className="p-6 bg-[#12121c] border border-neutral-800 rounded-sm space-y-3">
+                <div className="p-6 bg-[#12121c] border border-neutral-800 rounded-sm space-y-3 group hover:border-[#d4af37]/40 transition-colors">
                   <h4 className="font-serif text-xl text-white font-medium">Young Adult Mentorship</h4>
                   <p className="text-xs text-neutral-400 leading-relaxed font-light">
                     Equipping emerging adults with the perspective, relationships and capabilities to navigate life, leadership and work.
@@ -142,8 +168,22 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
 
           {/* 3. CentreStage Club */}
           <div className="interactive-card p-8 md:p-12 bg-[#0b0b0e] border border-[#d4af37]/30 rounded-sm shadow-2xl">
-            <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-8">
-              <div className="space-y-4 max-w-3xl">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-5">
+                <div className="relative aspect-[16/10] w-full rounded-sm overflow-hidden border border-[#d4af37]/40 shadow-xl group">
+                  <img
+                    src="/images/youth_club_mentorship.jpg"
+                    alt="CentreStage Club Youth & Student Workshop"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-3 text-[10px] font-mono uppercase tracking-widest text-[#d4af37] bg-black/80 px-2.5 py-1 rounded-sm border border-[#d4af37]/30">
+                    Youth &amp; School Development
+                  </span>
+                </div>
+              </div>
+
+              <div className="lg:col-span-7 space-y-4">
                 <span className="text-xs font-mono tracking-widest text-[#d4af37] uppercase block">
                   YOUTH DEVELOPMENT
                 </span>
@@ -159,23 +199,36 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
                 <p className="text-xs text-neutral-400 font-light">
                   Students develop critical thinking, communication, public speaking, leadership, teamwork, adaptability and confidence while learning to recognise the value they bring in an AI disrupted world.
                 </p>
-              </div>
-
-              <div>
-                <button
-                  onClick={() => handleCtaClick('CentreStage Club')}
-                  className="w-full sm:w-auto px-8 py-4 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#e2bd44] transition-all rounded-sm whitespace-normal break-words max-w-full text-center"
-                >
-                  Bring CentreStage Club to Your School
-                </button>
+                <div className="pt-2">
+                  <button
+                    onClick={() => handleCtaClick('CentreStage Club')}
+                    className="w-full sm:w-auto px-8 py-4 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#e2bd44] transition-all rounded-sm whitespace-normal break-words text-center"
+                  >
+                    Bring CentreStage Club to Your School
+                  </button>
+                </div>
               </div>
             </div>
           </div>
 
           {/* 4. The Irreplaceable Advantage™ */}
           <div className="interactive-card p-8 md:p-12 bg-[#101017] border border-[#d4af37]/40 rounded-sm shadow-2xl">
-            <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-8">
-              <div className="space-y-4 max-w-3xl">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-5">
+                <div className="relative aspect-[16/10] w-full rounded-sm overflow-hidden border border-[#d4af37]/40 shadow-xl group">
+                  <img
+                    src="/images/dynamic_keynote_session.jpg"
+                    alt="The Irreplaceable Advantage Signature Masterclass"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-3 text-[10px] font-mono uppercase tracking-widest text-[#d4af37] bg-black/80 px-2.5 py-1 rounded-sm border border-[#d4af37]/30">
+                    Proprietary Framework
+                  </span>
+                </div>
+              </div>
+
+              <div className="lg:col-span-7 space-y-4">
                 <span className="text-xs font-mono tracking-widest text-[#d4af37] uppercase block">
                   PROPRIETARY FRAMEWORK
                 </span>
@@ -191,23 +244,36 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
                 <p className="text-xs text-neutral-400 font-light leading-relaxed">
                   The Irreplaceable Advantage™ is our proprietary framework for identifying the distinctive combination of experience, perspective, knowledge, values, thinking and capability that makes an individual or organisation difficult to replicate.
                 </p>
-              </div>
-
-              <div>
-                <button
-                  onClick={() => handleCtaClick('Work With Us')}
-                  className="w-full sm:w-auto px-8 py-4 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#e2bd44] transition-all rounded-sm whitespace-normal break-words max-w-full text-center"
-                >
-                  Discover The Irreplaceable Advantage™
-                </button>
+                <div className="pt-2">
+                  <button
+                    onClick={() => handleCtaClick('Work With Us')}
+                    className="w-full sm:w-auto px-8 py-4 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#e2bd44] transition-all rounded-sm whitespace-normal break-words text-center"
+                  >
+                    Discover The Irreplaceable Advantage™
+                  </button>
+                </div>
               </div>
             </div>
           </div>
 
           {/* 5. The CentreStage Mixer */}
           <div className="interactive-card p-8 md:p-12 bg-[#0b0b0e] border border-[#d4af37]/30 rounded-sm shadow-2xl">
-            <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-8">
-              <div className="space-y-4 max-w-3xl">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-5">
+                <div className="relative aspect-[16/10] w-full rounded-sm overflow-hidden border border-[#d4af37]/40 shadow-xl group">
+                  <img
+                    src="/images/mixer_executive_dinner.jpg"
+                    alt="The CentreStage Mixer Curated Executive Gathering"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-3 text-[10px] font-mono uppercase tracking-widest text-[#d4af37] bg-black/80 px-2.5 py-1 rounded-sm border border-[#d4af37]/30">
+                    Invite-Only Convening
+                  </span>
+                </div>
+              </div>
+
+              <div className="lg:col-span-7 space-y-4">
                 <span className="text-xs font-mono tracking-widest text-[#d4af37] uppercase block">
                   INVITE-ONLY CONVENING
                 </span>
@@ -223,15 +289,14 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
                 <p className="text-xs text-neutral-400 font-light leading-relaxed">
                   It is not another networking event. It is a place for ideas to cross sectors, relationships to begin and unexpected possibilities to emerge.
                 </p>
-              </div>
-
-              <div>
-                <button
-                  onClick={() => handleCtaClick('Partnerships')}
-                  className="w-full sm:w-auto px-8 py-4 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#e2bd44] transition-all rounded-sm whitespace-normal break-words max-w-full text-center"
-                >
-                  Partner With The Mixer
-                </button>
+                <div className="pt-2">
+                  <button
+                    onClick={() => handleCtaClick('Partnerships')}
+                    className="w-full sm:w-auto px-8 py-4 bg-[#d4af37] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#e2bd44] transition-all rounded-sm whitespace-normal break-words text-center"
+                  >
+                    Partner With The Mixer
+                  </button>
+                </div>
               </div>
             </div>
           </div>

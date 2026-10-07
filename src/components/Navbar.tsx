@@ -41,11 +41,29 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
 
   return (
     <>
+      {/* Sleek Top Announcement Ribbon for The Business Advantage Workshop */}
+      <div 
+        onClick={() => handleNavClick('/workshop')}
+        className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#121008] via-[#241c09] to-[#121008] border-b border-[#d4af37]/40 px-4 py-1.5 text-center cursor-pointer group hover:bg-[#2e230a] transition-colors"
+      >
+        <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 text-[10px] sm:text-xs font-mono tracking-wider text-[#d4af37]">
+          <span className="px-1.5 py-0.2 bg-[#d4af37] text-black font-bold rounded-sm uppercase tracking-widest text-[9px]">
+            New Masterclass
+          </span>
+          <span className="text-neutral-200 group-hover:text-white transition-colors">
+            <strong>The Business Advantage Workshop (BAW)</strong> in Abuja by Dr. Naomi
+          </span>
+          <span className="hidden md:inline text-[#d4af37] underline font-semibold ml-1 group-hover:translate-x-1 transition-transform">
+            Reserve Your Seat →
+          </span>
+        </div>
+      </div>
+
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#08080a]/95 backdrop-blur-md border-b border-[#d4af37]/20 py-3 shadow-2xl'
-            : 'bg-transparent py-5'
+            ? 'top-7 bg-[#08080a]/95 backdrop-blur-md border-b border-[#d4af37]/20 py-3 shadow-2xl'
+            : 'top-7 bg-transparent py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -63,20 +81,28 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
           </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-7">
             {NAV_ITEMS.map((item) => {
               const isActive = currentPath === item.path;
+              const isWorkshop = item.path === '/workshop';
               return (
                 <button
                   key={item.path}
                   onClick={() => handleNavClick(item.path)}
-                  className={`relative text-xs tracking-[0.18em] uppercase transition-all duration-200 py-1 font-medium ${
+                  className={`relative text-xs tracking-[0.16em] uppercase transition-all duration-200 py-1 font-medium flex items-center gap-1.5 ${
                     isActive
                       ? 'text-[#d4af37]'
+                      : isWorkshop
+                      ? 'text-[#d4af37] font-semibold hover:text-[#e2bd44]'
                       : 'text-neutral-300 hover:text-white'
                   }`}
                 >
-                  {item.label}
+                  <span>{item.label}</span>
+                  {isWorkshop && (
+                    <span className="px-1.5 py-0.5 text-[9px] bg-[#d4af37] text-black font-bold rounded-sm uppercase tracking-widest animate-pulse">
+                      BAW
+                    </span>
+                  )}
                   {isActive && (
                     <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#d4af37] rounded-full" />
                   )}
@@ -86,12 +112,19 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
           </nav>
 
           {/* CTA Action */}
-          <div className="hidden lg:flex items-center">
+          <div className="hidden lg:flex items-center gap-3">
+            <button
+              onClick={() => handleNavClick('/workshop')}
+              className="group relative inline-flex items-center gap-1.5 px-4 py-2 text-xs tracking-wider uppercase font-semibold text-[#d4af37] border border-[#d4af37]/60 hover:bg-[#d4af37]/10 transition-all rounded-sm"
+            >
+              <span>Join Workshop</span>
+            </button>
+
             <button
               onClick={() => handleNavClick('/contact')}
-              className="group relative inline-flex items-center gap-2 px-5 py-2.5 text-xs tracking-wider uppercase font-semibold text-black bg-[#d4af37] hover:bg-[#e2bd44] transition-all duration-300 rounded-sm shadow-lg shadow-[#d4af37]/10 hover:shadow-[#d4af37]/20"
+              className="group relative inline-flex items-center gap-2 px-5 py-2 text-xs tracking-wider uppercase font-semibold text-black bg-[#d4af37] hover:bg-[#e2bd44] transition-all duration-300 rounded-sm shadow-lg shadow-[#d4af37]/10 hover:shadow-[#d4af37]/20"
             >
-              <span>Start a Conversation</span>
+              <span>Contact</span>
               <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
           </div>

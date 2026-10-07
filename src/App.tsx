@@ -7,6 +7,7 @@ import { WorkPage } from './pages/WorkPage';
 import { EcosystemPage } from './pages/EcosystemPage';
 import { InsightsPage } from './pages/InsightsPage';
 import { ContactPage } from './pages/ContactPage';
+import { WorkshopPage } from './pages/WorkshopPage';
 import type { NavigationPath, InsightArticle } from './types';
 
 export function App() {
@@ -16,7 +17,7 @@ export function App() {
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname as NavigationPath;
-      if (['/', '/about', '/our-work', '/ecosystem', '/insights', '/contact'].includes(path)) {
+      if (['/', '/about', '/our-work', '/ecosystem', '/workshop', '/insights', '/contact'].includes(path)) {
         setCurrentPath(path);
       }
     };
@@ -45,6 +46,8 @@ export function App() {
         return <WorkPage onNavigate={handleNavigate} />;
       case '/ecosystem':
         return <EcosystemPage onNavigate={handleNavigate} />;
+      case '/workshop':
+        return <WorkshopPage onNavigate={handleNavigate} />;
       case '/insights':
         return <InsightsPage onNavigate={handleNavigate} selectedArticleFromParent={selectedArticle} />;
       case '/contact':

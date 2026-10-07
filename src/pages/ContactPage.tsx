@@ -162,7 +162,47 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, defaultEnq
         </section>
 
         {/* Form Container */}
-        <section ref={formRef} className="max-w-3xl mx-auto bg-[#0b0b0e] border border-[#d4af37]/30 rounded-sm p-8 md:p-14 shadow-2xl relative scroll-mt-32">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          {/* Left Column: Direct Executive Advisory Presence Card */}
+          <div className="lg:col-span-5 bg-[#0b0b0f] border border-[#d4af37]/30 rounded-sm p-6 sm:p-8 space-y-6 shadow-2xl">
+            <div className="relative aspect-[4/3] w-full rounded-sm overflow-hidden border border-[#d4af37]/40 shadow-md group">
+              <img
+                src="/images/roundtable_advisory.jpg"
+                alt="The CENTRESTAGE Advisory & Leadership Dialogue"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+              <div className="absolute bottom-3 left-3 right-3">
+                <span className="text-[9px] font-mono uppercase tracking-widest text-[#d4af37] bg-black/80 px-2 py-0.5 rounded-sm border border-[#d4af37]/30 block w-max mb-1">
+                  Executive Advisory
+                </span>
+                <p className="font-serif text-white text-sm font-medium">Strategic Clarity. Global Presence.</p>
+              </div>
+            </div>
+
+            <div className="space-y-3 text-neutral-300 text-xs sm:text-sm font-light leading-relaxed">
+              <h3 className="font-serif text-xl text-white font-medium">
+                The Right Conversation Changes Everything.
+              </h3>
+              <p>
+                Every engagement begins with direct strategic examination by our senior advisory team, led by <strong className="text-white font-medium">Dr. Naomi</strong>.
+              </p>
+              <p className="text-neutral-400">
+                Whether shaping a sovereign trade narrative, elevating executive visibility, or architecting an institutional platform, we work with deliberate focus and high discretion.
+              </p>
+            </div>
+
+            <div className="pt-4 border-t border-neutral-900 space-y-2 text-xs font-mono">
+              <div className="text-[#d4af37]">THE CENTRESTAGE COMPANY</div>
+              <div className="text-neutral-400">Abuja, Nigeria • Working Globally</div>
+              <div className="text-neutral-500">thecentrestageco@gmail.com</div>
+            </div>
+          </div>
+
+          {/* Right Column: Contact Form */}
+          <div className="lg:col-span-7">
+            <section ref={formRef} className="bg-[#0b0b0e] border border-[#d4af37]/30 rounded-sm p-6 sm:p-10 md:p-12 shadow-2xl relative scroll-mt-32">
           
           {submitted ? (
             <div className="py-16 text-center space-y-6 animate-fadeIn">
@@ -304,6 +344,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, defaultEnq
           </div>
 
         </section>
+          </div>
+        </div>
 
       </div>
     </>
