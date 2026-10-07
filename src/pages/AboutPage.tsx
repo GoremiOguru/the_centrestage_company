@@ -176,7 +176,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             <div className="lg:col-span-5 relative group overflow-hidden rounded-sm border border-[#d4af37]/40 shadow-2xl bg-[#0e0e14]">
               <div className="relative aspect-[3/4] max-h-[500px] w-full overflow-hidden">
                 <img
-                  src="/images/dr_naomi_executive_portrait.jpg"
+                  src="/images/dr_naomi.jpg"
                   alt="Dr. Naomi - Founder & Chief Strategist"
                   className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                 />

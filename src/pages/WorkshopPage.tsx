@@ -454,7 +454,7 @@ export const WorkshopPage: React.FC<WorkshopPageProps> = ({ onNavigate }) => {
               <div className="lg:col-span-5">
                 <div className="relative aspect-[3/4] max-h-[440px] w-full rounded-sm overflow-hidden border border-[#d4af37]/50 shadow-2xl group">
                   <img
-                    src="/images/dr_naomi_speaking_stage.jpg"
+                    src="/images/dr_naomi.jpg"
                     alt="Dr. Naomi Osemedua - Lead Strategist & Author"
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                   />

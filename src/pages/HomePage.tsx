@@ -100,7 +100,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
             {[
               {
                 src: "/images/dr_naomi_speaking_stage.jpg",
-                title: "Dr. Naomi on The CentreStage",
+                title: "Executive Stage & Keynotes",
                 label: "Keynote & Speaking",
                 desc: "High-stakes keynote addresses and strategic reputation framing."
               },
@@ -398,7 +398,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
               <div className="lg:col-span-4">
                 <div className="relative aspect-[3/4] max-h-[380px] w-full rounded-sm overflow-hidden border border-[#d4af37]/50 shadow-xl group">
                   <img
-                    src="/images/dr_naomi_executive_portrait.jpg"
+                    src="/images/dr_naomi.jpg"
                     alt="Dr. Naomi - Founder & Chief Strategist"
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                   />

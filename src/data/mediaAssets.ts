@@ -9,7 +9,8 @@ export interface MediaPhoto {
 
 export const MEDIA_ASSETS = {
   founder: '/images/dr_naomi.jpg',
-  founderPortrait: '/images/dr_naomi_executive_portrait.jpg',
+  founderPortrait: '/images/dr_naomi.jpg',
+  culturalImpact: '/images/IMG_9807.jpg',
   founderKeynote: '/images/founder_keynote_naomi.jpg',
   naomiSpeakingStage: '/images/dr_naomi_speaking_stage.jpg',
   womenWithStories: '/images/women_with_stories_abuja.jpg',
@@ -39,18 +40,34 @@ export const MEDIA_ASSETS = {
 
 export const GALLERY_PHOTOS: MediaPhoto[] = [
   {
+    id: 'dr-naomi-founder-portrait',
+    src: MEDIA_ASSETS.founder,
+    alt: 'Dr. Naomi - Founder & Chief Strategist',
+    title: 'Dr. Naomi — Founder & Chief Strategist',
+    category: 'Keynote & Speaking',
+    caption: 'Visionary strategist helping organizations turn hidden value into enduring market authority.'
+  },
+  {
+    id: 'cultural-impact-convening',
+    src: MEDIA_ASSETS.culturalImpact,
+    alt: 'Cultural & Creative Storytelling Convening',
+    title: 'Cultural Heritage & Storytelling',
+    category: 'Foundation & Impact',
+    caption: 'Celebrating authentic African cultural expression, heritage, and community storytelling.'
+  },
+  {
     id: 'dr-naomi-speaking-stage',
     src: MEDIA_ASSETS.naomiSpeakingStage,
-    alt: 'Dr. Naomi delivering a commanding keynote address on stage',
-    title: 'Dr. Naomi on The CentreStage',
+    alt: 'Keynote Stage and Strategic Leadership Address',
+    title: 'Executive Keynotes & Speaking',
     category: 'Keynote & Speaking',
     caption: 'Inspiring leaders with strategic narrative clarity, conviction, and authoritative delivery.'
   },
   {
     id: 'dr-naomi-keynote',
     src: MEDIA_ASSETS.founderKeynote,
-    alt: 'Dr. Naomi Osemedua Keynote Presentation',
-    title: 'Continental Keynote & Narrative Authority',
+    alt: 'Continental Keynote & Narrative Authority',
+    title: 'Continental Keynotes & Storytelling',
     category: 'Keynote & Speaking',
     caption: 'Shaping continental conversations around reputation, positioning, and human potential.'
   },
@@ -77,14 +94,6 @@ export const GALLERY_PHOTOS: MediaPhoto[] = [
     title: 'High-Table Stakeholder Convenings',
     category: 'The Mixer & Networking',
     caption: 'Curating exclusive dinners where decision-makers forge lasting strategic alliances.'
-  },
-  {
-    id: 'dr-naomi-executive-portrait',
-    src: MEDIA_ASSETS.founderPortrait,
-    alt: 'Dr. Naomi Osemedua - Founder & Chief Strategist',
-    title: 'Dr. Naomi Osemedua — Founder',
-    category: 'Keynote & Speaking',
-    caption: 'Visionary strategist helping organizations turn hidden value into enduring market authority.'
   },
   {
     id: 'summit-keynote',
