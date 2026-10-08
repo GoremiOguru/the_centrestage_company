@@ -18,6 +18,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
       <SEOHead
         title="About The CENTRESTAGE Company | Reputation, Story & Influence"
         description="Discover The CENTRESTAGE Company, an African strategy, reputation and storytelling company helping important work become seen, understood and influential."
+        path="/about"
       />
 
       <div className="max-w-6xl mx-auto px-6 md:px-12 pt-32 pb-24 space-y-24">

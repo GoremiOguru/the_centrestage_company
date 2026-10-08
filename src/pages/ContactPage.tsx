@@ -99,6 +99,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, defaultEnq
       <SEOHead
         title="Contact The CENTRESTAGE Company | Start a Conversation"
         description="Talk to The CENTRESTAGE about reputation, positioning, storytelling, thought leadership, executive presence, partnerships and programmes."
+        path="/contact"
       />
 
       <div className="max-w-6xl mx-auto px-6 md:px-12 pt-32 pb-24 space-y-20">

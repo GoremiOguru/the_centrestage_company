@@ -21,6 +21,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
       <SEOHead
         title="The CENTRESTAGE Company | Strategy, Story & Visibility"
         description="The CENTRESTAGE Company helps leaders and organisations strengthen reputation, sharpen positioning, tell powerful stories and build influence."
+        path="/"
       />
 
       <div className="space-y-24 pb-20">

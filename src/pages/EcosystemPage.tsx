@@ -18,6 +18,7 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
       <SEOHead
         title="The CENTRESTAGE Ecosystem | Company, Foundation & Programmes"
         description="Explore The CENTRESTAGE ecosystem spanning reputation, leadership, social impact, youth development, human distinction and convening."
+        path="/ecosystem"
       />
 
       <div className="max-w-6xl mx-auto px-6 md:px-12 pt-32 pb-24 space-y-24">

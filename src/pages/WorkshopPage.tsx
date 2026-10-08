@@ -110,6 +110,7 @@ export const WorkshopPage: React.FC<WorkshopPageProps> = ({ onNavigate }) => {
       <SEOHead
         title="The Business Advantage Workshop (BAW) | Dr. Naomi | The CENTRESTAGE"
         description="Six practical masterclasses in Abuja to help business owners, leaders and teams turn internal value into turnover, pricing power and market influence."
+        path="/workshop"
       />
 
       <div className="space-y-28 pb-24 pt-28 sm:pt-32">

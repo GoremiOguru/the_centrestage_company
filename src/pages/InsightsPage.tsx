@@ -53,6 +53,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
       <SEOHead
         title="Insights on Reputation, Leadership & Influence | The CENTRESTAGE"
         description="Ideas and perspectives from The CENTRESTAGE on reputation, leadership, storytelling, influence, AI, visibility and the future of work."
+        path="/insights"
       />
 
       <div className="max-w-6xl mx-auto px-6 md:px-12 pt-32 pb-24 space-y-20">

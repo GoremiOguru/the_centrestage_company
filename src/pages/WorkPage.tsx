@@ -20,6 +20,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
       <SEOHead
         title="Reputation, Executive Positioning & Storytelling | The CENTRESTAGE"
         description="Explore The CENTRESTAGE Company's work across reputation, executive presence, storytelling, thought leadership and high impact experiences."
+        path="/our-work"
       />
 
       <div className="max-w-6xl mx-auto px-6 md:px-12 pt-32 pb-24 space-y-28">
