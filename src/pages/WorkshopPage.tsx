@@ -108,7 +108,7 @@ export const WorkshopPage: React.FC<WorkshopPageProps> = ({ onNavigate }) => {
   return (
     <>
       <SEOHead
-        title="The Business Advantage Workshop (BAW) | Dr. Naomi | The CENTRESTAGE"
+        title="The Business Advantage Workshop (BAW) | Dr. Naomi | The CentreStage"
         description="Six practical masterclasses in Abuja to help business owners, leaders and teams turn internal value into turnover, pricing power and market influence."
         path="/workshop"
       />
@@ -277,22 +277,22 @@ export const WorkshopPage: React.FC<WorkshopPageProps> = ({ onNavigate }) => {
                     <h3 className="font-serif text-2xl text-white group-hover:text-[#d4af37] transition-colors">
                       {cls.title}
                     </h3>
-                    <p className="font-serif italic text-xs text-neutral-300">
+                    <p className="font-serif italic text-sm text-neutral-200">
                       "{cls.coreQuestion}"
                     </p>
-                    <p className="text-xs text-neutral-400 font-light leading-relaxed">
+                    <p className="text-sm text-neutral-200 font-normal leading-relaxed">
                       {cls.description}
                     </p>
                   </div>
 
                   {/* Learning Outcomes */}
                   <div className="pt-2 space-y-2 border-t border-neutral-900">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-400 block">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-300 block font-semibold">
                       Key Capabilities Acquired:
                     </span>
-                    <ul className="space-y-1.5">
+                    <ul className="space-y-2">
                       {cls.outcomes.slice(0, 3).map((out, i) => (
-                        <li key={i} className="flex items-start gap-2 text-xs text-neutral-300 font-light">
+                        <li key={i} className="flex items-start gap-2 text-xs sm:text-sm text-neutral-200 font-normal">
                           <CheckCircle className="w-3.5 h-3.5 text-[#d4af37] flex-shrink-0 mt-0.5" />
                           <span>{out}</span>
                         </li>
@@ -468,7 +468,7 @@ export const WorkshopPage: React.FC<WorkshopPageProps> = ({ onNavigate }) => {
                       Lead Strategist &amp; Author
                     </span>
                     <h3 className="font-serif text-2xl text-white">Dr. Naomi Osemedua</h3>
-                    <p className="text-xs text-[#d4af37] font-mono">Chief Strategist • The CENTRESTAGE Company</p>
+                    <p className="text-xs text-[#d4af37] font-mono">Chief Strategist • The CentreStage Company</p>
                   </div>
                 </div>
               </div>
@@ -726,7 +726,7 @@ export const WorkshopPage: React.FC<WorkshopPageProps> = ({ onNavigate }) => {
                   </button>
 
                   <p className="text-[11px] text-neutral-400 text-center font-mono">
-                    Direct Inquiry Coordinator: Cora (0704 974 8121) • Powered by The CENTRESTAGE Company
+                    Direct Inquiry Coordinator: Cora (0704 974 8121) • Powered by The CentreStage Company
                   </p>
                 </div>
 

@@ -61,7 +61,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClo
           <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-white font-medium leading-tight">
             {caseStudy.title}
           </h2>
-          <p className="text-sm md:text-base text-neutral-400 font-light">
+          <p className="text-base md:text-lg text-neutral-200 font-normal">
             {caseStudy.summary}
           </p>
         </div>
@@ -71,10 +71,10 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClo
           
           {/* Part 1: THE CONTEXT */}
           <div className="p-6 bg-[#0e0e14] border-l-2 border-neutral-600 rounded-r-sm">
-            <h4 className="text-xs font-mono tracking-[0.2em] text-neutral-400 uppercase mb-2">
+            <h4 className="text-xs font-mono tracking-[0.2em] text-neutral-300 uppercase mb-2 font-semibold">
               THE CONTEXT
             </h4>
-            <p className="text-sm md:text-base leading-relaxed text-neutral-200">
+            <p className="text-base md:text-lg leading-relaxed text-neutral-100 font-normal">
               {caseStudy.context}
             </p>
           </div>
@@ -84,17 +84,17 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClo
             <h4 className="text-xs font-mono tracking-[0.2em] text-[#d4af37] uppercase mb-2 font-semibold">
               WHAT WE SAW
             </h4>
-            <p className="font-serif text-lg md:text-xl text-white leading-relaxed italic">
+            <p className="font-serif text-xl md:text-2xl text-white leading-relaxed italic">
               "{caseStudy.whatWeSaw}"
             </p>
           </div>
 
           {/* Part 3: WHAT WE DID */}
           <div className="p-6 bg-[#0e0e14] border-l-2 border-neutral-600 rounded-r-sm">
-            <h4 className="text-xs font-mono tracking-[0.2em] text-neutral-400 uppercase mb-2">
+            <h4 className="text-xs font-mono tracking-[0.2em] text-neutral-300 uppercase mb-2 font-semibold">
               WHAT WE DID
             </h4>
-            <p className="text-sm md:text-base leading-relaxed text-neutral-200">
+            <p className="text-base md:text-lg leading-relaxed text-neutral-100 font-normal">
               {caseStudy.whatWeDid}
             </p>
           </div>
@@ -107,7 +107,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClo
                 WHAT CHANGED
               </h4>
             </div>
-            <p className="text-sm md:text-base leading-relaxed text-emerald-100">
+            <p className="text-base md:text-lg leading-relaxed text-emerald-50 font-normal">
               {caseStudy.whatChanged}
             </p>
           </div>

@@ -119,7 +119,7 @@ export const ImpactPhotoGallery: React.FC = () => {
                   {selectedPhoto.category}
                 </span>
                 <span className="text-xs text-neutral-500 font-mono">
-                  The CENTRESTAGE Archive
+                  The CentreStage Archive
                 </span>
               </div>
               <h3 className="font-serif text-2xl text-white">

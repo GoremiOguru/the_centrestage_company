@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { NAV_ITEMS } from '../data/siteData';
+import { NAV_ITEMS, SOCIAL_LINKS } from '../data/siteData';
 import type { NavigationPath } from '../types';
 import { Menu, X, ArrowUpRight, Flame, Clock, Sparkles } from 'lucide-react';
+import { InstagramIcon } from './InstagramIcon';
+import { TikTokIcon } from './TikTokIcon';
 import logoImg from '../assets/the_centrestage_company_logo.jpg';
 
 interface NavbarProps {
@@ -168,7 +170,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
           >
             <img
               src={logoImg}
-              alt="The CENTRESTAGE Company Logo"
+              alt="The CentreStage Company Logo"
               className="h-10 sm:h-12 w-auto object-contain max-w-[200px] sm:max-w-[240px] border border-[#d4af37]/30 rounded-sm p-1 bg-black/40 group-hover:border-[#d4af37] transition-all"
             />
           </button>
@@ -280,6 +282,30 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
             >
               Start a Conversation
             </button>
+
+            {/* Social channels in mobile drawer */}
+            <div className="flex items-center justify-center gap-6 pt-1 text-xs text-neutral-400">
+              <a
+                href={SOCIAL_LINKS.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#d4af37] transition-colors inline-flex items-center gap-1.5"
+              >
+                <InstagramIcon className="w-3.5 h-3.5 text-[#d4af37]" />
+                <span>Instagram</span>
+              </a>
+              <span className="text-neutral-700">•</span>
+              <a
+                href={SOCIAL_LINKS.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#d4af37] transition-colors inline-flex items-center gap-1.5"
+              >
+                <TikTokIcon className="w-3.5 h-3.5 text-[#d4af37]" />
+                <span>TikTok</span>
+              </a>
+            </div>
+
             <p className="text-center text-xs text-neutral-500 font-serif tracking-widest italic">
               Strategy. Story. Visibility.
             </p>

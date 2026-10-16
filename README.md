@@ -1,9 +1,9 @@
-# The CENTRESTAGE Company — Digital Platform
+# The CentreStage Company — Digital Platform
 
 > **"Make great work impossible to overlook."**  
 > *Strategy. Story. Visibility.*
 
-Official web platform for **The CENTRESTAGE Company** — built as the digital home of an intelligent, contemporary African company operating at the intersection of strategy, story, reputation, visibility, and influence.
+Official web platform for **The CentreStage Company** — built as the digital home of an intelligent, contemporary African company operating at the intersection of strategy, story, reputation, visibility, and influence.
 
 ---
 
@@ -19,10 +19,10 @@ Official web platform for **The CENTRESTAGE Company** — built as the digital h
 
 ## 🏛️ Ecosystem Architecture
 
-The CENTRESTAGE has grown into an ecosystem of five core expressions:
+The CentreStage has grown into an ecosystem of five core expressions:
 
-1. **The CENTRESTAGE Company** — *Commercial Heart:* Positioning, reputation management, executive presence, corporate storytelling, thought leadership, and high-impact convenings.
-2. **The CENTRESTAGE Foundation** — *Social Impact Platform:* Home to *The Women With Stories*, *Africa Thru My Eyes*, and the *Young Adult Mentorship Programme*.
+1. **The CentreStage Company** — *Commercial Heart:* Positioning, reputation management, executive presence, corporate storytelling, thought leadership, and high-impact convenings.
+2. **The CentreStage Foundation** — *Social Impact Platform:* Home to *The Women With Stories*, *Africa Thru My Eyes*, and the *Young Adult Mentorship Programme*.
 3. **CentreStage Club** — *Youth & School Development:* Preparing young people with critical thinking, public speaking, leadership, and adaptability in an AI-disrupted world.
 4. **The Irreplaceable Advantage™** — *Proprietary Framework:* Identifying the distinctive combination of experience, perspective, values, and capability that makes an individual or organization difficult to replicate.
 5. **The CentreStage Mixer** — *Invite-Only Convening:* Bringing leaders, thinkers, and decision-makers across sectors into one room for meaningful connection.
@@ -79,4 +79,4 @@ npm run build
 
 ---
 
-© The CENTRESTAGE Company. All rights reserved.
+© The CentreStage Company. All rights reserved.

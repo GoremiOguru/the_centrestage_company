@@ -28,7 +28,7 @@ export const WORKSHOP_META = {
   tagline: "The advantage your organisation needs may already be inside it.",
   framework: "The Irreplaceable Advantage™",
   founder: "Dr. Naomi Osemedua",
-  founderTitle: "Chief Strategist at The CENTRESTAGE Company",
+  founderTitle: "Chief Strategist at The CentreStage Company",
   location: "Abuja, Nigeria",
   schedule: "Thursdays, 11:00 AM – 4:00 PM",
   contactPerson: "Cora",

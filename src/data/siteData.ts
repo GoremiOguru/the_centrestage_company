@@ -12,6 +12,14 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const BRAND_SHORTHAND = "Strategy. Story. Visibility.";
 
+export const SOCIAL_LINKS = {
+  instagram: "https://www.instagram.com/thecentrestagehq?exln=MTB3bm5neTZyaDFmNA%3D%3D&utm_source=qr",
+  tiktok: "https://www.tiktok.com/@thecentrestagehq?_r=1&_t=ZS-9AXoSDXbkGq",
+  linkedin: "https://www.linkedin.com/company/the-centrestage-company",
+  handle: "@thecentrestagehq",
+  email: "thecentrestageco@gmail.com",
+};
+
 export const BRAND_FRAMEWORK: BrandFramework = {
   belief: "Great work should not go unseen.",
   purpose: "To turn distinctive value into influence.",
@@ -126,7 +134,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     whatWeDid: "We authored an overarching institutional narrative, 'The Corridor of Future Growth', repositioned the executive committee as sovereign trade authorities, and engineered exclusive invitation-only executive roundtables in London and Lagos.",
     whatChanged: "Shifted international investor perception, secured 40%+ increase in top-tier global financial media commentary, and earned direct advisory seats on continental trade policy committees.",
     quote: {
-      text: "The CENTRESTAGE didn't just redesign our messaging—they forced us to recognize the profound authority we already possessed.",
+      text: "The CentreStage didn't just redesign our messaging—they forced us to recognize the profound authority we already possessed.",
       author: "Chief Strategy Officer",
       role: "Pan-African Financial Group"
     },
@@ -191,7 +199,7 @@ export const CASE_STUDIES: CaseStudy[] = [
 export const ECOSYSTEM_PILLARS: EcosystemPillar[] = [
   {
     id: "company",
-    title: "The CENTRESTAGE Company",
+    title: "The CentreStage Company",
     headline: "Where great work becomes difficult to overlook.",
     badge: "Commercial Heart",
     description: "The commercial heart of our ecosystem. We work with leaders and organisations across reputation, positioning, storytelling, executive presence, thought leadership and experiences.",
@@ -201,10 +209,10 @@ export const ECOSYSTEM_PILLARS: EcosystemPillar[] = [
   },
   {
     id: "foundation",
-    title: "The CENTRESTAGE Foundation",
+    title: "The CentreStage Foundation",
     headline: "Stories can change what statistics cannot.",
     badge: "Social Impact Platform",
-    description: "The social impact expression of The CENTRESTAGE. The Foundation creates platforms that elevate stories, develop people and expand possibility.",
+    description: "The social impact expression of The CentreStage. The Foundation creates platforms that elevate stories, develop people and expand possibility.",
     image: "/images/women_with_stories_abuja.jpg",
     nestedItems: [
       {
@@ -292,7 +300,7 @@ Every organization operates at the intersection of two reality vectors:
 
 When there is a discrepancy between actual value and perceived value, value decays. You lose key talent to competitors with stronger employer brands. You lose institutional capital to companies with clearer narratives. You get left out of high-stakes conversations where policy and industry directions are set.
 
-The CENTRESTAGE exists to close this precise gap.
+The CentreStage exists to close this precise gap.
 
 ---
 
@@ -365,7 +373,7 @@ Over-exposure breeds familiarity; curated presence builds gravitas. Influential 
 
 ---
 
-### The CENTRESTAGE Distinction
+### The CentreStage Distinction
 
 Visibility is not the goal. **Significance is.**
 
@@ -398,7 +406,7 @@ Human distinction.
 
 ### Introducing The Irreplaceable Advantage™
 
-At The CENTRESTAGE, we developed **The Irreplaceable Advantage™** framework to address this specific shift. We ask a fundamental question: *What can only you bring?*
+At The CentreStage, we developed **The Irreplaceable Advantage™** framework to address this specific shift. We ask a fundamental question: *What can only you bring?*
 
 Human distinction is not built on technical skills alone. It is built on the unique combination of:
 1. **Lived Perspective:** The lived experiences, cultural contexts, and hard-earned wisdom that no algorithm has lived through.

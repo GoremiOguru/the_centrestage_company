@@ -16,8 +16,8 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
   return (
     <>
       <SEOHead
-        title="The CENTRESTAGE Ecosystem | Company, Foundation & Programmes"
-        description="Explore The CENTRESTAGE ecosystem spanning reputation, leadership, social impact, youth development, human distinction and convening."
+        title="The CentreStage Ecosystem | Company, Foundation & Programmes"
+        description="Explore The CentreStage ecosystem spanning reputation, leadership, social impact, youth development, human distinction and convening."
         path="/ecosystem"
       />
 
@@ -36,7 +36,7 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
           </h1>
 
           <p className="text-base sm:text-lg text-neutral-300 font-light max-w-2xl mx-auto leading-relaxed">
-            The CENTRESTAGE has evolved into an ecosystem built around one enduring idea:
+            The CentreStage has evolved into an ecosystem built around one enduring idea:
           </p>
         </section>
 
@@ -49,14 +49,14 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
         {/* 5 Distinct Ecosystem Visual Blocks */}
         <section className="space-y-16">
           
-          {/* 1. The CENTRESTAGE Company */}
+          {/* 1. The CentreStage Company */}
           <div className="interactive-card p-8 md:p-12 bg-[#0b0b0e] border border-[#d4af37]/30 rounded-sm shadow-2xl relative overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-5">
                 <div className="relative aspect-[16/10] w-full rounded-sm overflow-hidden border border-[#d4af37]/40 shadow-xl group">
                   <img
                     src="/images/summit_keynote_stage.jpg"
-                    alt="The CENTRESTAGE Company Keynote"
+                    alt="The CentreStage Company Keynote"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
@@ -71,7 +71,7 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
                   COMMERCIAL HEART
                 </span>
                 <h2 className="font-serif text-3xl sm:text-4xl text-white">
-                  The CENTRESTAGE Company
+                  The CentreStage Company
                 </h2>
                 <p className="font-serif italic text-lg text-[#d4af37]">
                   "Where great work becomes difficult to overlook."
@@ -91,14 +91,14 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          {/* 2. The CENTRESTAGE Foundation */}
+          {/* 2. The CentreStage Foundation */}
           <div className="interactive-card p-8 md:p-12 bg-[#0d0d14] border border-[#d4af37]/30 rounded-sm shadow-2xl space-y-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pb-6 border-b border-neutral-800">
               <div className="lg:col-span-5">
                 <div className="relative aspect-[16/10] w-full rounded-sm overflow-hidden border border-[#d4af37]/40 shadow-xl group">
                   <img
                     src="/images/women_with_stories_abuja.jpg"
-                    alt="The CENTRESTAGE Foundation - The Women With Stories"
+                    alt="The CentreStage Foundation - The Women With Stories"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
@@ -113,13 +113,13 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
                   SOCIAL IMPACT PLATFORM
                 </span>
                 <h2 className="font-serif text-3xl sm:text-4xl text-white">
-                  The CENTRESTAGE Foundation
+                  The CentreStage Foundation
                 </h2>
                 <p className="font-serif italic text-lg text-[#d4af37]">
                   "Stories can change what statistics cannot."
                 </p>
                 <p className="text-sm md:text-base text-neutral-300 font-light leading-relaxed">
-                  The social impact expression of The CENTRESTAGE. The Foundation creates platforms that elevate stories, develop people and expand possibility.
+                  The social impact expression of The CentreStage. The Foundation creates platforms that elevate stories, develop people and expand possibility.
                 </p>
                 <div className="pt-2">
                   <button
@@ -197,10 +197,10 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
                 <p className="font-serif italic text-lg text-[#d4af37]">
                   "Future ready starts now."
                 </p>
-                <p className="text-sm md:text-base text-neutral-300 font-light leading-relaxed">
+                <p className="text-base md:text-lg text-neutral-200 font-normal leading-relaxed">
                   The world young people are entering is changing faster than the systems preparing them for it. CentreStage Club is a school based development experience helping young people discover who they are while building the capabilities the future will demand.
                 </p>
-                <p className="text-xs text-neutral-400 font-light">
+                <p className="text-sm sm:text-base text-neutral-200 font-normal leading-relaxed">
                   Students develop critical thinking, communication, public speaking, leadership, teamwork, adaptability and confidence while learning to recognise the value they bring in an AI disrupted world.
                 </p>
                 <div className="pt-2">
@@ -242,10 +242,10 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onNavigate }) => {
                 <p className="font-serif italic text-lg text-[#d4af37]">
                   "What can only you bring?"
                 </p>
-                <p className="text-sm md:text-base text-neutral-300 font-light leading-relaxed">
+                <p className="text-base md:text-lg text-neutral-200 font-normal leading-relaxed">
                   In a world where technology can replicate more of what we do, the question of what makes us distinctive becomes increasingly important.
                 </p>
-                <p className="text-xs text-neutral-400 font-light leading-relaxed">
+                <p className="text-sm sm:text-base text-neutral-200 font-normal leading-relaxed">
                   The Irreplaceable Advantage™ is our proprietary framework for identifying the distinctive combination of experience, perspective, knowledge, values, thinking and capability that makes an individual or organisation difficult to replicate.
                 </p>
                 <div className="pt-2">

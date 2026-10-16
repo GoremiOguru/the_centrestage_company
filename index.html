@@ -5,17 +5,32 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="The CENTRESTAGE Company helps leaders and organisations strengthen reputation, sharpen positioning, tell powerful stories and build influence." />
-    <meta name="keywords" content="Strategy, Storytelling, Executive Visibility, Thought Leadership, Brand Positioning, Leadership Communication, The CENTRESTAGE Company" />
+    <meta name="description" content="The CentreStage Company helps leaders and organisations strengthen reputation, sharpen positioning, tell powerful stories and build influence." />
+    <meta name="keywords" content="Strategy, Storytelling, Executive Visibility, Thought Leadership, Brand Positioning, Leadership Communication, The CentreStage Company" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <link rel="canonical" href="https://thecentrestagehq.com/" />
-    <title>The CENTRESTAGE Company | Strategy, Story &amp; Visibility</title>
+    <link rel="canonical" id="canonical-link" href="https://thecentrestagehq.com/" />
+    <script>
+      (function() {
+        try {
+          var p = window.location.pathname || '';
+          if (p.length > 1 && p.endsWith('/')) p = p.slice(0, -1);
+          var canonical = 'https://thecentrestagehq.com' + (p === '' || p === '/' ? '/' : p);
+          var el = document.getElementById('canonical-link') || document.querySelector('link[rel="canonical"]');
+          if (el) el.setAttribute('href', canonical);
+          var ogUrl = document.querySelector('meta[property="og:url"]');
+          if (ogUrl) ogUrl.setAttribute('content', canonical);
+          var twUrl = document.querySelector('meta[name="twitter:url"]');
+          if (twUrl) twUrl.setAttribute('content', canonical);
+        } catch (e) {}
+      })();
+    </script>
+    <title>The CentreStage Company | Strategy, Story &amp; Visibility</title>
 
     <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="The CENTRESTAGE Company" />
+    <meta property="og:site_name" content="The CentreStage Company" />
     <meta property="og:url" content="https://thecentrestagehq.com/" />
-    <meta property="og:title" content="The CENTRESTAGE Company | Strategy, Story &amp; Visibility" />
+    <meta property="og:title" content="The CentreStage Company | Strategy, Story &amp; Visibility" />
     <meta property="og:description" content="We uncover value, shape perception and build influence through strategy, story and visibility for ambitious leaders and organisations." />
     <meta property="og:image" content="https://thecentrestagehq.com/the_centrestage_company_logo.jpg" />
     <meta property="og:locale" content="en_US" />
@@ -23,7 +38,7 @@
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://thecentrestagehq.com/" />
-    <meta name="twitter:title" content="The CENTRESTAGE Company | Strategy, Story &amp; Visibility" />
+    <meta name="twitter:title" content="The CentreStage Company | Strategy, Story &amp; Visibility" />
     <meta name="twitter:description" content="We uncover value, shape perception and build influence through strategy, story and visibility." />
     <meta name="twitter:image" content="https://thecentrestagehq.com/the_centrestage_company_logo.jpg" />
 
@@ -35,7 +50,7 @@
           {
             "@type": "Organization",
             "@id": "https://thecentrestagehq.com/#organization",
-            "name": "The CENTRESTAGE Company",
+            "name": "The CentreStage Company",
             "url": "https://thecentrestagehq.com/",
             "logo": "https://thecentrestagehq.com/the_centrestage_company_logo.jpg",
             "description": "Strategic advisory and reputation consulting firm helping leaders and organisations turn distinctive value into influence through strategy, story, and visibility.",
@@ -46,7 +61,8 @@
             },
             "sameAs": [
               "https://www.linkedin.com/company/the-centrestage-company",
-              "https://www.instagram.com/thecentrestagehq"
+              "https://www.instagram.com/thecentrestagehq",
+              "https://www.tiktok.com/@thecentrestagehq"
             ],
             "contactPoint": {
               "@type": "ContactPoint",
@@ -58,7 +74,7 @@
             "@type": "WebSite",
             "@id": "https://thecentrestagehq.com/#website",
             "url": "https://thecentrestagehq.com/",
-            "name": "The CENTRESTAGE Company",
+            "name": "The CentreStage Company",
             "publisher": {
               "@id": "https://thecentrestagehq.com/#organization"
             }

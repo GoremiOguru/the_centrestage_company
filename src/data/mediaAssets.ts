@@ -98,7 +98,7 @@ export const GALLERY_PHOTOS: MediaPhoto[] = [
   {
     id: 'summit-keynote',
     src: MEDIA_ASSETS.summitStage,
-    alt: 'The CENTRESTAGE Keynote & Continental Summit',
+    alt: 'The CentreStage Keynote & Continental Summit',
     title: 'Keynote & Executive Positioning',
     category: 'Keynote & Speaking',
     caption: 'Elevating leadership narratives on continental and global conference stages.'

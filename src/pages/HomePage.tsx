@@ -19,8 +19,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
   return (
     <>
       <SEOHead
-        title="The CENTRESTAGE Company | Strategy, Story & Visibility"
-        description="The CENTRESTAGE Company helps leaders and organisations strengthen reputation, sharpen positioning, tell powerful stories and build influence."
+        title="The CentreStage Company | Strategy, Story & Visibility"
+        description="The CentreStage Company helps leaders and organisations strengthen reputation, sharpen positioning, tell powerful stories and build influence."
         path="/"
       />
 
@@ -367,10 +367,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
                   <h3 className="font-serif text-2xl text-white group-hover:text-[#d4af37] transition-colors">
                     {cap.title}
                   </h3>
-                  <p className="text-xs font-serif italic text-neutral-400">
+                  <p className="text-sm font-serif italic text-neutral-300">
                     "{cap.tagline}"
                   </p>
-                  <p className="text-xs text-neutral-300 font-light leading-relaxed line-clamp-3">
+                  <p className="text-sm text-neutral-200 font-normal leading-relaxed line-clamp-3">
                     {cap.description}
                   </p>
                 </div>
@@ -476,10 +476,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
                   <h3 className="font-serif text-2xl text-white group-hover:text-[#d4af37] transition-colors">
                     {pillar.title}
                   </h3>
-                  <p className="font-serif italic text-sm text-neutral-300">
+                  <p className="font-serif italic text-sm text-neutral-200">
                     "{pillar.headline}"
                   </p>
-                  <p className="text-xs text-neutral-400 font-light leading-relaxed line-clamp-3">
+                  <p className="text-sm text-neutral-200 font-normal leading-relaxed line-clamp-3">
                     {pillar.description}
                   </p>
                 </div>
@@ -551,7 +551,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
                   <h3 className="font-serif text-xl text-white group-hover:text-[#d4af37] transition-colors leading-snug">
                     {article.title}
                   </h3>
-                  <p className="text-xs text-neutral-400 font-light line-clamp-3">
+                  <p className="text-sm text-neutral-200 font-normal leading-relaxed line-clamp-3">
                     {article.excerpt}
                   </p>
                 </div>

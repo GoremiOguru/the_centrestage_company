@@ -31,8 +31,14 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     // 2. Standard Meta
     setMetaTag('name', 'description', description);
 
-    // 3. Open Graph
-    const canonicalUrl = `https://thecentrestagehq.com${path.startsWith('/') ? path : `/${path}`}`;
+    // 3. Normalized Canonical & Open Graph URL
+    let cleanPath = path || '';
+    if (!cleanPath.startsWith('/')) cleanPath = `/${cleanPath}`;
+    if (cleanPath.length > 1 && cleanPath.endsWith('/')) {
+      cleanPath = cleanPath.slice(0, -1);
+    }
+    const canonicalUrl = `https://thecentrestagehq.com${cleanPath === '/' ? '/' : cleanPath}`;
+
     setMetaTag('property', 'og:title', title);
     setMetaTag('property', 'og:description', description);
     setMetaTag('property', 'og:url', canonicalUrl);

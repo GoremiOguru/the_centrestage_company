@@ -22,7 +22,7 @@ export const BrandFrameworkVisual: React.FC = () => {
               Institutional Architecture
             </span>
             <h3 className="font-serif text-2xl md:text-3xl text-white">
-              The CENTRESTAGE Brand Framework
+              The CentreStage Brand Framework
             </h3>
           </div>
         </div>
@@ -30,7 +30,7 @@ export const BrandFrameworkVisual: React.FC = () => {
         <div>
           <img
             src={logoImg}
-            alt="The CENTRESTAGE Company Logo"
+            alt="The CentreStage Company Logo"
             className="h-8 md:h-10 w-auto object-contain max-w-[180px] border border-[#d4af37]/30 rounded-sm p-1 bg-black/40"
           />
         </div>

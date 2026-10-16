@@ -18,8 +18,8 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
   return (
     <>
       <SEOHead
-        title="Reputation, Executive Positioning & Storytelling | The CENTRESTAGE"
-        description="Explore The CENTRESTAGE Company's work across reputation, executive presence, storytelling, thought leadership and high impact experiences."
+        title="Reputation, Executive Positioning & Storytelling | The CentreStage"
+        description="Explore The CentreStage Company's work across reputation, executive presence, storytelling, thought leadership and high impact experiences."
         path="/our-work"
       />
 
@@ -43,7 +43,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
             <p>You can build something remarkable and still struggle to explain why it matters.</p>
             <div className="pt-2">
               <span className="font-serif text-2xl text-white font-medium italic block">
-                The CENTRESTAGE exists to close that gap.
+                The CentreStage exists to close that gap.
               </span>
             </div>
             <p className="text-sm text-neutral-400">
@@ -157,7 +157,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
                   <h3 className="font-serif text-2xl text-white group-hover:text-[#d4af37] transition-colors leading-snug">
                     {study.title}
                   </h3>
-                  <p className="text-xs text-neutral-400 font-light line-clamp-3">
+                  <p className="text-sm text-neutral-200 font-normal leading-relaxed line-clamp-3">
                     {study.summary}
                   </p>
 
@@ -166,7 +166,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onNavigate }) => {
                     <span className="text-[10px] font-mono text-[#d4af37] uppercase block mb-1">
                       WHAT WE SAW
                     </span>
-                    <p className="font-serif text-xs text-neutral-200 italic line-clamp-2">
+                    <p className="font-serif text-sm text-neutral-100 italic line-clamp-2">
                       "{study.whatWeSaw}"
                     </p>
                   </div>

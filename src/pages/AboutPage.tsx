@@ -16,8 +16,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
   return (
     <>
       <SEOHead
-        title="About The CENTRESTAGE Company | Reputation, Story & Influence"
-        description="Discover The CENTRESTAGE Company, an African strategy, reputation and storytelling company helping important work become seen, understood and influential."
+        title="About The CentreStage Company | Reputation, Story & Influence"
+        description="Discover The CentreStage Company, an African strategy, reputation and storytelling company helping important work become seen, understood and influential."
         path="/about"
       />
 
@@ -26,7 +26,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
         {/* Header Section */}
         <section className="space-y-8 text-center max-w-4xl mx-auto">
           <span className="text-xs font-mono tracking-[0.3em] text-[#d4af37] uppercase block">
-            ABOUT THE CENTRESTAGE
+            ABOUT The CentreStage
           </span>
           <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl text-white font-light leading-tight">
             Where great ideas take <br />
@@ -35,7 +35,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             </span>
           </h1>
           <p className="text-base sm:text-lg text-neutral-300 font-light max-w-2xl mx-auto leading-relaxed">
-            The CENTRESTAGE Company began in 2015 with a simple conviction:
+            The CentreStage Company began in 2015 with a simple conviction:
           </p>
         </section>
 
@@ -48,7 +48,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             subtitle="The Foundational Instinct"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-sm md:text-base text-neutral-300 font-light leading-relaxed">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-base md:text-lg text-neutral-200 font-normal leading-relaxed">
             <div className="space-y-6">
               <p>
                 What began in reputation management and visibility has evolved into something broader.
@@ -71,15 +71,15 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           </div>
 
           {/* Evolution text */}
-          <div className="max-w-3xl mx-auto text-center space-y-6 text-neutral-300 font-light text-base md:text-lg">
+          <div className="max-w-3xl mx-auto text-center space-y-6 text-neutral-100 font-normal text-lg md:text-xl leading-relaxed">
             <p>
               We look beneath what is obvious to find the value, story, perspective or possibility that can change how a person, idea or organisation is understood.
             </p>
-            <p className="font-serif italic text-xl text-[#d4af37]">
+            <p className="font-serif italic text-2xl text-[#d4af37]">
               Then we bring together strategy, story and visibility to move it forward.
             </p>
-            <p className="text-neutral-400">
-              Today, The CENTRESTAGE is more than a company. It is an expanding ecosystem of ideas, platforms and programmes built around people and work with the potential to matter.
+            <p className="text-neutral-200">
+              Today, The CentreStage is more than a company. It is an expanding ecosystem of ideas, platforms and programmes built around people and work with the potential to matter.
             </p>
             <p className="font-mono text-xs text-[#d4af37] tracking-widest uppercase">
               And we are still evolving.
@@ -124,7 +124,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               <p className="font-serif italic text-white text-base">
                 We look deeper.
               </p>
-              <p className="text-xs text-neutral-400 font-light leading-relaxed">
+              <p className="text-sm text-neutral-200 font-normal leading-relaxed">
                 What makes this different? What is being overlooked? What should this organisation or leader be known for? Where is the opportunity others haven't recognised?
               </p>
             </div>
@@ -138,7 +138,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               <p className="font-serif italic text-white text-base">
                 We synthesize meaning.
               </p>
-              <p className="text-xs text-neutral-400 font-light leading-relaxed">
+              <p className="text-sm text-neutral-200 font-normal leading-relaxed">
                 We turn what we discover into a clear position, compelling story and coherent expression.
               </p>
             </div>
@@ -152,7 +152,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               <p className="font-serif italic text-white text-base">
                 We build authority.
               </p>
-              <p className="text-xs text-neutral-400 font-light leading-relaxed">
+              <p className="text-sm text-neutral-200 font-normal leading-relaxed">
                 We place that value where it can be seen, understood and recognised by the people who matter.
               </p>
             </div>
@@ -195,7 +195,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                   </span>
                   <img
                     src={logoImg}
-                    alt="The CENTRESTAGE Company"
+                    alt="The CentreStage Company"
                     className="h-6 w-auto object-contain bg-black/60 backdrop-blur-md px-2 py-0.5 rounded-sm border border-neutral-800"
                   />
                 </div>
@@ -216,9 +216,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             </div>
 
             {/* Editorial Copy */}
-            <div className="lg:col-span-7 space-y-6 text-neutral-300 text-sm md:text-base font-light leading-relaxed">
+            <div className="lg:col-span-7 space-y-6 text-neutral-100 text-base md:text-lg font-normal leading-relaxed">
               <p>
-                The CENTRESTAGE Company was founded by <strong className="text-white font-medium">Dr. Naomi</strong>, a strategist, storyteller and communication professional whose work spans reputation, leadership, storytelling and human potential.
+                The CentreStage Company was founded by <strong className="text-white font-medium">Dr. Naomi</strong>, a strategist, storyteller and communication professional whose work spans reputation, leadership, storytelling and human potential.
               </p>
               <p>
                 Since 2015, that founding vision has grown into a wider ecosystem of platforms, programmes and ideas, united by one belief:

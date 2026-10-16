@@ -51,8 +51,8 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
   return (
     <>
       <SEOHead
-        title="Insights on Reputation, Leadership & Influence | The CENTRESTAGE"
-        description="Ideas and perspectives from The CENTRESTAGE on reputation, leadership, storytelling, influence, AI, visibility and the future of work."
+        title="Insights on Reputation, Leadership & Influence | The CentreStage"
+        description="Ideas and perspectives from The CentreStage on reputation, leadership, storytelling, influence, AI, visibility and the future of work."
         path="/insights"
       />
 
@@ -167,7 +167,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
                       {article.title}
                     </h3>
 
-                    <p className="text-xs text-neutral-300 font-light leading-relaxed line-clamp-3">
+                    <p className="text-sm text-neutral-200 font-normal leading-relaxed line-clamp-3">
                       {article.excerpt}
                     </p>
                   </div>
@@ -222,7 +222,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onNavigate, selected
                     {article.title}
                   </h3>
 
-                  <p className="text-xs text-neutral-400 font-light line-clamp-3">
+                  <p className="text-sm text-neutral-200 font-normal leading-relaxed line-clamp-3">
                     {article.excerpt}
                   </p>
                 </div>

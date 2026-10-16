@@ -72,25 +72,25 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({ article, onClose, on
             {article.title}
           </h1>
 
-          <p className="text-base text-neutral-400 font-light italic">
+          <p className="text-base sm:text-lg text-neutral-200 font-normal italic">
             "{article.excerpt}"
           </p>
         </div>
 
         {/* Article Main Content */}
-        <div className="prose prose-invert prose-gold max-w-none space-y-6 text-neutral-300 font-sans leading-relaxed text-sm md:text-base">
+        <div className="prose prose-invert prose-gold max-w-none space-y-6 text-neutral-100 font-sans leading-relaxed text-base sm:text-lg">
           {article.fullContent ? (
             article.fullContent.split('\n\n').map((paragraph, index) => {
               if (paragraph.startsWith('### ')) {
                 return (
-                  <h3 key={index} className="font-serif text-2xl text-white pt-6 pb-2 font-medium border-b border-neutral-800">
+                  <h3 key={index} className="font-serif text-2xl sm:text-3xl text-white pt-6 pb-2 font-medium border-b border-neutral-800">
                     {paragraph.replace('### ', '')}
                   </h3>
                 );
               }
               if (paragraph.startsWith('#### ')) {
                 return (
-                  <h4 key={index} className="font-serif text-xl text-[#d4af37] pt-4 font-medium">
+                  <h4 key={index} className="font-serif text-xl sm:text-2xl text-[#d4af37] pt-4 font-medium">
                     {paragraph.replace('#### ', '')}
                   </h4>
                 );
@@ -100,7 +100,7 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({ article, onClose, on
               }
               if (paragraph.startsWith('- ')) {
                 return (
-                  <ul key={index} className="list-disc list-inside space-y-2 text-neutral-300 pl-4">
+                  <ul key={index} className="list-disc list-inside space-y-2.5 text-neutral-200 text-base sm:text-lg pl-4 leading-relaxed">
                     {paragraph.split('\n').map((li, i) => (
                       <li key={i}>{li.replace('- ', '')}</li>
                     ))}
@@ -108,7 +108,7 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({ article, onClose, on
                 );
               }
               return (
-                <p key={index} className="text-neutral-300 leading-relaxed font-light">
+                <p key={index} className="text-neutral-100 text-base sm:text-lg leading-[1.8] font-normal">
                   {paragraph}
                 </p>
               );
@@ -118,7 +118,7 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({ article, onClose, on
               <BookOpen className="w-8 h-8 text-[#d4af37] mx-auto opacity-60" />
               <h3 className="font-serif text-xl text-white">Full Monograph Available Upon Request</h3>
               <p className="text-xs text-neutral-400 max-w-md mx-auto">
-                This insight piece is part of The CENTRESTAGE's original monograph series exploring reputation, authority, and human distinction.
+                This insight piece is part of The CentreStage's original monograph series exploring reputation, authority, and human distinction.
               </p>
             </div>
           )}

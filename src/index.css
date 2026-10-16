@@ -18,15 +18,25 @@
 @layer base {
   body {
     background-color: var(--color-dark-bg);
-    color: #e5e5e5;
+    color: #f3f4f6;
     font-family: var(--font-sans);
     overflow-x: hidden;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  p {
+    color: #e5e7eb;
+    line-height: 1.75;
+    letter-spacing: 0.01em;
   }
 
   h1, h2, h3, h4, .font-serif-heading {
     font-family: var(--font-serif);
     font-weight: 500;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.015em;
   }
 }
 

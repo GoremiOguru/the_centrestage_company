@@ -1,0 +1,7 @@
+# Canonical Domain & HTTPS Redirects
+http://thecentrestagehq.com/*        https://thecentrestagehq.com/:splat 301!
+http://www.thecentrestagehq.com/*    https://thecentrestagehq.com/:splat 301!
+https://www.thecentrestagehq.com/*   https://thecentrestagehq.com/:splat 301!
+
+# SPA Routing Fallback
+/*    /index.html   200

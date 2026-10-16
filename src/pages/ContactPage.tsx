@@ -3,7 +3,10 @@ import { SEOHead } from '../components/SEOHead';
 import { HorizontalSlider } from '../components/HorizontalSlider';
 import { TypewriterText } from '../components/TypewriterText';
 import type { NavigationPath } from '../types';
-import { ArrowRight, CheckCircle, Loader2, Send } from 'lucide-react';
+import { ArrowRight, CheckCircle, Loader2, Send, ArrowUpRight } from 'lucide-react';
+import { InstagramIcon } from '../components/InstagramIcon';
+import { TikTokIcon } from '../components/TikTokIcon';
+import { SOCIAL_LINKS } from '../data/siteData';
 
 interface ContactPageProps {
   onNavigate: (path: NavigationPath) => void;
@@ -31,7 +34,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, defaultEnq
     },
     {
       title: "Partnerships",
-      description: "For institutions, brands and organisations interested in collaborating across The CENTRESTAGE ecosystem."
+      description: "For institutions, brands and organisations interested in collaborating across The CentreStage ecosystem."
     },
     {
       title: "CentreStage Club",
@@ -72,7 +75,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, defaultEnq
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          _subject: `New CENTRESTAGE Inquiry: ${selectedTopic} - ${formData.fullName}`,
+          _subject: `New CentreStage Inquiry: ${selectedTopic} - ${formData.fullName}`,
           inquiry_area: selectedTopic,
           full_name: formData.fullName,
           email: formData.email,
@@ -97,8 +100,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, defaultEnq
   return (
     <>
       <SEOHead
-        title="Contact The CENTRESTAGE Company | Start a Conversation"
-        description="Talk to The CENTRESTAGE about reputation, positioning, storytelling, thought leadership, executive presence, partnerships and programmes."
+        title="Contact The CentreStage Company | Start a Conversation"
+        description="Talk to The CentreStage about reputation, positioning, storytelling, thought leadership, executive presence, partnerships and programmes."
         path="/contact"
       />
 
@@ -107,7 +110,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, defaultEnq
         {/* Header & Lead */}
         <section className="space-y-8 text-center max-w-4xl mx-auto">
           <span className="text-xs font-mono tracking-[0.3em] text-[#d4af37] uppercase block">
-            CONTACT THE CENTRESTAGE
+            CONTACT The CentreStage
           </span>
           <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl text-white font-light leading-tight">
             Bring it to <br />
@@ -173,7 +176,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, defaultEnq
             <div className="relative aspect-[4/3] w-full rounded-sm overflow-hidden border border-[#d4af37]/40 shadow-md group">
               <img
                 src="/images/roundtable_advisory.jpg"
-                alt="The CENTRESTAGE Advisory & Leadership Dialogue"
+                alt="The CentreStage Advisory & Leadership Dialogue"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
@@ -197,10 +200,55 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, defaultEnq
               </p>
             </div>
 
-            <div className="pt-4 border-t border-neutral-900 space-y-2 text-xs font-mono">
-              <div className="text-[#d4af37]">THE CENTRESTAGE COMPANY</div>
+            <div className="pt-4 border-t border-neutral-900 space-y-3 text-xs font-mono">
+              <div className="text-[#d4af37] font-semibold">The CentreStage Company</div>
               <div className="text-neutral-400">Abuja, Nigeria • Working Globally</div>
-              <div className="text-neutral-500">thecentrestageco@gmail.com</div>
+              <a
+                href={`mailto:${SOCIAL_LINKS.email}`}
+                className="text-neutral-300 hover:text-[#d4af37] transition-colors block"
+              >
+                {SOCIAL_LINKS.email}
+              </a>
+
+              {/* Social Channels Direct Connect */}
+              <div className="pt-3 border-t border-neutral-900/80 space-y-2">
+                <span className="text-[10px] tracking-widest uppercase text-neutral-500 font-sans block">
+                  Official Channels
+                </span>
+                <div className="flex flex-col gap-2">
+                  <a
+                    href={SOCIAL_LINKS.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-2 rounded-sm bg-neutral-950 border border-neutral-800 hover:border-[#d4af37]/50 text-neutral-300 hover:text-white transition-all group"
+                  >
+                    <span className="flex items-center gap-2">
+                      <InstagramIcon className="w-3.5 h-3.5 text-[#d4af37] group-hover:scale-110 transition-transform" />
+                      <span className="text-xs font-sans">Instagram</span>
+                    </span>
+                    <span className="flex items-center gap-1 text-[11px] text-neutral-500 font-mono group-hover:text-[#d4af37]">
+                      <span>{SOCIAL_LINKS.handle}</span>
+                      <ArrowUpRight className="w-3 h-3" />
+                    </span>
+                  </a>
+
+                  <a
+                    href={SOCIAL_LINKS.tiktok}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-2 rounded-sm bg-neutral-950 border border-neutral-800 hover:border-[#d4af37]/50 text-neutral-300 hover:text-white transition-all group"
+                  >
+                    <span className="flex items-center gap-2">
+                      <TikTokIcon className="w-3.5 h-3.5 text-[#d4af37] group-hover:scale-110 transition-transform" />
+                      <span className="text-xs font-sans">TikTok</span>
+                    </span>
+                    <span className="flex items-center gap-1 text-[11px] text-neutral-500 font-mono group-hover:text-[#d4af37]">
+                      <span>{SOCIAL_LINKS.handle}</span>
+                      <ArrowUpRight className="w-3 h-3" />
+                    </span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -215,7 +263,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, defaultEnq
               </div>
               <h3 className="font-serif text-3xl text-white">Conversation Initiated.</h3>
               <p className="text-sm text-neutral-300 font-light max-w-md mx-auto leading-relaxed">
-                Thank you for bringing your work to The CENTRESTAGE. Your inquiry regarding <strong className="text-[#d4af37]">{selectedTopic}</strong> has been transmitted to our team and we will respond directly.
+                Thank you for bringing your work to The CentreStage. Your inquiry regarding <strong className="text-[#d4af37]">{selectedTopic}</strong> has been transmitted to our team and we will respond directly.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
                 <button
@@ -240,7 +288,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, defaultEnq
                   SELECTED INQUIRY AREA: {selectedTopic.toUpperCase()}
                 </span>
                 <p className="text-xs text-neutral-400 font-light">
-                  Please fill out the form below to transmit your message directly to The CENTRESTAGE executive team.
+                  Please fill out the form below to transmit your message directly to The CentreStage executive team.
                 </p>
               </div>
 
