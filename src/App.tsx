@@ -11,7 +11,15 @@ import { WorkshopPage } from './pages/WorkshopPage';
 import type { NavigationPath, InsightArticle } from './types';
 
 export function App() {
-  const [currentPath, setCurrentPath] = useState<NavigationPath>('/');
+  const [currentPath, setCurrentPath] = useState<NavigationPath>(() => {
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname as NavigationPath;
+      if (['/', '/about', '/our-work', '/ecosystem', '/workshop', '/insights', '/contact'].includes(path)) {
+        return path;
+      }
+    }
+    return '/';
+  });
   const [selectedArticle, setSelectedArticle] = useState<InsightArticle | null>(null);
 
   useEffect(() => {

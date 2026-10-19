@@ -1,15 +1,11 @@
 {
-  "redirects": [
-    {
-      "source": "/:path*/",
-      "destination": "/:path*",
-      "permanent": true
-    }
-  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/((?!assets|images|icons\\.svg|favicon|apple-touch-icon|robots\\.txt|sitemap\\.xml|_redirects|google0ec5add40841c923\\.html).*)/",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]
 }
+
