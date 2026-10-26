@@ -5,8 +5,6 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'ABOUT', path: '/about' },
   { label: 'OUR WORK', path: '/our-work' },
   { label: 'ECOSYSTEM', path: '/ecosystem' },
-  { label: 'WORKSHOP', path: '/workshop' },
-  { label: 'INSIGHTS', path: '/insights' },
   { label: 'CONTACT', path: '/contact' },
 ];
 

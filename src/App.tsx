@@ -5,28 +5,27 @@ import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { WorkPage } from './pages/WorkPage';
 import { EcosystemPage } from './pages/EcosystemPage';
-import { InsightsPage } from './pages/InsightsPage';
 import { ContactPage } from './pages/ContactPage';
-import { WorkshopPage } from './pages/WorkshopPage';
-import type { NavigationPath, InsightArticle } from './types';
+import type { NavigationPath } from './types';
 
 export function App() {
   const [currentPath, setCurrentPath] = useState<NavigationPath>(() => {
     if (typeof window !== 'undefined') {
       const path = window.location.pathname as NavigationPath;
-      if (['/', '/about', '/our-work', '/ecosystem', '/workshop', '/insights', '/contact'].includes(path)) {
+      if (['/', '/about', '/our-work', '/ecosystem', '/contact'].includes(path)) {
         return path;
       }
     }
     return '/';
   });
-  const [selectedArticle, setSelectedArticle] = useState<InsightArticle | null>(null);
 
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname as NavigationPath;
-      if (['/', '/about', '/our-work', '/ecosystem', '/workshop', '/insights', '/contact'].includes(path)) {
+      if (['/', '/about', '/our-work', '/ecosystem', '/contact'].includes(path)) {
         setCurrentPath(path);
+      } else {
+        setCurrentPath('/');
       }
     };
     window.addEventListener('popstate', handlePopState);
@@ -39,29 +38,20 @@ export function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleOpenArticle = (article: InsightArticle) => {
-    setSelectedArticle(article);
-    handleNavigate('/insights');
-  };
-
   const renderPage = () => {
     switch (currentPath) {
       case '/':
-        return <HomePage onNavigate={handleNavigate} onOpenArticle={handleOpenArticle} />;
+        return <HomePage onNavigate={handleNavigate} />;
       case '/about':
         return <AboutPage onNavigate={handleNavigate} />;
       case '/our-work':
         return <WorkPage onNavigate={handleNavigate} />;
       case '/ecosystem':
         return <EcosystemPage onNavigate={handleNavigate} />;
-      case '/workshop':
-        return <WorkshopPage onNavigate={handleNavigate} />;
-      case '/insights':
-        return <InsightsPage onNavigate={handleNavigate} selectedArticleFromParent={selectedArticle} />;
       case '/contact':
         return <ContactPage onNavigate={handleNavigate} />;
       default:
-        return <HomePage onNavigate={handleNavigate} onOpenArticle={handleOpenArticle} />;
+        return <HomePage onNavigate={handleNavigate} />;
     }
   };
 

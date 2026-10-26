@@ -123,23 +123,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li>
                 <button
-                  onClick={() => handleNav('/workshop')}
-                  className="text-[#d4af37] font-semibold hover:underline flex items-center gap-1.5"
-                >
-                  <span>Business Advantage Workshop</span>
-                  <span className="text-[9px] px-1 bg-[#d4af37] text-black font-mono font-bold rounded-sm uppercase">BAW</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleNav('/insights')}
-                  className="hover:text-white transition-colors"
-                >
-                  Insights &amp; Journal
-                </button>
-              </li>
-              <li>
-                <button
                   onClick={() => handleNav('/contact')}
                   className="hover:text-white transition-colors"
                 >

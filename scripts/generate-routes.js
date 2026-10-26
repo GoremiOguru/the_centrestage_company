@@ -23,16 +23,6 @@ const routes = [
     description: 'Explore The CentreStage ecosystem spanning reputation, leadership, social impact, youth development, human distinction and convening.'
   },
   {
-    path: '/workshop',
-    title: 'The Business Advantage Workshop (BAW) | Dr. Naomi | The CentreStage',
-    description: 'Six practical masterclasses in Abuja to help business owners, leaders and teams turn internal value into turnover, pricing power and market influence.'
-  },
-  {
-    path: '/insights',
-    title: 'Insights on Reputation, Leadership & Influence | The CentreStage',
-    description: 'Ideas and perspectives from The CentreStage on reputation, leadership, storytelling, influence, AI, visibility and the future of work.'
-  },
-  {
     path: '/contact',
     title: 'Contact The CentreStage Company | Start a Conversation',
     description: 'Talk to The CentreStage about reputation, positioning, storytelling, thought leadership, executive presence, partnerships and programmes.'

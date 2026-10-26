@@ -4,17 +4,16 @@ import { CountUpStat } from '../components/CountUpStat';
 import { HorizontalSlider } from '../components/HorizontalSlider';
 import { SpotlightBeliefSection } from '../components/SpotlightBeliefSection';
 import { TypewriterText } from '../components/TypewriterText';
-import { CAPABILITIES, ECOSYSTEM_PILLARS, INSIGHTS_ARTICLES, IMPACT_STATS } from '../data/siteData';
+import { CAPABILITIES, ECOSYSTEM_PILLARS, IMPACT_STATS } from '../data/siteData';
 import type { NavigationPath, InsightArticle } from '../types';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 
 interface HomePageProps {
   onNavigate: (path: NavigationPath) => void;
-  onOpenArticle: (article: InsightArticle) => void;
+  onOpenArticle?: (article: InsightArticle) => void;
 }
 
-export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle }) => {
-  const publishedArticles = INSIGHTS_ARTICLES.filter((a) => a.isPublished);
+export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
   return (
     <>
@@ -165,121 +164,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
           </div>
         </section>
 
-        {/* SECTION: FEATURED HIGH-CONVERTING WORKSHOP SPOTLIGHT */}
-        <section className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="bg-gradient-to-br from-[#121008] via-[#101017] to-[#0a0a0e] border-2 border-[#d4af37]/60 rounded-sm p-8 sm:p-12 md:p-16 shadow-2xl relative overflow-hidden group">
-            
-            {/* Ambient Background Gold Beam */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#d4af37]/10 rounded-full blur-[120px] pointer-events-none" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
-              
-              <div className="lg:col-span-7 space-y-6">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#d4af37]/50 bg-[#d4af37]/15 text-[11px] font-mono tracking-widest text-[#d4af37] uppercase font-semibold">
-                  <span className="w-2 h-2 rounded-full bg-[#d4af37] animate-ping" />
-                  UPCOMING MASTERCLASS SERIES • ABUJA
-                </div>
-
-                <div className="space-y-2">
-                  <h2 className="font-serif text-3xl sm:text-5xl text-white font-medium leading-tight">
-                    The Business Advantage <br />
-                    <span className="italic text-gold-gradient">
-                      <TypewriterText text="Workshop (BAW)" speed={40} delay={200} />
-                    </span>
-                  </h2>
-                  <p className="font-serif text-lg sm:text-xl text-[#d4af37] italic">
-                    "The advantage your organisation needs may already be inside it."
-                  </p>
-                </div>
-
-                <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed">
-                  Six practical classes designed to help business owners, leaders and teams turn internal value into turnover, win high-value proposals, protect pricing, and build repeat trust in an AI-disrupted world.
-                </p>
-
-                {/* Key Benefits Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-                  {[
-                    "Protect pricing without discounting",
-                    "Stop losing customer inquiries",
-                    "Eliminate expensive internal rework",
-                    "Uncover overlooked team capabilities"
-                  ].map((benefit, i) => (
-                    <div key={i} className="flex items-center gap-2 text-xs text-neutral-200">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#d4af37]" />
-                      <span>{benefit}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Pricing summary pill */}
-                <div className="pt-2 flex flex-wrap items-center gap-3 text-xs font-mono text-neutral-400">
-                  <span className="text-white font-semibold">Flexible Passes:</span>
-                  <span className="text-[#d4af37] bg-[#d4af37]/10 px-2.5 py-1 rounded-sm border border-[#d4af37]/30">1 Class: ₦70k</span>
-                  <span className="text-[#d4af37] bg-[#d4af37]/10 px-2.5 py-1 rounded-sm border border-[#d4af37]/30">3 Classes: ₦180k</span>
-                  <span className="text-[#d4af37] bg-[#d4af37]/10 px-2.5 py-1 rounded-sm border border-[#d4af37]/30">All 6: ₦300k</span>
-                </div>
-
-                {/* Action CTAs */}
-                <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                  <button
-                    onClick={() => onNavigate('/workshop')}
-                    className="px-8 py-4 bg-[#d4af37] text-black font-bold text-xs uppercase tracking-widest hover:bg-[#e2bd44] transition-all rounded-sm shadow-xl shadow-[#d4af37]/20 flex items-center justify-center gap-2"
-                  >
-                    <span>Explore Classes &amp; Book Seats</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-
-                  <a
-                    href="https://wa.me/2347049748121?text=Hello%20Cora,%20I%20would%20like%20to%20inquire%20about%20booking%20seats%20for%20The%20Business%20Advantage%20Workshop."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-6 py-4 bg-transparent border border-neutral-700 hover:border-[#d4af37] text-white font-medium text-xs uppercase tracking-widest transition-all rounded-sm text-center"
-                  >
-                    Chat With Cora (0704 974 8121)
-                  </a>
-                </div>
-
-              </div>
-
-              {/* Right Column: Visual Photo Card with Class Dates */}
-              <div className="lg:col-span-5 space-y-4">
-                <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-[#d4af37]/50 shadow-2xl group">
-                  <img
-                    src="/images/executive_workshop.jpg"
-                    alt="The Business Advantage Workshop"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4 space-y-1">
-                    <span className="text-[10px] font-mono text-[#d4af37] uppercase tracking-widest bg-black/80 px-2 py-0.5 rounded-sm border border-[#d4af37]/30 block w-max">
-                      Thursdays in Abuja • 11 AM - 4 PM
-                    </span>
-                    <h3 className="font-serif text-white text-xl">The Irreplaceable Advantage™</h3>
-                    <p className="text-xs text-neutral-300 font-light">Facilitated by Dr. Naomi Osemedua</p>
-                  </div>
-                </div>
-
-                {/* 6 Dates Badge Ribbon */}
-                <div className="p-4 bg-[#0a0a0f] border border-neutral-800 rounded-sm grid grid-cols-3 gap-2 text-center">
-                  <div className="p-2 bg-[#12121a] rounded-sm border border-neutral-800/80">
-                    <span className="text-[9px] font-mono text-neutral-400 block">CLASS 1 &amp; 2</span>
-                    <span className="text-xs font-serif text-[#d4af37] font-semibold">Oct 15 &amp; 22</span>
-                  </div>
-                  <div className="p-2 bg-[#12121a] rounded-sm border border-neutral-800/80">
-                    <span className="text-[9px] font-mono text-neutral-400 block">CLASS 3 &amp; 4</span>
-                    <span className="text-xs font-serif text-[#d4af37] font-semibold">Oct 29 &amp; Nov 5</span>
-                  </div>
-                  <div className="p-2 bg-[#12121a] rounded-sm border border-neutral-800/80">
-                    <span className="text-[9px] font-mono text-neutral-400 block">CLASS 5 &amp; 6</span>
-                    <span className="text-xs font-serif text-[#d4af37] font-semibold">Nov 12 &amp; 19</span>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-          </div>
-        </section>
 
         {/* SECTION: HOW WE THINK */}
         <section className="max-w-6xl mx-auto px-6 md:px-12">
@@ -518,50 +403,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenArticle })
               />
             ))}
           </div>
-        </section>
-
-        {/* SECTION: INSIGHTS PREVIEW (HORIZONTAL SLIDER WITH INTERACTIVE SHAKE CARDS) */}
-        <section className="max-w-7xl mx-auto px-6 md:px-12">
-          <HorizontalSlider
-            title="Ideas worth putting CentreStage."
-            subtitle="INSIGHTS PREVIEW"
-          >
-            {publishedArticles.map((article) => (
-              <div
-                key={article.id}
-                onClick={() => onOpenArticle(article)}
-                className="interactive-card w-[300px] sm:w-[360px] flex-shrink-0 p-6 sm:p-8 bg-[#0b0b0e] border border-neutral-800 rounded-sm group flex flex-col justify-between cursor-pointer snap-start"
-              >
-                <div className="space-y-4">
-                  {article.image && (
-                    <div className="relative aspect-[16/9] w-full rounded-sm overflow-hidden border border-neutral-800 group-hover:border-[#d4af37]/40 transition-colors">
-                      <img
-                        src={article.image}
-                        alt={article.title}
-                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                    </div>
-                  )}
-
-                  <div className="flex items-center justify-between text-xs font-mono">
-                    <span className="text-[#d4af37] uppercase tracking-widest">{article.category}</span>
-                    <span className="text-neutral-500">{article.readTime}</span>
-                  </div>
-                  <h3 className="font-serif text-xl text-white group-hover:text-[#d4af37] transition-colors leading-snug">
-                    {article.title}
-                  </h3>
-                  <p className="text-sm text-neutral-200 font-normal leading-relaxed line-clamp-3">
-                    {article.excerpt}
-                  </p>
-                </div>
-                <div className="pt-6 mt-6 border-t border-neutral-900 flex items-center justify-between text-xs text-neutral-400 group-hover:text-[#d4af37]">
-                  <span>Read Monograph</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </div>
-              </div>
-            ))}
-          </HorizontalSlider>
         </section>
 
       </div>
